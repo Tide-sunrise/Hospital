@@ -1,5 +1,5 @@
 <template>
-	<view class="catalogsLayout pageBg2">
+	<view class="catalogsLayout">
 		<view class="imageBackground">
 			<image src="../../common/image/xiangya2.jpg" mode="aspectFill"></image>
 		</view>

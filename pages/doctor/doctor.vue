@@ -29,8 +29,8 @@
 			<view class="bar"></view>
 			<view class="down-content">
 				<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-					<view class="downFixDay" v-for="item in 8">
-						<view class="box">
+					<view class="downFixDay" v-for="item in 8" >
+						<view class="box" @click="navToDetail">
 							<text class="t1">周日</text>
 							<text class="t2">9-15</text>
 						</view>
@@ -42,7 +42,12 @@
 </template>
 
 <script setup>
-	
+import { ref } from 'vue'
+const  navToDetail = () => {
+	uni.navigateTo({
+		url: '/pages/doctor-details/doctor-details'
+	})
+}
 </script>
 
 <style lang="scss" scoped>

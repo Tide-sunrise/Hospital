@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "y-tab": "../../uni_modules/y-tabs/components/y-tab/y-tab",
+    "y-tabs": "../../uni_modules/y-tabs/components/y-tabs/y-tabs",
+    "small-icon": "../../components/small-icon/small-icon"
+  }
+}

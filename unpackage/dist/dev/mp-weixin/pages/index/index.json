@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "医院",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "custom-nav-bar": "../../components/custom-nav-bar/custom-nav-bar",
+    "wd-swiper": "../../uni_modules/wot-design-uni/components/wd-swiper/wd-swiper",
+    "small-icon": "../../components/small-icon/small-icon",
+    "uni-icons": "../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "y-tab": "../../uni_modules/y-tabs/components/y-tab/y-tab",
+    "y-tabs": "../../uni_modules/y-tabs/components/y-tabs/y-tabs",
+    "wd-tabbar-item": "../../uni_modules/wot-design-uni/components/wd-tabbar-item/wd-tabbar-item",
+    "wd-tabbar": "../../uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar"
+  }
+}

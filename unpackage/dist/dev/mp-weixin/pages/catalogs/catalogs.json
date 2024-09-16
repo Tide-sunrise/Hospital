@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "就诊记录",
+  "usingComponents": {
+    "wd-tabbar-item": "../../uni_modules/wot-design-uni/components/wd-tabbar-item/wd-tabbar-item",
+    "wd-tabbar": "../../uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="smallIcon data-v-399c1124"><navigator class="box data-v-399c1124" url="{{c}}"><image class="pic data-v-399c1124" src="{{a}}" mode="aspectFill"></image><view class="text data-v-399c1124">{{b}}</view></navigator></view>

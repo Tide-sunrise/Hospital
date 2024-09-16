@@ -1,0 +1,65 @@
+/* 路径 src/iconfont/index.css */
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 4684385 */
+  src: url('//at.alicdn.com/t/c/font_4684385_0x4vmzgj3g9p.woff2?t=1726232823358') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4684385_0x4vmzgj3g9p.woff?t=1726232823358') format('woff'),
+       url('//at.alicdn.com/t/c/font_4684385_0x4vmzgj3g9p.ttf?t=1726232823358') format('truetype');
+}
+
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yuyuequxiao:before {
+  content: "\e618";
+}
+
+.icon-feiyongchaxun:before {
+  content: "\e619";
+}
+
+.icon-yuanneidingcan:before {
+  content: "\e61a";
+}
+
+.icon-tijianzhongxin:before {
+  content: "\e61b";
+}
+
+.icon-NIPTshaicha:before {
+  content: "\e610";
+}
+
+.icon-binglifuyin:before {
+  content: "\e611";
+}
+
+.icon-baogaochaxun:before {
+  content: "\e613";
+}
+
+.icon-tijianbaogao:before {
+  content: "\e614";
+}
+
+.icon-quyudaozhen:before {
+  content: "\e615";
+}
+
+.icon-dianzipiaoju:before {
+  content: "\e616";
+}
+
+.icon-jiamuchaxun:before {
+  content: "\e617";
+}
+
+.icon-yuyueguahao:before {
+  content: "\e610";
+}

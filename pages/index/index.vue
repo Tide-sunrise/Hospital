@@ -19,9 +19,13 @@
 			</view>
 		</view>
 		
-		<view class="healthCard">
-			这里放健康卡
-		</view>
+		<z-swiper v-model="list" :options="options">
+			<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
+				<health-card :cardinfo="{isExist:item.isExist}"></health-card>
+			</z-swiper-item>
+		</z-swiper>
+		
+		
 		
 		<view class="bigBox">
 			<view class="function">
@@ -110,7 +114,27 @@ const swiperList = ref([
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/meng.jpg'
 ])
 
+//健康卡
+const slideCustomStyle= ref( {
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	borderRadius: '36rpx'
+})
+const options= ref( {
+	effect: 'cards',
+	cardsEffect: {
+	        rotate: false,
+		}
+})
 
+const list= ref( [
+	{isExist:true},
+	{isExist:true},
+	{isExist:true},
+	{isExist:true},
+	{isExist:false}
+])
 
 const noticeList = ref(['我草泥马','一得阁拉米','摩洛哥炒饼'])
 const myFunction = ref([{name:"挂号",url:"/pages/registration/registration"},{name:"击败"},{name:"吧唧"}])

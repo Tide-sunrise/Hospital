@@ -11,7 +11,7 @@
 				</view>
 			</view>
 		</view>
-		<view v-else class="none">
+		<view v-else class="none" @click="navToCards">
 			<uni-icons type="plus" size="100"></uni-icons>
 		</view>
 		
@@ -32,7 +32,13 @@ const props = defineProps({
 	}
 })
 const cardExist = ref(props.cardinfo.isExist);
-console.log(props.cardinfo);
+// console.log(props.cardinfo);
+
+const navToCards = () => {
+	uni.navigateTo({
+		url: '/pages/health-cards/health-cards'
+	})
+}
 </script>
 
 <style lang="scss" scoped>

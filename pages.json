@@ -58,6 +58,13 @@
 			{
 				"navigationBarTitleText" : "医生详情及挂号"
 			}
+		},
+		{
+			"path" : "pages/health-cards/health-cards",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的健康卡"
+			}
 		}
 	],
 	"globalStyle": {

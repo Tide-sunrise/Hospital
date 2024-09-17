@@ -22,13 +22,13 @@
 				<view class="morning">
 					<view class="text">上午 （08：00-12：00） 有号 </view>
 					<view class="button">
-						<wd-button size="small">预约</wd-button>
+						<wd-button size="small" @click="timeSelect">预约</wd-button>
 					</view>
 				</view>
 				<view class="afternoon">
 					<view class="text">下午 （14：30-18：00） 有号</view>
 					<view class="button">
-						<wd-button size="small">预约</wd-button>
+						<wd-button size="small" @click="timeSelect">预约</wd-button>
 					</view>
 				</view>
 			</view>
@@ -50,11 +50,30 @@
 				身份证号：114514191981011451
 			</view>
 		</view>
+		
+		<uni-popup ref="infoPopup" type="bottom">
+			<view class="infoPopup">
+				<view class="title">
+					请选择时间段
+				</view>
+				<view class="grid">
+					<view class="tabs" v-for="item in 8">
+						<text>10:00-10:30</text>
+					</view>
+				</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+//预约
+const infoPopup =ref(null)
+const timeSelect = () => {
+	infoPopup.value.open();
+}
 </script>
 
 <style lang="scss" scoped>
@@ -212,6 +231,30 @@
 			justify-content: center;
 			align-items: center;
 			// background: white;
+		}
+	}
+	.infoPopup{
+		background: #fff;
+		padding: 30rpx;
+		border-radius: 30rpx 30rpx 0 0;
+		overflow: hidden;
+		padding-bottom: 100rpx;
+		.title{
+			font-size: 30rpx;
+			text-align: center;
+			margin-bottom: 30rpx;
+		}
+		.grid{
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+			column-gap: 20rpx;
+			row-gap: 20rpx;
+			.tabs{
+				background: #f5f5f5;
+				border-radius: 20rpx;
+				padding: 20rpx;
+				text-align: center;
+			}
 		}
 	}
 }    

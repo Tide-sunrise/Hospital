@@ -65,6 +65,21 @@
 			{
 				"navigationBarTitleText" : "我的健康卡"
 			}
+		},
+		{
+			"path" : "pages/notice/notice",
+			"style" : 
+			{
+				"navigationBarTitleText" : "公告",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/notice/detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "详情"
+			}
 		}
 	],
 	"globalStyle": {

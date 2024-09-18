@@ -39,7 +39,7 @@
 				<text class="text">公告</text>
 				
 			</view>
-			<view class="center">
+			<view class="center" @click="navToNotice">
 				<swiper vertical autoplay interval="1500" duration="300" circular>
 					<swiper-item v-for="item in noticeList" >
 						<navigator :url="'/pages/notice/detail?id='+item._id">
@@ -185,6 +185,13 @@ function onAnimationfinish(e) {
     // 通过setTimeout解决解锁时机问题
     tabs.value.unlockDx()//通知y-tabs解除对setDx()的锁定
     console.log(activeIndex)
+}
+
+//公告
+const navToNotice = ()=>{
+	uni.navigateTo({
+		url:"/pages/notice/notice"
+	})
 }
 </script>
 

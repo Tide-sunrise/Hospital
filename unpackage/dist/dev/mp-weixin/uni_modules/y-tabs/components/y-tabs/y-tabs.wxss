@@ -1,0 +1,363 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.y-tabs.data-v-3efb49c4 {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.y-tabs.is-vertical.data-v-3efb49c4 {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1;
+}
+.y-tabs.is-vertical .y-tabs__scroll.data-v-3efb49c4 {
+  flex-direction: column;
+}
+.y-tabs.is-cancel-tonch.data-v-3efb49c4 {
+  touch-action: none;
+}
+.y-tabs.is-areaScroll.is-scrollNav.data-v-3efb49c4 {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+.y-tabs.is-areaScroll.is-scrollNav .y-tabs__wrap.data-v-3efb49c4 {
+  flex-shrink: 0;
+}
+.y-tabs.is-areaScroll.is-scrollNav .y-tabs__track.data-v-3efb49c4,
+.y-tabs.is-areaScroll.is-scrollNav .y-tabs__content-scrollview.data-v-3efb49c4 {
+  height: 100%;
+}
+.y-tabs.is-areaScroll.is-sidebarNav.data-v-3efb49c4 {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+.y-tabs.is-areaScroll.is-sidebarNav .y-tabs__scroll.data-v-3efb49c4 {
+  height: 100%;
+}
+.y-tabs.is-areaScroll.is-sidebarNav .y-tabs__wrap.data-v-3efb49c4 {
+  flex-shrink: 0;
+}
+.y-tabs.is-areaScroll.is-sidebarNav .y-tabs__track.data-v-3efb49c4,
+.y-tabs.is-areaScroll.is-sidebarNav .y-tabs__content-scrollview.data-v-3efb49c4 {
+  height: 100%;
+}
+.y-tabs__depend.data-v-3efb49c4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+}
+.y-tabs__depend--transparent.data-v-3efb49c4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 1px;
+}
+.y-tabs__depend--offset.data-v-3efb49c4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 1px;
+}
+.y-tabs__ellipsis.data-v-3efb49c4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.y-tabs__sticky.data-v-3efb49c4 {
+  position: -webkit-sticky;
+  position: sticky;
+}
+.y-tabs.is-vertical .y-tabs__sticky.data-v-3efb49c4 {
+  align-self: flex-start;
+  height: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+.y-tabs__wrap.data-v-3efb49c4 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  visibility: visible;
+  background: #fff;
+  height: 40px;
+}
+.y-tabs__wrap.is-vertical.data-v-3efb49c4 {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.y-tabs__wrap.is-fixed.data-v-3efb49c4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.y-tabs__wrap.is-transparent.data-v-3efb49c4 {
+  background: rgba(255, 255, 255, 0);
+}
+.y-tabs__wrap.is-button.data-v-3efb49c4:not(.is-vertical), .y-tabs__wrap.is-line-button.data-v-3efb49c4:not(.is-vertical) {
+  padding: 0 8px;
+}
+.y-tabs__scroll.data-v-3efb49c4 {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.data-v-3efb49c4::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  -webkit-appearance: none;
+          appearance: none;
+  background: transparent;
+  color: transparent;
+}
+.y-tabs__nav.data-v-3efb49c4 {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+          user-select: none;
+  flex: 1;
+  display: flex;
+}
+.y-tabs__nav.is-shrink.data-v-3efb49c4 {
+  display: inline-flex;
+}
+.y-tabs__nav.is-card.data-v-3efb49c4 {
+  margin: 6px 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #0022ab;
+}
+.y-tabs__nav.is-vertical.data-v-3efb49c4 {
+  flex-direction: column;
+  height: auto;
+}
+.y-tabs__nav.is-vertical .y-tab.data-v-3efb49c4 {
+  flex: unset;
+}
+.y-tabs__nav-left.data-v-3efb49c4, .y-tabs__nav-right.data-v-3efb49c4 {
+  position: relative;
+  display: inline-flex;
+  white-space: nowrap;
+}
+.y-tab.data-v-3efb49c4 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 28rpx;
+  color: #646566;
+  text-align: center;
+  padding: 0 4px;
+  flex: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.y-tab.is-active.data-v-3efb49c4 {
+  color: #323233;
+  font-weight: 500;
+}
+.y-tab.is-disabled.data-v-3efb49c4 {
+  color: #c8c9cc !important;
+  cursor: not-allowed;
+}
+.y-tab.is-shrink.data-v-3efb49c4 {
+  flex: none;
+  padding: 0 8px;
+}
+.y-tab.is-card.data-v-3efb49c4 {
+  height: 28px;
+  line-height: 28px;
+}
+.y-tab__title.data-v-3efb49c4 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+.y-tab__title--top.data-v-3efb49c4,
+.y-tab__title--bottom.data-v-3efb49c4 {
+  flex-direction: column;
+}
+.y-tab__text.data-v-3efb49c4 {
+  position: relative;
+  display: block;
+  line-height: 1.2;
+  order: 2;
+  white-space: nowrap;
+}
+.y-tabs__nav.is-vertical .y-tab__text.data-v-3efb49c4:not(.y-tabs__ellipsis) {
+  white-space: normal;
+}
+.y-tab__text--left.data-v-3efb49c4,
+.y-tab__text--top.data-v-3efb49c4 {
+  order: 0;
+}
+.y-tab__icons.data-v-3efb49c4 {
+  display: flex;
+  align-items: center;
+  order: 1;
+  z-index: 1;
+}
+.y-tab__image.data-v-3efb49c4 {
+  width: 20px;
+  height: 20px;
+}
+.y-tab__info.data-v-3efb49c4 {
+  display: inline-flex;
+  position: relative;
+}
+.y-tab__info--dot.data-v-3efb49c4, .y-tab__info--badge.data-v-3efb49c4 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  background-color: #e53935;
+  transform-origin: 100%;
+}
+.y-tab__info--dot.data-v-3efb49c4 {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  transform: translate(0%, -180%);
+}
+.y-tab__info--badge.data-v-3efb49c4 {
+  line-height: 13px;
+  min-width: 18px;
+  border-radius: 18px;
+  padding: 0 2px;
+  transform: translate(0%, -120%);
+  font-size: 18rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+}
+.y-tabs__bar.data-v-3efb49c4 {
+  position: absolute;
+  display: inline-flex;
+  left: 0;
+  z-index: 1;
+  width: 20px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #0022ab;
+  box-sizing: border-box;
+}
+.y-tabs__bar.is-line.data-v-3efb49c4 {
+  z-index: 2;
+}
+.y-tabs__bar.is-line.data-v-3efb49c4:not(.is-vertical) {
+  bottom: 3px;
+  width: 20px;
+  height: 3px;
+  border-radius: 3px;
+}
+.y-tabs__bar.is-line.is-vertical.data-v-3efb49c4 {
+  top: 0;
+  left: 3px;
+  width: 3px;
+  height: 20px;
+  border-radius: 3px;
+}
+.y-tabs__bar.is-button.data-v-3efb49c4, .y-tabs__bar.is-line-button.data-v-3efb49c4 {
+  justify-content: center;
+  align-items: center;
+  border-radius: 26px;
+}
+.y-tabs__bar.is-button.data-v-3efb49c4:not(.is-vertical), .y-tabs__bar.is-line-button.data-v-3efb49c4:not(.is-vertical) {
+  height: calc(100% - 8px);
+  bottom: 4px;
+}
+.y-tabs__bar.is-button.is-vertical.data-v-3efb49c4, .y-tabs__bar.is-line-button.is-vertical.data-v-3efb49c4 {
+  left: 3px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+}
+.y-tabs__bar.is-line-button.data-v-3efb49c4 {
+  background-color: transparent;
+  border: 2rpx solid transparent;
+}
+.y-tabs__content.data-v-3efb49c4 {
+  display: block;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.y-tabs__content.is-vertical.data-v-3efb49c4 {
+  width: 100%;
+}
+.y-tabs__track.data-v-3efb49c4 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  will-change: transform;
+}
+.y-tabs__track.is-scrollspy.data-v-3efb49c4 {
+  flex-direction: column;
+}
+.y-tab__pane.data-v-3efb49c4 {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  position: relative;
+  flex-direction: row;
+  display: block;
+  visibility: visible;
+}
+.y-tab__pane.data-v-3efb49c4:not(.is-scrollspy) {
+  transform: translate(0px, 0px) translateZ(0px);
+}
+.y-tab__pane.is-active.data-v-3efb49c4 {
+  height: auto;
+}
+.y-tab__pane.is-scrollspy.data-v-3efb49c4 {
+  height: auto;
+}
+.y-tab__pane--wrap.data-v-3efb49c4 {
+  position: relative;
+}
+.y-tabs__content-scrollview.data-v-3efb49c4 {
+  flex-direction: column;
+}

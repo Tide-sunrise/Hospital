@@ -1,0 +1,1 @@
+<view data-index="{{b}}" class="{{['y-tab__pane', 'data-v-2d763a4b', c, d]}}" style="{{e}}"><view wx:if="{{a}}" class="y-tab__pane--wrap data-v-2d763a4b"><slot/></view></view>

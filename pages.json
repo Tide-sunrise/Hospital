@@ -42,7 +42,7 @@
 			"path" : "pages/payment/payment",
 			"style" : 
 			{
-				"navigationBarTitleText" : "支付"
+				"navigationBarTitleText" : "支付详情"
 			}
 		},
 		{

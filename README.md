@@ -4,11 +4,14 @@
 医院挂号app
 
 本项目需使用插件：
++ cc-twoCate
++ uni-dateformat
 + uni-icons
 + uni-load-more
 + uni-popup
 + uni-scss
 + uni-search-bar
++ uni-tag
 + uni-transition
 + uv-empty
 + uv-icon

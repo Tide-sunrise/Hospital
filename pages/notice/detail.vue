@@ -8,7 +8,7 @@
 		</view>
 		
 		<view class="info">
-			<view class="item">咸虾米</view>					
+			<view class="item">把既定</view>					
 			<view class="item">
 				<uni-dateformat :date="Date.now()" format="yyyy-MM-dd hh:mm:ss"></uni-dateformat>
 			</view>	

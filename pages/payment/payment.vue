@@ -1,13 +1,16 @@
 <template>
 	<view class="paymentLayout">
-		<view class="success">
-			<view class="icon">
-				<image src="../../common/image/fukuanchenggong.svg" mode="aspectFill"></image>
+		<view class="layout">
+			<view v-if="isSuccess" class="icon">
+				<image src="../../common/image/zhifu-zhifuchenggong.svg" mode="aspectFill"></image>
+			</view>
+			<view v-else class="icon">
+				<image src="../../common/image/zhifu-zhifushibai.svg" mode="aspectFill"></image>
 			</view>
 			<view class="success-text">
-				付款成功
+				付款{{isSuccess?"成功":"失败"}}
 			</view>
-			<view class="money">
+			<view v-if="isSuccess" class="money">
 				￥1145.14
 			</view>
 			<view class="detail">
@@ -37,7 +40,10 @@
 </template>
 
 <script setup>
-const  navBack = () => {
+import { ref } from 'vue';
+const isSuccess = ref(false);
+	
+const navBack = () => {
 	uni.navigateBack({
 		
 	})
@@ -46,7 +52,7 @@ const  navBack = () => {
 
 <style lang="scss" scoped>
 .paymentLayout{
-	.success{
+	.layout{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -69,9 +75,10 @@ const  navBack = () => {
 			font-size: 80rpx;
 			color: #333;
 			margin-top: 30rpx;
-			margin-bottom: 30rpx;
+			// margin-bottom: 30rpx;
 		}
 		.detail{
+			margin-top: 30rpx;
 			display: flex;
 			// background: red;
 			flex-direction: column;

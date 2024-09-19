@@ -37,7 +37,7 @@
 			<view class="title">
 				<view class="text">当前就诊人</view>
 				<view class="button">
-					<wd-button size="small" type="info">健康卡管理</wd-button>
+					<wd-button size="small" type="info" @click="navToCards">健康卡管理</wd-button>
 				</view>	
 			</view>
 			<view class="logo">
@@ -73,6 +73,12 @@ import { ref } from 'vue';
 const infoPopup =ref(null)
 const timeSelect = () => {
 	infoPopup.value.open();
+}
+
+const navToCards = () => {
+	uni.navigateTo({
+		url: '/pages/health-cards/health-cards'
+	})
 }
 </script>
 

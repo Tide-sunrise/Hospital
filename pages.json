@@ -80,6 +80,13 @@
 			{
 				"navigationBarTitleText" : "详情"
 			}
+		},
+		{
+			"path" : "pages/health-card-form/health-card-form",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {

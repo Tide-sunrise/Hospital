@@ -1,6 +1,6 @@
 <template>
 	<view class="health-card">
-		<view v-if="cardExist" class="exist">
+		<view v-if="cardExist" class="exist" @click="navToCards">
 			<view class="box2">
 				<view class="image">
 					<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
@@ -11,7 +11,7 @@
 				</view>
 			</view>
 		</view>
-		<view v-else class="none" @click="navToCards">
+		<view v-else class="none" @click="navToform">
 			<uni-icons type="plus" size="100"></uni-icons>
 		</view>
 		
@@ -35,8 +35,19 @@ const cardExist = ref(props.cardinfo.isExist);
 // console.log(props.cardinfo);
 
 const navToCards = () => {
+	let arr=getCurrentPages();
+	console.log();
+	if(!(arr[arr.length-1].route==='pages/health-cards/health-cards')){
+		uni.navigateTo({
+				url: '/pages/health-cards/health-cards'
+			})
+		}
+	}
+	
+
+const navToform = () => {
 	uni.navigateTo({
-		url: '/pages/health-cards/health-cards'
+		url: '/pages/health-card-form/health-card-form'
 	})
 }
 </script>

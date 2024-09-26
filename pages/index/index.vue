@@ -14,6 +14,7 @@
 			    :list="swiperList"
 			    previousMargin="24px"
 			    nextMargin="24px"
+				@click="onClick"
 			  >
 			  </wd-swiper>
 			</view>
@@ -114,6 +115,8 @@ const swiperList = ref([
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/meng.jpg'
 ])
 
+
+
 //健康卡
 const slideCustomStyle= ref( {
 	display: 'flex',
@@ -165,6 +168,13 @@ const newsLists = ref([
 
 
 //滚动
+const onClick =(item)=>{
+	// console.log(index);
+	console.log(item.index===0);
+	uni.navigateTo({
+		url:(item.index===0)?'/pages/payment/payment':'/pages/User/User'
+	})
+}
 function handleClick(e) {
   console.log(e)
 }
@@ -200,6 +210,8 @@ const navToNotice = ()=>{
 
 .homeLayout{
 	padding: 20rpx 0 0 0;
+	width: 750rpx;
+	
 	.banner{
 		width: 750rpx;
 		padding: 30rpx 0;

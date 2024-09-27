@@ -7,6 +7,7 @@
 			<view class="statusBar" :style="{height:getStatusBarHeight()+'px'}"></view>
 			<view class="titleBar" :style="{height:getTitleBarHeight()+'px'}">
 				<view class="title">{{title}}</view>
+				
 				<navigator url="/pages/search/search" class="search">
 					<uni-icons class="icon" type="search" size="18" color="#888"></uni-icons>
 					<text class="text">搜索</text>

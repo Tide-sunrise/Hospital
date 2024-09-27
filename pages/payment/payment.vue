@@ -28,9 +28,9 @@
 				</view>
 			</view>
 			<view class="buttons">
-				<view class="watch">
-					<wd-button block type="success">订单详情</wd-button>
-				</view>
+<!-- 				<view class="watch">
+					<wd-button block type="success">支付详情</wd-button>
+				</view> -->
 				<view class="back">
 					<wd-button block type="info" @click="navBack">返回上一页</wd-button>
 				</view>

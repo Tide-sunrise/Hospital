@@ -41,7 +41,7 @@
 
 <script setup>
 import { ref } from 'vue';
-const isSuccess = ref(false);
+const isSuccess = ref(true);
 	
 const navBack = () => {
 	uni.navigateBack({

@@ -23,15 +23,8 @@ import {getStatusBarHeight,getTitleBarHeight,getNavBarHeight} from "@/utils/syst
 
 //返回上一页
 const goBack = ()=>{
-	uni.navigateBack({
-		success:()=>{
-			
-		},
-		fail:(err)=>{
-			uni.reLaunch({
-				url:"/pages/index/index"
-			})
-		}
+	uni.navigateTo({
+		url:"/pages/index/index"
 	})
 }
 

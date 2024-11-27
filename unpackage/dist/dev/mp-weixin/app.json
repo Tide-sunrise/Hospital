@@ -3,7 +3,15 @@
     "pages/index/index",
     "pages/registration/registration",
     "pages/User/User",
-    "pages/catalogs/catalogs"
+    "pages/catalogs/catalogs",
+    "pages/search/search",
+    "pages/payment/payment",
+    "pages/doctor/doctor",
+    "pages/doctor-details/doctor-details",
+    "pages/health-cards/health-cards",
+    "pages/notice/notice",
+    "pages/notice/detail",
+    "pages/health-card-form/health-card-form"
   ],
   "window": {
     "navigationBarTextStyle": "black",

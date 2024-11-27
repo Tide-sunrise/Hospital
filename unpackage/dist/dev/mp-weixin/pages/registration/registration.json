@@ -1,8 +1,13 @@
 {
   "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
-    "y-tab": "../../uni_modules/y-tabs/components/y-tab/y-tab",
-    "y-tabs": "../../uni_modules/y-tabs/components/y-tabs/y-tabs",
-    "small-icon": "../../components/small-icon/small-icon"
+    "custom-nav-bar": "../../components/custom-nav-bar/custom-nav-bar",
+    "wd-sidebar-item": "../../uni_modules/wot-design-uni/components/wd-sidebar-item/wd-sidebar-item",
+    "wd-sidebar": "../../uni_modules/wot-design-uni/components/wd-sidebar/wd-sidebar",
+    "wd-cell": "../../uni_modules/wot-design-uni/components/wd-cell/wd-cell",
+    "wd-cell-group": "../../uni_modules/wot-design-uni/components/wd-cell-group/wd-cell-group",
+    "precautions": "../../components/precautions/precautions",
+    "uni-popup": "../../uni_modules/uni-popup/components/uni-popup/uni-popup"
   }
 }

@@ -1,0 +1,34 @@
+
+.inputView.data-v-55514cde {
+		flex-direction: row;
+		display: flex;
+		height: 50px;
+		align-items: center;
+		width: 100%;
+}
+.leftTitle.data-v-55514cde {
+		margin-left: 12px;
+		width: 68px;
+		font-size: 28rpx;
+		color: #333333;
+}
+.rightInput.data-v-55514cde {
+		width: calc(100vw - 106px);
+		font-size: 28rpx;
+		height: 50px;
+		color: #161616;
+}
+.rightTitle.data-v-55514cde {
+		margin-left: -50px;
+		width: 40px;
+		font-size: 28rpx;
+		color: #666666;
+		text-align: right;
+}
+.line.data-v-55514cde {
+		width: 90%;
+		height: 2rpx;
+		margin-left: -2rpx;
+		background-color: #f8f8f8;
+		margin-left: 5%;
+}

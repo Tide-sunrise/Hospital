@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "支付详情",
+  "usingComponents": {
+    "uni-dateformat": "../../uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat",
+    "wd-button": "../../uni_modules/wot-design-uni/components/wd-button/wd-button"
+  }
+}

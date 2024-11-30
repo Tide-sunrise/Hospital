@@ -1,0 +1,1 @@
+<view bindtap="{{e}}" class="{{['data-v-0597c3a8', f]}}" style="{{g}}"><slot name="icon"></slot><block wx:if="{{a}}"><wd-icon wx:if="{{b}}" class="data-v-0597c3a8" u-i="0597c3a8-0" bind:__l="__l" u-p="{{b}}"></wd-icon></block><wd-badge wx:if="{{d}}" class="data-v-0597c3a8" u-s="{{['d']}}" u-i="0597c3a8-1" bind:__l="__l" u-p="{{d}}">{{c}}</wd-badge></view>

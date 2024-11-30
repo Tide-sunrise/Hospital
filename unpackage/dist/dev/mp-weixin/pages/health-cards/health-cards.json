@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的健康卡",
+  "usingComponents": {
+    "health-card": "../../components/health-card/health-card"
+  }
+}

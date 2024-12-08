@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "医院",
@@ -8,84 +14,90 @@
 			}
 		},
 		{
-			"path" : "pages/registration/registration",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
+			"path": "pages/registration/registration",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
-			}
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/User/User",
-			"style" : 
-			{
-				"navigationBarTitleText" : "个人中心",
+			"path": "pages/User/User",
+			"style": {
+				"navigationBarTitleText": "个人中心",
 				"navigationStyle": "custom"
-			}
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/catalogs/catalogs",
-			"style" : 
-			{
-				"navigationBarTitleText" : "就诊记录",
+			"path": "pages/catalogs/catalogs",
+			"style": {
+				"navigationBarTitleText": "就诊记录",
 				"navigationStyle": "custom"
-			}
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/search/search",
-			"style" : 
-			{
-				"navigationBarTitleText" : "搜索栏"
-			}
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索栏"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/payment/payment",
-			"style" : 
-			{
-				"navigationBarTitleText" : "支付详情"
-			}
+			"path": "pages/payment/payment",
+			"style": {
+				"navigationBarTitleText": "支付详情"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/doctor/doctor",
-			"style" : 
-			{
-				"navigationBarTitleText" : "医生列表"
-			}
+			"path": "pages/doctor/doctor",
+			"style": {
+				"navigationBarTitleText": "医生列表"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/doctor-details/doctor-details",
-			"style" : 
-			{
-				"navigationBarTitleText" : "医生详情及挂号"
-			}
+			"path": "pages/doctor-details/doctor-details",
+			"style": {
+				"navigationBarTitleText": "医生详情及挂号"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/health-cards/health-cards",
-			"style" : 
-			{
-				"navigationBarTitleText" : "我的健康卡"
-			}
+			"path": "pages/health-cards/health-cards",
+			"style": {
+				"navigationBarTitleText": "我的健康卡"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/notice/notice",
-			"style" : 
-			{
-				"navigationBarTitleText" : "公告",
+			"path": "pages/notice/notice",
+			"style": {
+				"navigationBarTitleText": "公告",
 				"navigationStyle": "custom"
-			}
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/notice/detail",
-			"style" : 
-			{
-				"navigationBarTitleText" : "详情"
-			}
+			"path": "pages/notice/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			},
+			"needLogin": true
 		},
 		{
-			"path" : "pages/health-card-form/health-card-form",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
+			"path": "pages/health-card-form/health-card-form",
+			"style": {
+				"navigationBarTitleText": ""
+			},
+			"needLogin": true
+		},
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册"
 			}
 		}
 	],
@@ -111,11 +123,11 @@
 	// 	]
 	// },
 	"easycom": {
-	    "autoscan": true,
-	    "custom": {
-	        "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-	        "^y-(.*)": "@/uni_modules/y-$1/components/y-$1.vue"
-	    }
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+			"^y-(.*)": "@/uni_modules/y-$1/components/y-$1.vue"
+		}
 	},
 	"uniIdRouter": {}
 }

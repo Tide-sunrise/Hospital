@@ -1,49 +1,23 @@
+import axios from 'axios'
+const baseURL = 'http://localhost:8080';
+const timeout = 5000;
+const instance = axios.create({ baseURL, timeout });
 
-const BASE_URL = 'https://tea.qingnian8.com/api/bizhi';
+//定义拦截响应器
+instance.interceptors.response.use(
+    result => {
+        if (result.code === true) {
+            return result.data;
+        }
+        else {
+            ElementUI.Message.error(result.msg);
+            return Promise.reject(result.msg);
+        }
+    },
+    err => {
+        alert("服务异常")
+        return Promise.reject(err);
+    }
+)//异步
 
-export function request(config={}){
-	
-	let {
-		url,
-		method='GET',
-		header={},
-		data={}
-	} = config;//解构
-	
-	url=BASE_URL+url;
-	header['access-key']="access@+";//键值对形式，可以自定义键
-	return new Promise((resolve,reject)=>{
-		
-		uni.request({
-			url,
-			method,
-			header,
-			data,
-			success:res=>{
-				if(res.data.errCode===0){
-					resolve(res.data)
-				}else if(res.data.errCode===400){
-					uni.showModal({
-						title:"错误提示",
-						content:res.data.errMsg,
-						showCancel:false,
-						
-					})
-					reject(res.data)
-				}else{
-					uni.showToast({
-						title:res.data.errMsg,
-						icon:"none"
-					})
-					reject(res.data)
-				}
-				
-			},
-			fail:err=>{
-				reject(err)
-			}
-		})
-	})
-	
-	
-}
+export default instance;

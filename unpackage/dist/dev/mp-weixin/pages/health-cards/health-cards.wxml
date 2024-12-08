@@ -1,0 +1,1 @@
+<view class="cardLayout pageBg2 data-v-6838644f"><health-card wx:for="{{a}}" wx:for-item="item" class="data-v-6838644f" u-i="{{item.a}}" bind:__l="__l" u-p="{{b}}"></health-card><health-card wx:for="{{c}}" wx:for-item="item" class="data-v-6838644f" u-i="{{item.a}}" bind:__l="__l" u-p="{{d}}"></health-card></view>

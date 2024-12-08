@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "医生详情及挂号",
+  "usingComponents": {
+    "wd-button": "../../uni_modules/wot-design-uni/components/wd-button/wd-button",
+    "uni-popup": "../../uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

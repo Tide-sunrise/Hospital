@@ -15,21 +15,46 @@ const _sfc_main = {
     title: {
       type: String,
       default: "壁纸"
+    },
+    isBack: {
+      type: Boolean,
+      default: false
     }
   },
   setup(__props) {
+    const goBack = () => {
+      common_vendor.index.navigateBack({
+        success: () => {
+        },
+        fail: (err) => {
+          common_vendor.index.reLaunch({
+            url: "/pages/index/index"
+          });
+        }
+      });
+    };
     return (_ctx, _cache) => {
-      return {
-        a: common_vendor.unref(utils_system.getStatusBarHeight)() + "px",
-        b: common_vendor.t(__props.title),
-        c: common_vendor.p({
+      return common_vendor.e({
+        a: __props.isBack
+      }, __props.isBack ? {
+        b: common_vendor.p({
+          type: "back",
+          color: "#fff",
+          size: "20"
+        }),
+        c: common_vendor.o(goBack),
+        d: common_vendor.unref(utils_system.getStatusBarHeight)() + "px"
+      } : {}, {
+        e: common_vendor.unref(utils_system.getStatusBarHeight)() + "px",
+        f: common_vendor.t(__props.title),
+        g: common_vendor.p({
           type: "search",
           size: "18",
           color: "#888"
         }),
-        d: common_vendor.unref(utils_system.getTitleBarHeight)() + "px",
-        e: common_vendor.unref(utils_system.getNavBarHeight)() + "px"
-      };
+        h: common_vendor.unref(utils_system.getTitleBarHeight)() + "px",
+        i: common_vendor.unref(utils_system.getNavBarHeight)() + "px"
+      });
     };
   }
 };

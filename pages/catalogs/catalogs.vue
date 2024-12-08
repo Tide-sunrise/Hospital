@@ -15,6 +15,7 @@
 				</view>
 			</view>
 		</view>
+		<myEmpty height="300rpx"></myEmpty>
 		<myTabBar :item="itemTab"></myTabBar>
 	</view>
 </template>

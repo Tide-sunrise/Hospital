@@ -1,48 +1,82 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
-const common_data_data = require("../../common/data/data.js");
+const common_assets = require("../../common/assets.js");
 if (!Array) {
-  const _easycom_wd_tabbar_item2 = common_vendor.resolveComponent("wd-tabbar-item");
-  const _easycom_wd_tabbar2 = common_vendor.resolveComponent("wd-tabbar");
-  (_easycom_wd_tabbar_item2 + _easycom_wd_tabbar2)();
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
+  const _easycom_myTabBar2 = common_vendor.resolveComponent("myTabBar");
+  (_easycom_uni_icons2 + _easycom_myTabBar2)();
 }
-const _easycom_wd_tabbar_item = () => "../../uni_modules/wot-design-uni/components/wd-tabbar-item/wd-tabbar-item.js";
-const _easycom_wd_tabbar = () => "../../uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.js";
+const _easycom_uni_icons = () => "../../uni_modules/uni-icons/components/uni-icons/uni-icons.js";
+const _easycom_myTabBar = () => "../../components/myTabBar/myTabBar.js";
 if (!Math) {
-  (_easycom_wd_tabbar_item + _easycom_wd_tabbar)();
+  (_easycom_uni_icons + _easycom_myTabBar)();
 }
 const _sfc_main = {
   __name: "User",
   setup(__props) {
-    const tabbar = common_vendor.ref(2);
-    const handleChange1 = ({ value }) => {
-      console.log(value);
-      common_vendor.index.redirectTo({
-        url: common_data_data.tabBarList[value].url
+    const itemTab = common_vendor.ref({ myTabbar: 2 });
+    const navToA = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/index/index"
+      });
+    };
+    const navToB = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/catalogs/catalogs"
       });
     };
     return (_ctx, _cache) => {
       return {
-        a: common_vendor.p({
-          title: "首页",
-          icon: "home"
-        }),
+        a: common_assets._imports_0$2,
         b: common_vendor.p({
-          title: "就诊记录",
-          icon: "cart"
+          type: "download-filled",
+          size: "20"
         }),
         c: common_vendor.p({
-          title: "我的",
-          icon: "user"
+          type: "right",
+          size: "15",
+          color: "#aaa"
         }),
-        d: common_vendor.o(handleChange1),
-        e: common_vendor.o(($event) => tabbar.value = $event),
+        d: common_vendor.o(navToA),
+        e: common_vendor.p({
+          type: "star-filled",
+          size: "20"
+        }),
         f: common_vendor.p({
-          shape: "round",
-          fixed: true,
-          ["active-color"]: "#ee0a24",
-          ["inactive-color"]: "#7d7e80",
-          modelValue: tabbar.value
+          type: "right",
+          size: "15",
+          color: "#aaa"
+        }),
+        g: common_vendor.o(navToB),
+        h: common_vendor.p({
+          type: "chatboxes-filled",
+          size: "20"
+        }),
+        i: common_vendor.p({
+          type: "right",
+          size: "15",
+          color: "#aaa"
+        }),
+        j: common_vendor.p({
+          type: "notification-filled",
+          size: "20"
+        }),
+        k: common_vendor.p({
+          type: "right",
+          size: "15",
+          color: "#aaa"
+        }),
+        l: common_vendor.p({
+          type: "flag-filled",
+          size: "20"
+        }),
+        m: common_vendor.p({
+          type: "right",
+          size: "15",
+          color: "#aaa"
+        }),
+        n: common_vendor.p({
+          item: itemTab.value
         })
       };
     };

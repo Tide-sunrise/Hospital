@@ -23,17 +23,76 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.guide .swiper.data-v-1e5d1fa0 {
-  height: 400rpx;
-  border-radius: 30rpx;
-  background: red;
+.registrationLayout.data-v-1e5d1fa0 {
+  height: 100%;
 }
-.guide .swiper .swiper-item-view.data-v-1e5d1fa0 {
-  height: 400rpx;
-  text-align: center;
-  padding: 0rpx 40rpx;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 50rpx;
-  row-gap: 10rpx;
+.registrationLayout .empty.data-v-1e5d1fa0 {
+  padding-top: 70rpx;
+  height: 300rpx;
+}
+.registrationLayout .wraper.data-v-1e5d1fa0 {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  height: calc(100vh - var(--window-top));
+  height: calc(100vh - var(--window-top) - constant(safe-area-inset-bottom));
+  height: calc(100vh - var(--window-top) - env(safe-area-inset-bottom));
+  overflow: hidden;
+  border-radius: 2% 2% 0 0;
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+}
+.registrationLayout .wraper .title.data-v-1e5d1fa0 {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+.registrationLayout .wraper .content.data-v-1e5d1fa0 {
+  flex: 1;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+.registrationLayout .wraper .content .category.data-v-1e5d1fa0 {
+  box-sizing: border-box;
+  height: 100%;
+}
+.registrationLayout .wraper .content .category image.data-v-1e5d1fa0 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.registrationLayout .scorePopup.data-v-1e5d1fa0 {
+  background: #fff;
+  padding: 30rpx;
+  width: 95vw;
+  border-radius: 30rpx;
+}
+.registrationLayout .scorePopup .popHeader.data-v-1e5d1fa0 {
+  display: flex;
+  justify-content: center;
+}
+.registrationLayout .scorePopup .popHeader .title.data-v-1e5d1fa0 {
+  color: #333;
+  margin-bottom: 0px;
+  display: flex;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.registrationLayout .scorePopup .content.data-v-1e5d1fa0 {
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registrationLayout .scorePopup .content .text.data-v-1e5d1fa0 {
+  color: #FECA3E;
+  padding-left: 0rpx;
+  width: 80rpx;
+  line-height: 1em;
+  text-align: right;
+}
+.registrationLayout .scorePopup .footer.data-v-1e5d1fa0 {
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

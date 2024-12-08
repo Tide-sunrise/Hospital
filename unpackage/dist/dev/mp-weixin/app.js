@@ -6,6 +6,14 @@ if (!Math) {
   "./pages/registration/registration.js";
   "./pages/User/User.js";
   "./pages/catalogs/catalogs.js";
+  "./pages/search/search.js";
+  "./pages/payment/payment.js";
+  "./pages/doctor/doctor.js";
+  "./pages/doctor-details/doctor-details.js";
+  "./pages/health-cards/health-cards.js";
+  "./pages/notice/notice.js";
+  "./pages/notice/detail.js";
+  "./pages/health-card-form/health-card-form.js";
 }
 const _sfc_main = {
   onLaunch: function() {

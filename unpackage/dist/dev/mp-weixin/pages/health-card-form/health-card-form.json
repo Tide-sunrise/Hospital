@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "cc-easy-common-input": "../../uni_modules/cc-easyCommonInput/components/cc-easyCommonInput/cc-easyCommonInput",
+    "wd-button": "../../uni_modules/wot-design-uni/components/wd-button/wd-button"
+  }
+}

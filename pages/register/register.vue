@@ -80,7 +80,7 @@
 	const username = ref("")
 	const password = ref("")
 	const rePassword = ref("")
-	const passwordPattern = /^(?=.*[a-zA-Z])(?=.*[\W\d])[a-zA-Z\W\d]{6,20}$/;
+	const passwordPattern = /^(?:(?=.*\d)(?=.*[a-zA-Z])|(?=.*\d)(?=.*\W)|(?=.*[a-zA-Z])(?=.*\W)).{6,20}$/;
 	// const isPassword = ref(true)
 	const eye = ref(false)
 

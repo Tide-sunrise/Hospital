@@ -1,40 +1,21 @@
 {
-  "hash": "f07054bb",
-  "configHash": "02c65632",
-  "lockfileHash": "929a81b5",
-  "browserHash": "6c754472",
+  "hash": "511efe80",
+  "configHash": "29a1851d",
+  "lockfileHash": "14b1c2ba",
+  "browserHash": "432fe4ac",
   "optimized": {
     "jwt-decode": {
       "src": "../../../../../node_modules/jwt-decode/build/esm/index.js",
       "file": "jwt-decode.js",
-      "fileHash": "79bf11a7",
+      "fileHash": "99ded68a",
       "needsInterop": false
     },
     "dayjs/esm/index": {
       "src": "../../../../../node_modules/dayjs/esm/index.js",
       "file": "dayjs_esm_index.js",
-      "fileHash": "bc66b0de",
-      "needsInterop": false
-    },
-    "axios": {
-      "src": "../../../../../node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "7dd8f71e",
-      "needsInterop": false
-    },
-    "uniapp-axios-adapter": {
-      "src": "../../../../../node_modules/uniapp-axios-adapter/lib/index.esm.js",
-      "file": "uniapp-axios-adapter.js",
-      "fileHash": "5d1b30bd",
+      "fileHash": "6405bb20",
       "needsInterop": false
     }
   },
-  "chunks": {
-    "chunk-OKHAKZC6": {
-      "file": "chunk-OKHAKZC6.js"
-    },
-    "chunk-CSAU5B4Q": {
-      "file": "chunk-CSAU5B4Q.js"
-    }
-  }
+  "chunks": {}
 }

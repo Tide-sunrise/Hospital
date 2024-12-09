@@ -6,8 +6,8 @@
 					<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
 				</view>
 				<view class="row">
-					<view class="text">姓名：原神</view>
-					<view class="smallText">身份证号：114514191981011451</view>
+					<view class="text">姓名：{{cardinfo.name}}</view>
+					<view class="smallText">身份证号：{{cardinfo.id}}</view>
 				</view>
 			</view>
 		</view>
@@ -29,7 +29,7 @@ const props = defineProps({
 				isExist:false,
 			}
 		}
-	}
+	},
 })
 const cardExist = ref(props.cardinfo.isExist);
 // console.log(props.cardinfo);

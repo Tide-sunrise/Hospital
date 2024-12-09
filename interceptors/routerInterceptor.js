@@ -6,7 +6,8 @@ const needLoginPaths = pagesData.pages
   .map(page => '/'+page.path);
 const routerInterceptorHandler = {
 	invoke(args) {
-		console.log(args.url)
+		console.log(args.url)//跳转路径
+		store.commit('checkToken')
 		const token = store.state.token
 		if (needLoginPaths.includes(args.url) && token==null) {
 			uni.showToast({

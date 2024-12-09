@@ -22,7 +22,7 @@
 		
 		<z-swiper v-model="list" :options="options">
 			<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
-				<health-card :cardinfo="{isExist:item.isExist}"></health-card>
+				<health-card :cardinfo="item"></health-card>
 			</z-swiper-item>
 		</z-swiper>
 		
@@ -113,8 +113,6 @@ const swiperList = ref([
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/meng.jpg'
 ])
 
-
-
 //健康卡
 const slideCustomStyle= ref( {
 	display: 'flex',
@@ -126,19 +124,42 @@ const options= ref( {
 	effect: 'cards',
 	cardsEffect: {
 	        rotate: false,
-		}
+	}
 })
-
 const list= ref( [
-	{isExist:true},
-	{isExist:true},
-	{isExist:true},
-	{isExist:true},
-	{isExist:false}
+	{
+		isExist:true,
+		name:"原神",
+		id:"114514191981011451"
+	},
+	{
+		isExist:true,
+		name:"原神",
+		id:"114514191981011451"
+	},
+	{
+		isExist:true,
+		name:"原神",
+		id:"114514191981011451"
+	},
+	{
+		isExist:true,
+		name:"原神",
+		id:"114514191981011451"
+	},
+	{
+		isExist:false,
+		name:"原神",
+		id:"114514191981011451"
+	},
 ])
 
+//公告
 const noticeList = ref(['我草泥马','一得阁拉米','摩洛哥炒饼'])
+
+//导航栏
 const myFunction = ref([{name:"挂号",url:"/pages/registration/registration"},{name:"击败"},{name:"吧唧"}])
+
 //底部导航栏使用
 const itemTab=ref({myTabbar:0})
 

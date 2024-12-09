@@ -1,3 +1,5 @@
+import "./chunk-CSAU5B4Q.js";
+
 // ../../../../mine/webfrom/Hospital/node_modules/jwt-decode/build/esm/index.js
 var InvalidTokenError = class extends Error {
 };

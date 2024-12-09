@@ -1,3 +1,5 @@
+import "./chunk-CSAU5B4Q.js";
+
 // ../../../../mine/webfrom/Hospital/node_modules/dayjs/esm/constant.js
 var SECONDS_A_MINUTE = 60;
 var SECONDS_A_HOUR = SECONDS_A_MINUTE * 60;

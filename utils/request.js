@@ -1,16 +1,45 @@
-import axios from 'axios'
+import axios from "uniapp-axios-adapter"; 
+
 const baseURL = 'http://localhost:8080';
 const timeout = 5000;
-const instance = axios.create({ baseURL, timeout });
+const instance = axios.create({ 
+	baseURL, 
+	timeout,
+});
+
+//定义拦截器
+instance.interceptors.request.use(
+    config => {
+		// 在发送请求之前做些什么
+		//将Content-Type设置为application/json
+		if(!config.headers['Content-Type'])
+			config.headers['Content-Type'] = 'application/json';
+		console.log(config);
+		return config;
+});
+
 
 //定义拦截响应器
 instance.interceptors.response.use(
     result => {
-        if (result.code === true) {
-            return result.data;
+		result = result.data;
+		console.log(result.data);
+		//如果没有code字段，直接返回数据
+        if (result.code === 0) {
+            return result;
         }
         else {
-            ElementUI.Message.error(result.msg);
+			uni.showModal({
+				title: '提示',
+				content: result.msg,
+				success: function(res) {
+					if (res.confirm) {
+						console.log('用户点击确定');
+					} else if (res.cancel) {
+						console.log('用户点击取消');
+					}
+				}
+			});
             return Promise.reject(result.msg);
         }
     },

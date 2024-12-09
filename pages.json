@@ -3,7 +3,8 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录"
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom"
 			}
 		},
 		{
@@ -83,21 +84,24 @@
 		{
 			"path": "pages/notice/detail",
 			"style": {
-				"navigationBarTitleText": "详情"
+				"navigationBarTitleText": "详情",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},
 		{
 			"path": "pages/health-card-form/health-card-form",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},
 		{
 			"path": "pages/register/register",
 			"style": {
-				"navigationBarTitleText": "注册"
+				"navigationBarTitleText": "注册",
+				"navigationStyle": "custom"
 			}
 		}
 	],

@@ -25,8 +25,7 @@
 		          scroll-with-animation
 		          :show-scrollbar="false"
 		          :scroll-top="scrollTop"
-		          :throttle="false"
-		        >
+		          :throttle="false">
 					<wd-cell-group :title="item.title" border @click="navToDoctor">
 						<wd-cell v-for="(cell, index) in item.items" :key="index" :title="cell.title" :label="cell.label">
 							<image src="../../common/image/genshin.jpg" mode="aspectFit"></image>
@@ -57,12 +56,14 @@
 <script lang="ts" setup>
 import { ref, nextTick, onMounted } from 'vue'
 import { getAllDepartments } from '../../api/department'
+import { getSpecializationByDepartmentId } from '../../api/specialization'
 import axios from 'axios'
 // import {onShow,onLoad} from "@dcloudio/uni-app"
 
 const active = ref<number>(0)
 const scrollTop = ref<number>(0)
-const subCategories = new Array(24).fill({ title: '原神', label: '一款开放世界冒险游戏' }, 0, 24)
+const subCategories = ref([{title:String,lable:String}])
+subCategories.value = new Array(24).fill({ title: '原神', label: '一款开放世界冒险游戏' }, 0, 24)
 const categories = ref([
   {
     label: '分类一',
@@ -82,14 +83,14 @@ const categories = ref([
     label: '分类三',
     title: '标题三',
     icon: "none",
-    items: subCategories.slice(0, 18),
+    items: subCategories,
     disabled: false
   },
   {
     label: '分类四',
     title: '标题四',
     icon: "none",
-    items: subCategories.slice(0, 21),
+    items: subCategories,
     disabled: false
   },
   {
@@ -103,7 +104,7 @@ const categories = ref([
     label: '分类六',
     title: '标题六',
 	icon: "none",
-    items: subCategories.slice(0, 18),
+    items: subCategories,
     disabled: false
   },
   {
@@ -118,12 +119,31 @@ const categories = ref([
 //弹窗
 const scorePopup =ref(null)
 
+async function getSpecialization(departmentId: number) {
+  let res = await getSpecializationByDepartmentId(departmentId)
+  let data = res.data
+  console.log(data)
+  //清空subCategories
+  subCategories.value = []
+  for (let i = 0; i < data.length; i++) {
+    //构造一个新的对象，包含title, label
+    let obj = {
+      title: data[i].name,
+      label: data[i].description
+    }
+    subCategories.value.push(obj)
+  }
+  console.log(subCategories)
+}
+
 function handleChange({ value }) {
-  active.value = value
-  scrollTop.value = -1
-  nextTick(() => {
-    scrollTop.value = 0
-  })
+	console.log(value)
+	active.value = value
+	scrollTop.value = -1
+	nextTick(() => {
+		scrollTop.value = 0
+	})
+	getSpecialization(categories.value[value].departmentId)
 }
 
 const sure=() => {

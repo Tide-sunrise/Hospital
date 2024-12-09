@@ -23,7 +23,6 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
     result => {
 		result = result.data;
-		console.log(result.data);
 		//如果没有code字段，直接返回数据
         if (result.code === 0) {
             return result;

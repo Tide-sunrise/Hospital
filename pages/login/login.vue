@@ -56,7 +56,7 @@ import store from '@/store/index.js'
 
 //挂载前检查当前token是否存在或者在有效期内
 onMounted(()=>{
-	store.commit('checkToken');
+	//store.commit('checkToken');
 	if(store.getters.isAuthenticated){
 		uni.navigateTo({
 			url: '/pages/index/index'

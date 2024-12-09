@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+@import "@/uni_modules/uview-plus/index.scss";
 @import "common/style/common-style.scss";
 @import '@/iconfont/index.css';
 </style>

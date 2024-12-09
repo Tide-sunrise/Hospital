@@ -1,4 +1,5 @@
 import App from './App'
+import uviewPlus from '@/uni_modules/uview-plus'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -20,6 +21,7 @@ export function createApp() {
   const app = createSSRApp(App)
   app.use(store)
   app.use(routerInterceptor)
+  app.use(uviewPlus)
   return {
     app,
 	Vuex

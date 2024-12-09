@@ -3,7 +3,7 @@
 		<view v-if="cardExist" class="exist" @click="navToCards">
 			<view class="box2">
 				<view class="image">
-					<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
+					<up-avatar :text="cardinfo.name" fontSize="18" randomBgColor size="80"></up-avatar>
 				</view>
 				<view class="row">
 					<view class="text">姓名：{{cardinfo.name}}</view>
@@ -20,6 +20,7 @@
 
 <script setup>
 import { ref } from 'vue';
+
 
 const props = defineProps({
 	cardinfo:{
@@ -50,6 +51,15 @@ const navToform = () => {
 		url: '/pages/health-card-form/health-card-form'
 	})
 }
+
+const extractColorByName= (name) => {
+	var temp = [];
+	temp.push("#");
+	for (let index = 0; index < name.length; index++) {
+	    temp.push(parseInt(name[index].charCodeAt(0), 10).toString(16));
+	}
+	return temp.slice(0, 5).join('').slice(0, 4);
+}
 </script>
 
 <style lang="scss" scoped>
@@ -68,12 +78,9 @@ const navToform = () => {
 				box-sizing: border-box;
 				height: 200rpx;
 				margin: 0 50rpx;
-				image{
-					margin:25rpx ;
-					width: 150rpx;
-					height: 150rpx;
-					border-radius: 20%;
-				}
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 			.row{
 				width: 440rpx;

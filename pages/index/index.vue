@@ -100,7 +100,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import store from '../../store/index.js';
-import {tabBarList} from '../../common/data/data.js'
+import { tabBarList } from '../../common/data/data.js'
 
 //滚动
 const current = ref(0)

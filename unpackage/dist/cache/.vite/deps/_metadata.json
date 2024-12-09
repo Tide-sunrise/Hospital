@@ -1,13 +1,19 @@
 {
-  "hash": "bf565547",
+  "hash": "1bc32c82",
   "configHash": "02c65632",
-  "lockfileHash": "7eeaabef",
-  "browserHash": "1b348866",
+  "lockfileHash": "14b1c2ba",
+  "browserHash": "92bd8fe9",
   "optimized": {
     "jwt-decode": {
       "src": "../../../../../node_modules/jwt-decode/build/esm/index.js",
       "file": "jwt-decode.js",
-      "fileHash": "37745b28",
+      "fileHash": "b08b1203",
+      "needsInterop": false
+    },
+    "dayjs/esm/index": {
+      "src": "../../../../../node_modules/dayjs/esm/index.js",
+      "file": "dayjs_esm_index.js",
+      "fileHash": "49137e17",
       "needsInterop": false
     }
   },

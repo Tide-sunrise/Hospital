@@ -15,8 +15,9 @@ export function getDepartmentById(id) {
  * 获取所有科室信息
  */
 export function getAllDepartments() {
+	console.log("get all departments")
     return request({
-        url: '/departments/all',
+        url: '/departments/',
         method: 'get',
     })
 }

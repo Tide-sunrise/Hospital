@@ -56,6 +56,8 @@
 
 <script lang="ts" setup>
 import { ref, nextTick, onMounted } from 'vue'
+import { getAllDepartments } from '../../api/department'
+import axios from 'axios'
 // import {onShow,onLoad} from "@dcloudio/uni-app"
 
 const active = ref<number>(0)
@@ -138,6 +140,26 @@ const navToDoctor = () => {
 
 onMounted(()=>{
 	console.log('onShow')
+	async function getDepartments() {
+		let res = await getAllDepartments()
+		let data = res.data
+		//清空categories
+		categories.value = []
+		for (let i = 0; i < data.length; i++) {
+			//构造一个新的对象，包含label,title,icon,items,disabled
+			let obj = {
+				departmentId: data[i].departmentId,
+				label: data[i].name,
+				title: data[i].name,
+				icon: "none",
+				items: subCategories,
+				disabled: false
+			}
+			categories.value.push(obj)
+		}
+		console.log(categories.value)
+	}
+	getDepartments()
 	scorePopup.value.open();
 })
 

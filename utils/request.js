@@ -1,6 +1,7 @@
 import axios from "uniapp-axios-adapter"; 
+import store from "../store";
 
-const baseURL = 'http://localhost:8080';
+const baseURL = 'http://localhost:8081';
 const timeout = 5000;
 const instance = axios.create({ 
 	baseURL, 
@@ -14,6 +15,7 @@ instance.interceptors.request.use(
 		//将Content-Type设置为application/json
 		if(!config.headers['Content-Type'])
 			config.headers['Content-Type'] = 'application/json';
+		config.headers['satoken'] = store.state.token;
 		console.log(config);
 		return config;
 });
@@ -30,7 +32,7 @@ instance.interceptors.response.use(
         else {
 			uni.showModal({
 				title: '提示',
-				content: result.msg,
+				content: result.message,
 				success: function(res) {
 					if (res.confirm) {
 						console.log('用户点击确定');
@@ -39,7 +41,7 @@ instance.interceptors.response.use(
 					}
 				}
 			});
-            return Promise.reject(result.msg);
+            return Promise.reject(result.message);
         }
     },
     err => {

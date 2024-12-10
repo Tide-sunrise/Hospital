@@ -3,12 +3,20 @@ import { createStore } from 'vuex'
 import { jwtDecode, InvalidTokenError } from 'jwt-decode';
 const store = createStore({
 	state: { //存放状态
-		token: localStorage.getItem('token') || "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiIsImFkbWluIjp0cnVlLCJleHAiOjE3MzU1NzQ0MDB9.4Q0y-VeMDvz5_puwuznHU_FAQOtH1gGaBnmG1O664IXzcH1hAe2_Dj1cZ61hKPjNYsvVrQ1VlE1CzEUPetnuQw",
+		user: null,
+		token: localStorage.getItem('token') || null,
 	},
 	mutations: { //同步修改状态
 		setToken(state, token) {
 			localStorage.setItem('token', token);
 			state.token = token;
+		},
+		setUser(state, user) {
+			state.user = user;
+		},
+		removeToken(state) {
+			localStorage.removeItem('token');
+			state.token = null;
 		},
 		checkToken(state) {
 			console.log('checkToken');

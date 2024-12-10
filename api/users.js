@@ -25,3 +25,18 @@ export function login(data) {
 		data: JSON.stringify(data)
 	})
 }
+
+/**
+ * 注册
+ * @param {Object} data 注册信息
+ */
+export function register(data) {
+	return request({
+		url: '/users',
+		method: 'put',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		data: JSON.stringify(data)
+	})
+}

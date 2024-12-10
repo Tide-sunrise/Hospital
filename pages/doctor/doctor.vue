@@ -42,7 +42,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
+
+onMounted(()=>{
+	console.log("挂载")
+})
 const  navToDetail = () => {
 	uni.navigateTo({
 		url: '/pages/doctor-details/doctor-details'

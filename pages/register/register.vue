@@ -8,21 +8,13 @@
 				<view class="text-box">
 					用户名
 				</view>
-				<up-input 
-				placeholder="用户名不得重复" 
-				border="bottom" 
-				v-model="username" 
-				clearable></up-input>
+				<up-input placeholder="用户名不得重复" border="bottom" v-model="username" clearable></up-input>
 			</view>
 			<view class="small-input">
 				<view class="text-box">
 					密码
 				</view>
-				<up-input 
-				placeholder="6-20位,须含字母 符号 数字至少2种" 
-				border="bottom" 
-				v-model="password" 
-				clearable maxlength="20"
+				<up-input placeholder="6-20位,须含字母 符号 数字至少2种" border="bottom" v-model="password" clearable maxlength="20"
 					:password="!eye">
 
 
@@ -76,6 +68,11 @@
 		watch
 	} from 'vue'
 	import store from '@/store/index.js'
+	import {
+		register
+	} from '../../api/users'
+	import CryptoJS from 'crypto-js'
+
 	const value = ref(false)
 	const username = ref("")
 	const password = ref("")
@@ -83,7 +80,48 @@
 	const passwordPattern = /^(?:(?=.*\d)(?=.*[a-zA-Z])|(?=.*\d)(?=.*\W)|(?=.*[a-zA-Z])(?=.*\W)).{6,20}$/;
 	// const isPassword = ref(true)
 	const eye = ref(false)
+	const userid = ref()
 
+	const handleChange = (e) => {
+		value.value = e.value
+	}
+	async function userRegister(username, password) {
+		let data = {
+			userId: null,
+			name: username,
+			phone: null,
+			balabce: 0,
+			password: password,
+		}
+		data.password = CryptoJS.MD5(data.password).toString();
+		let res = await register(data)
+		if (res.code == 0) {
+			res = res.data;
+			userid.value = res
+			console.log(userid.value)
+			uni.showModal({
+				title: '注册成功',
+				content: '请记住您的登录账号:' + userid.value,
+				showCancel: false,
+				confirmText: '确定',
+				success: function(res) {
+					if (res.confirm) {
+						uni.navigateTo({
+							url: '/pages/login/login'
+						})
+					}
+				}
+			})
+			return true;
+		} else {
+			uni.showToast({
+				title: res.message,
+				icon: 'none',
+				duration: 1000
+			})
+			return false;
+		}
+	}
 	const confirmPassword = () => {
 		if (!value.value) {
 			uni.showToast({
@@ -93,9 +131,6 @@
 			})
 			return false
 		}
-
-		//此处插入判断用户名是否存在逻辑
-
 		if (!passwordPattern.test(password.value)) {
 			uni.showToast({
 				title: '密码格式错误',
@@ -104,7 +139,6 @@
 			})
 			return false
 		}
-
 		if (password.value !== rePassword.value) {
 			uni.showToast({
 				title: '两次密码输入不一致',
@@ -113,10 +147,7 @@
 			})
 			return false
 		}
-
-		//数据上传数据库逻辑
-
-		return true
+		return userRegister(username.value, password.value)
 	}
 
 	const navToRig = () => {
@@ -129,24 +160,6 @@
 		if (!confirmPassword()) {
 			return
 		}
-
-		uni.showToast({
-			title: '注册成功',
-			icon: 'success',
-			duration: 1000
-		})
-		setTimeout(() => {
-			uni.showToast({
-				title: '登录成功',
-				icon: 'success',
-				duration: 1000
-			})
-			uni.navigateTo({
-				url: '/pages/index/index'
-			})
-		}, 2000)
-
-
 	}
 </script>
 

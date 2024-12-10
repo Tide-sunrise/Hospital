@@ -1,4 +1,4 @@
-import "./chunk-CSAU5B4Q.js";
+import "./chunk-34Z2WVG2.js";
 
 // ../../../../mine/webfrom/Hospital/node_modules/dayjs/esm/constant.js
 var SECONDS_A_MINUTE = 60;

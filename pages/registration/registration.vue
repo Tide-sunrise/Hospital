@@ -28,7 +28,7 @@
 		          :throttle="false">
 					<wd-cell-group :title="item.title" border @click="navToDoctor">
 						<wd-cell v-for="(cell, index) in item.items" :key="index" :title="cell.title" :label="cell.label">
-							<image src="../../common/image/genshin.jpg" mode="aspectFit"></image>
+							<!-- <image src="../../common/image/genshin.jpg" mode="aspectFit"></image> -->
 						</wd-cell>
 					</wd-cell-group>
 		        </scroll-view>
@@ -122,7 +122,6 @@ const scorePopup =ref(null)
 async function getSpecialization(departmentId: number) {
   let res = await getSpecializationByDepartmentId(departmentId)
   let data = res.data
-  console.log(data)
   //清空subCategories
   subCategories.value = []
   for (let i = 0; i < data.length; i++) {
@@ -133,11 +132,9 @@ async function getSpecialization(departmentId: number) {
     }
     subCategories.value.push(obj)
   }
-  console.log(subCategories)
 }
 
 function handleChange({ value }) {
-	console.log(value)
 	active.value = value
 	scrollTop.value = -1
 	nextTick(() => {
@@ -147,8 +144,6 @@ function handleChange({ value }) {
 }
 
 const sure=() => {
-  console.log('你好')
-  
   scorePopup.value.close();
 }
 
@@ -159,7 +154,6 @@ const navToDoctor = () => {
 }
 
 onMounted(()=>{
-	console.log('onShow')
 	async function getDepartments() {
 		let res = await getAllDepartments()
 		let data = res.data
@@ -177,7 +171,8 @@ onMounted(()=>{
 			}
 			categories.value.push(obj)
 		}
-		console.log(categories.value)
+		//使用数据库时去除注释
+		getSpecialization(categories.value[0].departmentId)
 	}
 	getDepartments()
 	scorePopup.value.open();

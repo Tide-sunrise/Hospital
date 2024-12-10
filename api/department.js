@@ -16,7 +16,7 @@ export function getDepartmentById(id) {
  */
 export function getAllDepartments() {
     return request({
-        url: '/departments/',
+        url: '/departments/all',
         method: 'get',
     })
 }

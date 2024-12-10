@@ -52,21 +52,48 @@
 
 <script setup>
 import { ref,onMounted } from 'vue'
+import { login } from '@/api/users.js'
 import store from '@/store/index.js'
+import CryptoJS from 'crypto-js'
 
-//挂载前检查当前token是否存在或者在有效期内
+//挂载前检查当前token是否存在
 onMounted(()=>{
 	//store.commit('checkToken');
-	if(store.getters.isAuthenticated){
-		uni.navigateTo({
-			url: '/pages/index/index'
-		})
-	}
+	// if(store.getters.isAuthenticated){
+	// 	console.log('已登录')
+	// 	uni.navigateTo({
+	// 		url: '/pages/index/index'
+	// 	})
+	// }
 })
 
 const value = ref(false)
 const username = ref("")
 const password = ref("")
+
+const handleChange = (e) => {
+	value.value = e.value
+}
+async function userlogin(username,password){
+	let data = {
+		userId: username,
+		password: CryptoJS.MD5(password).toString()
+	}
+	let res = await login(data)
+	console.log(res)
+	res=res.data;
+	store.commit('setToken',res.tokenValue);
+	store.commit('setUser',username);
+	uni.showToast({
+		title: '登录成功',
+		icon: 'success',
+		duration: 1000
+	})
+	uni.navigateTo({
+		url: '/pages/index/index'
+	})
+	return true
+}
 
 
 const confirmPassword = () =>{
@@ -78,13 +105,8 @@ const confirmPassword = () =>{
 		})
 		return false
 	}
-	
-	
 	//此处插入判断用户是否存在逻辑
-	
-	
-	//后端验证逻辑
-	return true
+	return userlogin(username.value,password.value)
 }
 
 const navToRig = () => {
@@ -94,20 +116,9 @@ const navToRig = () => {
 }
 
 const confirm = () => {
-	
 	if(!confirmPassword()){
 		return
 	}
-	
-	uni.showToast({
-		title: '登录成功',
-		icon: 'success',
-		duration: 1000
-	})
-	
-	uni.navigateTo({
-		url: '/pages/index/index'
-	})
 }
 </script>
 

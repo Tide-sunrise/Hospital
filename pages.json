@@ -108,14 +108,16 @@
 			"path" : "pages/reg-info/reg-info",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "",
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path" : "pages/chatwindow/chatwindow",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "",
+				"navigationStyle": "custom"
 			}
 		}
 	],

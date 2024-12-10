@@ -79,6 +79,17 @@
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>
+				
+				<view class="row">
+					<view class="left">
+						<uni-icons type="minus-filled" size="20"></uni-icons>
+						<view class="text">退出登录</view>
+					</view>
+					<view class="right">
+						<view class="text"></view>
+						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
+					</view>
+				</view>
 			</view>
 		</view>
 		<myTabBar :item="itemTab"></myTabBar>

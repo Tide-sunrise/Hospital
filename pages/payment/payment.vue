@@ -41,10 +41,17 @@
 
 <script setup>
 import { ref } from 'vue';
+import { onLoad } from '@dcloudio/uni-app';
 const isSuccess = ref(false);
+onLoad((options) => {
+	console.log(options);
+  isSuccess.value = options.isSuccess==='true' || false;
+});
+
+
 const navBack = () => {
-	uni.navigateBack({
-		
+	uni.navigateTo({
+		url:`/pages/reg-info/reg-info?isPaid=${isSuccess.value}`
 	})
 }
 </script>

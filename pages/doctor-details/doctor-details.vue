@@ -51,13 +51,18 @@
 			</view>
 		</view>
 		
+		<view class="w-button">
+			<wd-button block @click="navBack">返回上一页</wd-button>
+		</view>
+		
+		
 		<uni-popup ref="infoPopup1" type="bottom">
 			<view class="infoPopup">
 				<view class="title">
 					请选择时间段
 				</view>
 				<view class="grid">
-					<up-button color="rgb(66, 83, 216)" shape="circle">8:30-9:30</up-button>
+					<up-button @click="navToInfo('8:30-9:30')" color="rgb(66, 83, 216)" shape="circle">8:30-9:30</up-button>
 					<up-button color="rgb(66, 83, 216)" shape="circle">9:30-10:30</up-button>
 					<up-button color="rgb(66, 83, 216)" shape="circle">10:30-11:30 {{uu}}</up-button>
 				</view>
@@ -99,6 +104,18 @@ const navToCards = () => {
 	uni.navigateTo({
 		url: '/pages/health-cards/health-cards'
 	})
+}
+
+const navToInfo = (time) => {
+	console.log(time);
+	uni.navigateTo({
+		url: `/pages/reg-info/reg-info?time=${time}`
+	});
+};
+
+
+const navBack =()=>{
+	uni.navigateBack()
 }
 </script>
 
@@ -258,6 +275,10 @@ const navToCards = () => {
 			align-items: center;
 			// background: white;
 		}
+	}
+	.w-button{
+		width: 690rpx;
+		margin: 0 30rpx;
 	}
 	.infoPopup{
 		background: #fff;

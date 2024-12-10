@@ -16,19 +16,19 @@
 		</view>
 		<view class="time-of-registration">
 			<view class="time">
-				<text>就诊时间：     2024-09-15</text>
+				<text>就诊时间： <uni-dateformat :date="Date.now()" format="yyyy-MM-dd"></uni-dateformat></text>
 			</view>
 			<view class="time-detail">
 				<view class="morning">
-					<view class="text">上午 （08：00-12：00） 有号 </view>
+					<view class="text">上午 （08：30-11：30） 有号 </view>
 					<view class="button">
-						<wd-button size="small" @click="timeSelect">预约</wd-button>
+						<wd-button size="small" @click="timeSelect1">预约</wd-button>
 					</view>
 				</view>
 				<view class="afternoon">
-					<view class="text">下午 （14：30-18：00） 有号</view>
+					<view class="text">下午 （14：30-17：30） 有号</view>
 					<view class="button">
-						<wd-button size="small" @click="timeSelect">预约</wd-button>
+						<wd-button size="small" @click="timeSelect2">预约</wd-button>
 					</view>
 				</view>
 			</view>
@@ -51,15 +51,28 @@
 			</view>
 		</view>
 		
-		<uni-popup ref="infoPopup" type="bottom">
+		<uni-popup ref="infoPopup1" type="bottom">
 			<view class="infoPopup">
 				<view class="title">
 					请选择时间段
 				</view>
 				<view class="grid">
-					<view class="tabs" v-for="item in 8">
-						<text>10:00-10:30</text>
-					</view>
+					<up-button color="rgb(66, 83, 216)" shape="circle">8:30-9:30</up-button>
+					<up-button color="rgb(66, 83, 216)" shape="circle">9:30-10:30</up-button>
+					<up-button color="rgb(66, 83, 216)" shape="circle">10:30-11:30 {{uu}}</up-button>
+				</view>
+			</view>
+		</uni-popup>
+		
+		<uni-popup ref="infoPopup2" type="bottom">
+			<view class="infoPopup">
+				<view class="title">
+					请选择时间段
+				</view>
+				<view class="grid">
+					<up-button color="rgb(66, 83, 216)" shape="circle">14:30-15:30</up-button>
+					<up-button color="rgb(66, 83, 216)" shape="circle">15:30-16:30</up-button>
+					<up-button color="rgb(66, 83, 216)" shape="circle">16:30-17:30</up-button>
 				</view>
 			</view>
 		</uni-popup>
@@ -70,9 +83,16 @@
 import { ref } from 'vue';
 
 //预约
-const infoPopup =ref(null)
-const timeSelect = () => {
-	infoPopup.value.open();
+const infoPopup1 =ref(null)
+const infoPopup2 =ref(null)
+const uu=ref("等吧吃点式")
+
+
+const timeSelect1 = () => {
+	infoPopup1.value.open();
+}
+const timeSelect2 = () => {
+	infoPopup2.value.open();
 }
 
 const navToCards = () => {
@@ -252,7 +272,7 @@ const navToCards = () => {
 		}
 		.grid{
 			display: grid;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: repeat(1,1fr);
 			column-gap: 20rpx;
 			row-gap: 20rpx;
 			.tabs{

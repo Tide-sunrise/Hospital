@@ -25,7 +25,7 @@
 			    border="bottom"
 				v-model="id"
 			    clearable
-				maxlength="20"
+				maxlength="18"
 			></up-input>
 		</view>
 			
@@ -56,9 +56,12 @@ const confirmName =()=>{
 		})
 		return false
 	}
+	
+	return true
 }
 
 const confirmId =()=>{
+	// console.log("击败1");
 	if(!idPattern.test(id.value)){
 		uni.showToast({
 			title: '医院丁真，鉴定为：罕见',
@@ -67,6 +70,7 @@ const confirmId =()=>{
 		})
 		return false
 	}
+	return true
 }
 
 const handleSubmit = async() => {
@@ -74,6 +78,7 @@ const handleSubmit = async() => {
 		return
 	}
 	if (!confirmId()) {
+		// console.log("击败");
 		return
 	}
 	

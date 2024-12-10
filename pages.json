@@ -103,6 +103,20 @@
 				"navigationBarTitleText": "注册",
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path" : "pages/reg-info/reg-info",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/chatwindow/chatwindow",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {

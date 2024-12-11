@@ -43,11 +43,21 @@
 
 <script setup>
 import { ref,onMounted } from 'vue'
+import { onLoad } from '@dcloudio/uni-app'
+import { getDoctorInfoBySpecialization } from '../../api/doctor'
 
-onMounted(()=>{
-	console.log("挂载")
+const specializationsId = ref()
+
+onLoad((option)=>{
+	specializationsId.value = option.specializationId
+	async function getDoctorList(){
+		console.log(specializationsId.value)
+		const res = await getDoctorInfoBySpecialization(specializationsId.value)
+		console.log(res)
+	}
+	getDoctorList()
 })
-const  navToDetail = () => {
+const navToDetail = () => {
 	uni.navigateTo({
 		url: '/pages/doctor-details/doctor-details'
 	})

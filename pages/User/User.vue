@@ -80,7 +80,7 @@
 					</view>
 				</view>
 				
-				<view class="row">
+				<view class="row" @click="loginOut">
 					<view class="left">
 						<uni-icons type="minus-filled" size="20"></uni-icons>
 						<view class="text">退出登录</view>
@@ -98,8 +98,23 @@
 
 <script setup>
 import { ref } from 'vue';
+import { loginout } from '@/api/users.js'
 
 const itemTab=ref({myTabbar:2})
+
+async function userLoginOut(){
+	const res = await loginout()
+	if(res.code===0){
+		uni.showToast({
+			title: '退出成功',
+			icon: 'success',
+			duration: 1000
+		})
+		uni.reLaunch({
+			url:"/pages/login/login"
+		})
+	}
+}
 
 const navToA = ()=>{
 	uni.navigateTo({
@@ -119,6 +134,17 @@ const clickContact = ()=>{
 	})
 }
 
+const loginOut = ()=>{
+	uni.showModal({
+		title:"提示",
+		content:"是否退出登录",
+		success(res){
+			if(res.confirm){
+				userLoginOut();
+			}
+		}
+	})
+}
 
 </script>
 

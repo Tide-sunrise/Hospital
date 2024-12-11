@@ -41,6 +41,11 @@ instance.interceptors.response.use(
 					}
 				}
 			});
+			if(result.message==="NEED_LOGIN"){
+				uni.navigateTo({
+					url: '/pages/login/login',
+				});
+			}
             return Promise.reject(result.message);
         }
     },

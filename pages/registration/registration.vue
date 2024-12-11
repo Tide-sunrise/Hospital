@@ -26,8 +26,9 @@
 		          :show-scrollbar="false"
 		          :scroll-top="scrollTop"
 		          :throttle="false">
-					<wd-cell-group :title="item.title" border @click="navToDoctor">
-						<wd-cell v-for="(cell, index) in item.items" :key="index" :title="cell.title" :label="cell.label">
+					<wd-cell-group :title="item.title" border>
+						<wd-cell v-for="(cell, index) in item.items" :key="index" :title="cell.title" :label="cell.label"
+						is-link :to="`/pages/doctor/doctor?specializationId=${cell.id}`">
 							<!-- <image src="../../common/image/genshin.jpg" mode="aspectFit"></image> -->
 						</wd-cell>
 					</wd-cell-group>
@@ -58,12 +59,13 @@ import { ref, nextTick, onMounted } from 'vue'
 import { getAllDepartments } from '../../api/department'
 import { getSpecializationByDepartmentId } from '../../api/specialization'
 import axios from 'axios'
+import { number } from '../../uni_modules/uview-plus/libs/function/test'
 // import {onShow,onLoad} from "@dcloudio/uni-app"
 
 const active = ref<number>(0)
 const scrollTop = ref<number>(0)
-const subCategories = ref([{title:String,lable:String}])
-subCategories.value = new Array(24).fill({ title: '原神', label: '一款开放世界冒险游戏' }, 0, 24)
+const subCategories = ref([{title:String,label:String,id:Number}])
+subCategories.value = new Array(24).fill({ title: '原神', label: '一款开放世界冒险游戏', id: 0 }, 0, 24)
 const categories = ref([
   {
     label: '分类一',
@@ -85,34 +87,6 @@ const categories = ref([
     icon: "none",
     items: subCategories,
     disabled: false
-  },
-  {
-    label: '分类四',
-    title: '标题四',
-    icon: "none",
-    items: subCategories,
-    disabled: false
-  },
-  {
-    label: '分类五',
-    title: '标题五',
-	icon: "none",
-    items: subCategories,
-    disabled: false
-  },
-  {
-    label: '分类六',
-    title: '标题六',
-	icon: "none",
-    items: subCategories,
-    disabled: false
-  },
-  {
-    label: '分类七',
-    title: '标题七',
-	icon: "none",
-    items: subCategories,
-    disabled: true
   }
 ])
 
@@ -128,10 +102,12 @@ async function getSpecialization(departmentId: number) {
     //构造一个新的对象，包含title, label
     let obj = {
       title: data[i].name,
-      label: data[i].description
+      label: data[i].description,
+	  id: data[i].specializationId
     }
     subCategories.value.push(obj)
   }
+  console.log(subCategories.value)
 }
 
 function handleChange({ value }) {
@@ -147,11 +123,12 @@ const sure=() => {
   scorePopup.value.close();
 }
 
-const navToDoctor = () => {
-  uni.navigateTo({
-    url: '/pages/doctor/doctor'
-  })
-}
+// const navToDoctor = (index) => {
+//   console.log(index)
+//   uni.navigateTo({
+//     url: '/pages/doctor/doctor'
+//   })
+// }
 
 onMounted(()=>{
 	async function getDepartments() {
@@ -171,7 +148,6 @@ onMounted(()=>{
 			}
 			categories.value.push(obj)
 		}
-		//使用数据库时去除注释
 		getSpecialization(categories.value[0].departmentId)
 	}
 	getDepartments()

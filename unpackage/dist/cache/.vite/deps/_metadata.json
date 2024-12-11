@@ -1,32 +1,32 @@
 {
-  "hash": "c8d6cefe",
-  "configHash": "29a1851d",
+  "hash": "34ba5792",
+  "configHash": "02c65632",
   "lockfileHash": "ca059c7b",
-  "browserHash": "821d6f8e",
+  "browserHash": "d7cbdad4",
   "optimized": {
     "jwt-decode": {
       "src": "../../../../../node_modules/jwt-decode/build/esm/index.js",
       "file": "jwt-decode.js",
-      "fileHash": "b9e97120",
+      "fileHash": "42c7781a",
       "needsInterop": false
     },
     "dayjs/esm/index": {
       "src": "../../../../../node_modules/dayjs/esm/index.js",
       "file": "dayjs_esm_index.js",
-      "fileHash": "bccab5e7",
-      "needsInterop": false
-    },
-    "uniapp-axios-adapter": {
-      "src": "../../../../../node_modules/uniapp-axios-adapter/lib/index.esm.js",
-      "file": "uniapp-axios-adapter.js",
-      "fileHash": "2a441e0e",
+      "fileHash": "f5a844eb",
       "needsInterop": false
     },
     "crypto-js": {
       "src": "../../../../../node_modules/crypto-js/index.js",
       "file": "crypto-js.js",
-      "fileHash": "0f1c9bbf",
+      "fileHash": "552b4144",
       "needsInterop": true
+    },
+    "uniapp-axios-adapter": {
+      "src": "../../../../../node_modules/uniapp-axios-adapter/lib/index.esm.js",
+      "file": "uniapp-axios-adapter.js",
+      "fileHash": "faf66680",
+      "needsInterop": false
     }
   },
   "chunks": {

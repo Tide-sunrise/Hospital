@@ -101,7 +101,7 @@
 import { ref, onMounted } from 'vue';
 import store from '../../store/index.js';
 import { tabBarList } from '../../common/data/data.js'
-
+import { getpatients } from '@/api/users.js'
 //滚动
 const current = ref(0)
 
@@ -182,8 +182,14 @@ const newsLists = ref([
 	{id:444,title:"这是资讯4"}
 ])
 
-
 //导航栏
+onMounted(()=>{
+	async function getHealthCard(){
+		let res = await getpatients(store.state.user)
+		console.log(res)
+	}
+	getHealthCard()
+})
 
 
 //滚动

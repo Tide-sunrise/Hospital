@@ -41,14 +41,16 @@
 		{
 			"path": "pages/search/search",
 			"style": {
-				"navigationBarTitleText": "搜索栏"
+				"navigationBarTitleText": "搜索栏",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},
 		{
 			"path": "pages/payment/payment",
 			"style": {
-				"navigationBarTitleText": "支付详情"
+				"navigationBarTitleText": "支付详情",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},
@@ -62,7 +64,8 @@
 		{
 			"path": "pages/doctor-details/doctor-details",
 			"style": {
-				"navigationBarTitleText": "医生详情及挂号"
+				"navigationBarTitleText": "医生详情及挂号",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},

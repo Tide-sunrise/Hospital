@@ -24,6 +24,10 @@
 				<label>患者姓名:</label>
 				<span>{{ patientName }}</span>
 			</view>
+			<view class="info-item">
+				<label>挂号时间段:</label>
+				<span>{{ time }}</span>
+			</view>
 		</view>
 		<view class="button">
 			<up-button :disabled="isPaid" @click="handlePayment" color="rgb(66, 83, 216)" shape="circle">确认支付</up-button>
@@ -46,20 +50,20 @@
 						付款{{isSuccess?"成功":"失败"}}
 					</view>
 					<view v-if="isSuccess" class="money">
-						￥1145.14
+						{{ amount }} 元
 					</view>
 					<view class="detail">
 						<view class="time">
-							<view class="words">付款时间</view>
-							<view class="numbers">
+							<label>付款时间</label>
+							<span>
 								<uni-dateformat :date="Date.now()" format="yyyy-MM-dd hh:mm:ss"></uni-dateformat>
-							</view>
+							</span>
 						</view>
 						<view class="method">
-							<view class="words">付款方式</view>
-							<view class="detail2">
-								微信支付
-							</view>
+							<label>付款方式</label>
+							<span>
+								直接支付
+							</span>
 						</view>
 					</view>
 				</view>
@@ -77,6 +81,7 @@ const doctorName = ref('张三'); // 医生姓名
 const department = ref('内科'); // 科室名称
 const amount = ref(50); // 金额
 const patientName = ref('李四'); // 患者姓名
+const time=ref('14:30-15:30')
 
 const isPaid=ref(false)
 const infoPopup =ref(null)
@@ -88,7 +93,7 @@ onLoad((options)=>{
 })
 
 onMounted(()=>{
-	//5个变量先通过regId.value获取数据
+	//6个变量先通过regId.value获取数据
 })
 
 const handlePayment=()=>{
@@ -149,6 +154,7 @@ const abandonPayment =()=>{
 
 .paymentLayout{
 	background: #fff;
+	border-radius: 50rpx 50rpx 0 0;
 	.layout{
 		display: flex;
 		flex-direction: column;
@@ -181,55 +187,34 @@ const abandonPayment =()=>{
 			flex-direction: column;
 			// align-items: center;
 			width: 690rpx;
-			margin: 0 auto;
+			margin: 50rpx auto;
 			margin-bottom: 50rpx;
 			.time{
 				display: flex;
 				justify-content: space-between;
-				width: 100%;
-				margin: 30rpx 0;
-				.words{
-					height: 50rpx;
-					font-size: 30rpx;
-					color: #666;
+				align-items: center;
+				
+				margin: 30rpx 30rpx ;
+				label {
+					font-weight: bold;
 				}
-				.numbers{
-					height: 50rpx;
-					font-size: 30rpx;
-					color: #333;
-					// padding-left: 20rpx;
+						
+				span {
+					font-size: 16px;
 				}
 			}
 			.method {
 				display: flex;
 				justify-content: space-between;
-				width: 100%;
-				.words {
-					height: 50rpx;
-					font-size: 30rpx;
-					color: #666;
-					width: 540rpx;
-					display: flex;
-					// justify-content: center;
-					align-items: center;
+				align-items: center;
+				
+				margin: 30rpx 30rpx ;
+				label {
+					font-weight: bold;
 				}
-			
-				.detail2 {
-					display: flex;
-					// justify-content: center;
-					  /* 假设父级需要有一个明确的宽度 */
-					//垂直居中
-					// align-items: center;
-					height: 50rpx;  
-					width: 120rpx;
-					// background: red;
-					font-size: 30rpx;
-					color: #333;
-					position: absolute;
-					right: 30rpx;
-					
-					// margin-left: auto; // 推到最右边
-					
+						
+				span {
+					font-size: 16px;
 				}
 			}
 		}

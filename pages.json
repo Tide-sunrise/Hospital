@@ -69,7 +69,8 @@
 		{
 			"path": "pages/health-cards/health-cards",
 			"style": {
-				"navigationBarTitleText": "我的健康卡"
+				"navigationBarTitleText": "我的健康卡",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},
@@ -122,6 +123,14 @@
 		},
 		{
 			"path" : "pages/payment-confirmation/payment-confirmation",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/reg-record/reg-record",
 			"style" : 
 			{
 				"navigationBarTitleText" : "",

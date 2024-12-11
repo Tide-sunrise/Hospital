@@ -32,7 +32,10 @@
 		<view class="footer">
 			<wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
 		</view>
-
+		
+		<view class="footer">
+			<wd-button type="primary" size="large" @click="goback" block>返回</wd-button>
+		</view>
 	</view>
 </template>
 
@@ -92,6 +95,10 @@ const handleSubmit = async() => {
 	
 	await sleep(1000); // 延迟 1000 毫秒（1 秒）
 
+	uni.navigateBack();
+}
+
+const goback =()=>{
 	uni.navigateBack();
 }
 </script>

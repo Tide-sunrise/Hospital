@@ -10,7 +10,7 @@
       <view class="info-item"><text><strong>医生信息:</strong> 雷医生, 🐓科专家</text></view>
     </view>
     <view v-if="!isPaid" class="payment-section">
-      <up-button @click="handlePayment" color="rgb(66, 83, 216)" shape="circle">支付 ¥50.00</up-button>
+      <up-button @click="handlePayment" color="rgb(66, 83, 216)" shape="circle">确认挂号</up-button>
     </view>
     <view v-else class="success-message">
       <text>挂号成功！请于指定时间前往医院就诊。</text>

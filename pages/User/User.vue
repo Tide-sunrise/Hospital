@@ -15,11 +15,11 @@
 			<view class="list">
 				<view class="row" @click="navToA">
 					<view class="left">
-						<uni-icons type="download-filled" size="20" ></uni-icons>
-						<view class="text">我的下载</view>
+						<uni-icons type="calendar-filled" size="20" ></uni-icons>
+						<view class="text">我的挂号记录</view>
 					</view>
 					<view class="right">
-						<view class="text">33</view>
+						<view class="text">{{recordNum}}</view>
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>
@@ -101,6 +101,8 @@ import { ref } from 'vue';
 import { loginout } from '@/api/users.js'
 
 const itemTab=ref({myTabbar:2})
+const recordNum=ref(33)
+
 
 async function userLoginOut(){
 	const res = await loginout()
@@ -118,7 +120,7 @@ async function userLoginOut(){
 
 const navToA = ()=>{
 	uni.navigateTo({
-		url:"/pages/index/index"
+		url:"/pages/reg-record/reg-record"
 	})
 }
 

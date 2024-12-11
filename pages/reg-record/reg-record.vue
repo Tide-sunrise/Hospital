@@ -1,12 +1,12 @@
 <template>
-	<view class="cardLayout pageBg2">
+	<view class="recordLayout pageBg2">
 		<view class="layout">
 			<view class="navbar">
 				<view class="goBack" @click="goBack">
 					<uni-icons type="back" color="#000" size="20"></uni-icons>
 				</view>
 				<view class="text">
-					我的健康卡
+					挂号记录
 				</view>
 				<view class="goBack">
 					<!-- <uni-icons type="back" color="#fff" size="20"></uni-icons> -->
@@ -16,9 +16,38 @@
 		<view class="em">
 			
 		</view>
-		<health-card v-for="item in 4" :cardinfo="{isExist:true}"></health-card>
-		<health-card v-for="item in 1" :cardinfo="{isExist:false}"></health-card>	
+		<view class="box" v-for="(item,index) in recordList">
+			<view class="info-item">
+				<label>订单生成时间:</label>
+				<span>{{ item.orderTime }}</span>
+			</view>
+			<view class="info-item">
+				<label>医生姓名:</label>
+				<span>{{ item.doctorName }}</span>
+			</view>
+			<view class="info-item">
+				<label>科室:</label>
+				<span>{{ item.department }}</span>
+			</view>
+			<view class="info-item">
+				<label>金额:</label>
+				<span>{{ item.amount }} 元</span>
+			</view>
+			<view class="info-item">
+				<label>患者姓名:</label>
+				<span>{{ item.patientName }}</span>
+			</view>
+			<view class="info-item">
+				<label>挂号时间段:</label>
+				<span>{{ item.time }}</span>
+			</view>
+			<view class="info-item">
+				<label>支付状态:</label>
+				<span>{{ item.isPaid?'已支付':'未支付' }}</span>
+			</view>
+		</view>
 	</view>
+	
 </template>
 
 <script setup>
@@ -36,14 +65,13 @@
 	//返回上一页
 	const goBack = () => {
 		uni.navigateTo({
-			url:'/pages/index/index'
+			url:'/pages/User/User'
 		})
-	}	
+	}
 </script>
 
 <style lang="scss" scoped>
-.cardLayout{
-	padding: 30rpx;
+.recordLayout{
 	.layout {
 		.navbar {
 			position: fixed;
@@ -57,7 +85,7 @@
 				linear-gradient(to left, #beecd8 20%, #b2e0fa);
 			display: flex;
 			flex-direction: row; //设置布局方向为水平
-	
+
 			.goBack {
 				width: 38rpx;
 				height: 38rpx;
@@ -80,5 +108,28 @@
 	.em{
 		height: 98rpx;
 	}
-}       
+	.box{
+		width: 690rpx;
+		// height: 200rpx;
+		border-radius: 30rpx;
+		box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+		margin: 30rpx auto;
+		background: #fff;
+		padding: 30rpx 0;
+		.info-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			margin: 30rpx 30rpx ;
+			label {
+				font-weight: bold;
+			}
+		
+			span {
+				font-size: 16px;
+			}
+		}
+	}	
+}
 </style>

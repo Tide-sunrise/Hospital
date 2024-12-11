@@ -1,5 +1,5 @@
 <template>
-	<view class="formLayout">
+	<view class="formLayout pageBg2">
 		<view class="title">
 			添加健康卡
 		</view>

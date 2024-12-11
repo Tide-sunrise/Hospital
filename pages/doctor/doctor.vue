@@ -1,5 +1,21 @@
 <template>
 	<view class="doctorLayout pageBg">
+		<view class="layout">
+			<view class="navbar">
+				<view class="goBack" @click="goBack">
+					<uni-icons type="back" color="#000" size="20"></uni-icons>
+				</view>
+				<view class="text">
+					医生日期选择
+				</view>
+				<view class="goBack">
+					<!-- <uni-icons type="back" color="#fff" size="20"></uni-icons> -->
+				</view>
+			</view>
+		</view>
+		<view class="em">
+			
+		</view>
 		<view class="upBar">
 			<view class="anyDay">
 				<text class="t1">不限</text>
@@ -62,10 +78,53 @@ const navToDetail = () => {
 		url: '/pages/doctor-details/doctor-details'
 	})
 }
+
+
+const goBack = () => {
+	uni.navigateTo({
+		url:'/pages/registration/registration'
+	})
+}
 </script>
 
 <style lang="scss" scoped>
 .doctorLayout{
+	.layout {
+		.navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+			padding: 30rpx 0;
+			background:
+				linear-gradient(to bottom, transparent 0%, #fff 400rpx),
+				linear-gradient(to left, #beecd8 20%, #b2e0fa);
+			display: flex;
+			flex-direction: row; //设置布局方向为水平
+	
+			.goBack {
+				width: 38rpx;
+				height: 38rpx;
+				// background: rgba(0, 0, 0, 0.5);
+				// left: 30rpx;
+				margin: 0 30rpx;
+				border-radius: 100px;
+				top: 0;
+				backdrop-filter: blur(10rpx);
+				border: 1rpx solid rgba(255, 255, 255, 0.3);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.text{
+				width: 554rpx;
+			}
+		}
+	}
+	.em{
+		height: 98rpx;
+	}
 	.upBar{
 		display: flex;
 		flex-direction: row;

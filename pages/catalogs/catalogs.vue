@@ -1,7 +1,7 @@
 <template>
 	<view class="catalogsLayout">
 		<view class="imageBackground">
-			<image src="../../common/image/xiangya2.jpg" mode="aspectFill"></image>
+			<image src="../../static/picture/xiangya2.jpg" mode="aspectFill"></image>
 		</view>
 		
 		<view class="logo">

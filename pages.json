@@ -57,7 +57,8 @@
 		{
 			"path": "pages/doctor/doctor",
 			"style": {
-				"navigationBarTitleText": "医生列表"
+				"navigationBarTitleText": "医生列表",
+				"navigationStyle": "custom"
 			},
 			"needLogin": true
 		},

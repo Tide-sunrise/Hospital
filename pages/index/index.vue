@@ -42,7 +42,7 @@
 				<swiper vertical autoplay interval="1500" duration="300" circular>
 					<swiper-item v-for="item in noticeList" >
 						<navigator :url="'/pages/notice/detail?id='+item._id">
-							{{item}}
+							{{item.title}}
 						</navigator>
 					</swiper-item>
 				</swiper>
@@ -153,7 +153,24 @@ const list= ref( [
 ])
 
 //公告
-const noticeList = ref(['我草泥马','一得阁拉米','摩洛哥炒饼'])
+const noticeList = ref( [
+        {
+          _id: '1',
+          title: '欢迎使用我们的新应用'
+        },
+        {
+          _id: '2',
+          title: '重要更新：版本1.0现已上线'
+        },
+        {
+          _id: '3',
+          title: '本周特别活动预告'
+        },
+        {
+          _id: '4',
+          title: '用户反馈收集进行中'
+        },
+      ])
 
 //导航栏
 const myFunction = ref([{name:"挂号",url:"/pages/registration/registration"},{name:"击败"},{name:"吧唧"}])
@@ -221,11 +238,11 @@ function onAnimationfinish(e) {
 }
 
 //公告
-const navToNotice = ()=>{
-	uni.navigateTo({
-		url:"/pages/notice/notice"
-	})
-}
+// const navToNotice = ()=>{
+// 	uni.navigateTo({
+// 		url:"/pages/notice/notice"
+// 	})
+// }
 
 
 </script>

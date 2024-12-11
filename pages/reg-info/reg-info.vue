@@ -57,10 +57,12 @@ const handlePayment = () => {
     success: (res) => {
       if (res.confirm) {
         // 模拟支付成功后的状态改变
+		//先把这条数据提交了,再获取挂号信息id
+		let regId=0;
         setTimeout(() => {
           isPaid.value = true;
           uni.navigateTo({
-          	url:`/pages/payment/payment?isSuccess=${isPaid.value}`
+          	url:`/pages/payment-confirmation/payment-confirmation?regId=${regId.value}`
           })
         }, 1000); // 假设需要1秒来完成支付过程
       }

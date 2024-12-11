@@ -26,8 +26,6 @@
 			</z-swiper-item>
 		</z-swiper>
 		
-		<navigator url="/pages/payment/payment">临时跳转</navigator>
-		
 		<view class="bigBox">
 			<view class="function">
 				<small-icon v-for="item in myFunction" :item="item"></small-icon>

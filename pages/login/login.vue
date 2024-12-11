@@ -6,10 +6,10 @@
 		<view class="input">
 			<view class="small-input">
 				<view class="text-box">
-					用户名
+					账号
 				</view>
 				<up-input
-				    placeholder="请输入用户名"
+				    placeholder="请输入账号"
 				    border="bottom"
 					v-model="username"
 				    clearable
@@ -20,13 +20,19 @@
 				<view class="text-box">
 					密码
 				</view>
-				<up-input
-				    placeholder="请输入密码"
-				    border="bottom"
-					v-model="password"
-				    clearable
-					maxlength="20"
-				  ></up-input>
+				<up-input placeholder="请输入密码" border="bottom" v-model="password" clearable maxlength="20"
+					:password="!eye">
+				
+				
+					<template #suffix>
+						<view class="eye" @click="eye=!eye">
+							<up-icon name="eye-fill" v-if="!eye"></up-icon>
+							<up-icon name="eye-off" v-if="eye"></up-icon>
+						</view>
+				
+					</template>
+				
+				</up-input>
 			</view>
 		</view>
 		<view class="negotiate">
@@ -70,6 +76,7 @@ onMounted(()=>{
 const value = ref(false)
 const username = ref("")
 const password = ref("")
+const eye = ref(false)
 
 const handleChange = (e) => {
 	value.value = e.value

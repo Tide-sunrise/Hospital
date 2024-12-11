@@ -38,7 +38,7 @@
 				<text class="text">公告</text>
 				
 			</view>
-			<view class="center" @click="navToNotice">
+			<view class="center">
 				<swiper vertical autoplay interval="1500" duration="300" circular>
 					<swiper-item v-for="item in noticeList" >
 						<navigator :url="'/pages/notice/detail?id='+item._id">
@@ -200,6 +200,7 @@ const newsLists = ref([
 //导航栏
 onMounted(()=>{
 	async function getHealthCard(){
+		console.log(store.state.user)
 		let res = await getpatients(store.state.user)
 		console.log(res)
 	}

@@ -42,6 +42,8 @@ instance.interceptors.response.use(
 				}
 			});
 			if(result.message==="NEED_LOGIN"){
+				store.commit("removeUser");
+				store.commit("removeToken");
 				uni.navigateTo({
 					url: '/pages/login/login',
 				});

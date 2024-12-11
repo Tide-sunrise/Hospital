@@ -99,6 +99,7 @@
 <script setup>
 import { ref } from 'vue';
 import { loginout } from '@/api/users.js'
+import store from '../../store';
 
 const itemTab=ref({myTabbar:2})
 const recordNum=ref(33)
@@ -107,6 +108,8 @@ const recordNum=ref(33)
 async function userLoginOut(){
 	const res = await loginout()
 	if(res.code===0){
+		store.commit('removeUser');
+		store.commit('removeToken');
 		uni.showToast({
 			title: '退出成功',
 			icon: 'success',

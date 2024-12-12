@@ -60,7 +60,7 @@
 		getNavBarHeight
 	} from "@/utils/system.js"
 	
-	const recordList = ref([]);
+	const recordList = ref([1]);
 	
 	//返回上一页
 	const goBack = () => {

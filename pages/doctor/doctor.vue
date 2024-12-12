@@ -17,38 +17,38 @@
 			
 		</view>
 		<view class="upBar">
-			<view class="anyDay">
-				<text class="t1">不限</text>
-				<text class="t2">日期</text>
+			<view class="anyDay" @click="showAllDoctorList">
+				<text class="t1">所有</text>
+				<text class="t2">医生</text>
 			</view>
 			<scroll-view :show-scrollbar="false" scroll-x="true" class="fixedDay">
-				<view class="fixDay" v-for="item in 14">
-					<view class="box">
-						<text class="t1">周日</text>
-						<text class="t2">9-15</text>
+				<view class="fixDay" v-for="item in date">
+					<view class="box" @click="showThisDay(item.date)">
+						<text class="t1">{{item.week}}</text>
+						<text class="t2">{{item.date}}</text>
 					</view>
 				</view>
 			</scroll-view>
 		</view>
-		<view class="doctor" v-for="item in 8">
+		<view class="doctor" v-for="item in showDoctorList">
 			<view class="up-content">
 				<view class="box2">
 					<view class="image">
-						<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
+						<image :src="item.avatar" mode="aspectFill"></image>
 					</view>
 					<view class="row">
-						<view class="text">原神</view>
-						<view class="smallText">mihoyo</view>
+						<view class="text">{{item.name}}</view>
+						<view class="smallText">{{item.title}}</view>
 					</view>
 				</view>
 			</view>
 			<view class="bar"></view>
 			<view class="down-content">
 				<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-					<view class="downFixDay" v-for="item in 8" >
+					<view class="downFixDay" v-for="item in item.schedule" >
 						<view class="box" @click="navToDetail">
-							<text class="t1">周日</text>
-							<text class="t2">9-15</text>
+							<text class="t1">{{item.week}}</text>
+							<text class="t2">{{item.date}}</text>
 						</view>
 					</view>
 				</scroll-view>
@@ -60,26 +60,161 @@
 <script setup>
 import { ref,onMounted } from 'vue'
 import { onLoad } from '@dcloudio/uni-app'
-import { getDoctorInfoBySpecialization } from '../../api/doctor'
+import { getBySpecializationId } from '@/api/schedule.js'
+import { formatDateToChinese } from '@/utils/date.js'
 
+const titlehash = {
+	'1': '医士',
+	'2': '医师',
+	'3': '主治医师',
+	'4': '副主任医师',
+	'5': '主任医师',
+	'6': '专家'
+}
 const specializationsId = ref()
+const date = ref([])
+const showDoctorList = ref([
+	{
+		name: '原神',
+		title: 'mihoyo',
+		avatar: '../../common/image/genshin.jpg',
+		schedule: [
+			{
+				date: '9-15',
+				week: '周日',
+			},
+			{
+				date: '9-15',
+				week: '周一',
+			},
+			{
+				date: '9-15',
+				week: '周二',
+			},
+			{
+				date: '9-15',
+				week: '周三',
+			},
+			{
+				date: '9-15',
+				week: '周四',
+			},
+			{
+				date: '9-15',
+				week: '周五',
+			},
+			{
+				date: '9-15',
+				week: '周六',
+			}
+		],
+	},
+	{
+		name: '原神',
+		title: 'mihoyo',
+		avatar: '../../common/image/genshin.jpg',
+		schedule: [
+			{
+				date: '9-15',
+				week: '周日',
+			},
+			{
+				date: '9-15',
+				week: '周一',
+			},
+			{
+				date: '9-15',
+				week: '周二',
+			},
+			{
+				date: '9-15',
+				week: '周三',
+			},
+			{
+				date: '9-15',
+				week: '周四',
+			},
+			{
+				date: '9-15',
+				week: '周五',
+			},
+			{
+				date: '9-15',
+				week: '周六',
+			}
+		],
+	}
+])
+const doctorList = ref([])
 
 onLoad((option)=>{
 	specializationsId.value = option.specializationId
 	async function getDoctorList(){
-		console.log(specializationsId.value)
-		const res = await getDoctorInfoBySpecialization(specializationsId.value)
+		//获取现在的日期与周几
+		let now = new Date()
+		date.value.push(formatDateToChinese(now))
+		//将包括今天在内7天的总日期存入date中
+		for(let i=1;i<7;i++){
+			now.setDate(now.getDate()+1)
+			date.value.push(formatDateToChinese(now));
+		}
+		//获取到所有该科室下医生的排班信息
+		let res = await getBySpecializationId(specializationsId.value)
 		console.log(res)
+		let doctorHash = {}
+		res = res.data
+		for(let i = 0;i<res.length;i++){
+			if(doctorHash.hasOwnProperty(res[i].doctorId)){
+				let part = formatDateToChinese(new Date(res[i].date))
+				doctorHash[res[i].doctorId].schedule.push({
+					date: part.date,
+					week: part.week,
+					time: res[i].time,
+					remain: res[i].availableNumber
+				})
+			}
+			else{
+				let doctor = {}
+				doctor.doctorId = res[i].doctorId
+				doctor.name = res[i].doctorName
+				doctor.title = titlehash[res[i].titleId]
+				doctor.schedule = []
+				let part = formatDateToChinese(new Date(res[i].date))
+				doctor.schedule.push({
+					date: part.date,
+					week: part.week,
+					time: res[i].time,
+					remain: res[i].availableNumber
+				})
+				doctorHash[res[i].doctorId] = doctor
+			}
+		}
+		console.log(doctorHash)
+		for(let key in doctorHash){
+			doctorList.value.push(doctorHash[key])
+		}
+		if(doctorList.value) showDoctorList.value = doctorList.value;
 	}
 	getDoctorList()
 })
+
+const showAllDoctorList = () => {
+	showDoctorList.value = doctorList.value
+}
+const showThisDay = (date) => {
+	showDoctorList.value = doctorList.value.filter((item)=>{
+		for(let i=0;i<item.schedule.length;i++){
+			if(item.schedule[i].date == date) return true
+		}
+		return false
+	})
+	console.log(showDoctorList)
+}
 const navToDetail = () => {
 	uni.navigateTo({
 		url: '/pages/doctor-details/doctor-details'
 	})
 }
-
-
 const goBack = () => {
 	uni.navigateTo({
 		url:'/pages/registration/registration'

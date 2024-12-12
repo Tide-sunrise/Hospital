@@ -24,6 +24,9 @@
 			<z-swiper-item :custom-style="slideCustomStyle" v-for="(item,index) in list" :key="index">
 				<health-card :cardinfo="item"></health-card>
 			</z-swiper-item>
+			<!-- <z-swiper-item :custom-style="slideCustomStyle">
+				<health-card :cardinfo="plus"></health-card>
+			</z-swiper-item> -->
 		</z-swiper>
 		
 		<view class="bigBox">
@@ -99,7 +102,7 @@
 import { ref, onMounted } from 'vue';
 import store from '../../store/index.js';
 import { tabBarList } from '../../common/data/data.js'
-import { getpatients } from '@/api/users.js'
+import { getpatients } from '@/api/patient.js'
 //滚动
 const current = ref(0)
 
@@ -125,32 +128,38 @@ const options= ref( {
 	}
 })
 const list= ref( [
-	{
-		isExist:true,
-		name:"原神",
-		id:"114514191981011451"
-	},
-	{
-		isExist:true,
-		name:"原神",
-		id:"114514191981011451"
-	},
-	{
-		isExist:true,
-		name:"原神",
-		id:"114514191981011451"
-	},
-	{
-		isExist:true,
-		name:"原神",
-		id:"114514191981011451"
-	},
-	{
+	// {
+	// 	isExist:true,
+	// 	name:"原神",
+	// 	id:"114514191981011451"
+	// },
+	// {
+	// 	isExist:true,
+	// 	name:"原神",
+	// 	id:"114514191981011451"
+	// },
+	// {
+	// 	isExist:true,
+	// 	name:"原神",
+	// 	id:"114514191981011451"
+	// },
+	// {
+	// 	isExist:true,
+	// 	name:"原神",
+	// 	id:"114514191981011451"
+	// },
+	// {
+	// 	isExist:false,
+	// 	name:"原神",
+	// 	id:"114514191981011451"
+	// }
+])
+
+const plus=ref({
 		isExist:false,
 		name:"原神",
 		id:"114514191981011451"
-	},
-])
+	})
 
 //公告
 const noticeList = ref( [
@@ -203,7 +212,24 @@ onMounted(()=>{
 		console.log(store.state.user)
 		let res = await getpatients(store.state.user)
 		console.log(res)
+		res = res.data
+		// list.value = []
+		for (let index = 0; index < res.length; index++) {
+			const element = res[index];
+			list.value.push({
+				isExist:true,
+				name:element.name,
+				id:element.cleartextId
+			})
+		}
+		list.value.push({
+			isExist:false,
+			name:"原神",
+			id:"114514191981011451"
+		})
+		console.log(list)
 	}
+	console.log(list)
 	getHealthCard()
 })
 

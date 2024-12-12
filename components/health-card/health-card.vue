@@ -33,7 +33,6 @@ const props = defineProps({
 	},
 })
 const cardExist = ref(props.cardinfo.isExist);
-// console.log(props.cardinfo);
 
 const navToCards = () => {
 	let arr=getCurrentPages();

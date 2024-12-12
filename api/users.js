@@ -42,17 +42,6 @@ export function register(data) {
 }
 
 /**
- * 获取用户绑定的患者
- * @param {Object} id 用户id
- */
-export function getpatients(id){
-	return request({
-		url:`/patients/${id}`,
-		method:'get',
-	})
-}
-
-/**
  * 退出登录
  */
 export function loginout(){

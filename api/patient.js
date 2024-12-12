@@ -10,3 +10,14 @@ export function getPatientById(id) {
 		method: 'get'
 	});
 }
+
+/**
+ * 获取用户绑定的患者
+ * @param {Object} id 用户id
+ */
+export function getpatients(id){
+	return request({
+		url:`/patients/userId/${id}`,
+		method:'get',
+	})
+}

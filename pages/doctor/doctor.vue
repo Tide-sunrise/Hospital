@@ -189,11 +189,11 @@ onLoad((option)=>{
 				doctorHash[res[i].doctorId] = doctor
 			}
 		}
-		console.log(doctorHash)
 		for(let key in doctorHash){
 			doctorList.value.push(doctorHash[key])
 		}
 		if(doctorList.value) showDoctorList.value = doctorList.value;
+		console.log(showDoctorList)
 	}
 	getDoctorList()
 })
@@ -202,12 +202,22 @@ const showAllDoctorList = () => {
 	showDoctorList.value = doctorList.value
 }
 const showThisDay = (date) => {
-	showDoctorList.value = doctorList.value.filter((item)=>{
-		for(let i=0;i<item.schedule.length;i++){
-			if(item.schedule[i].date == date) return true
+	//把传递进来的日期的医生筛选出来，然后只显示这些医生这天的排班信息
+	showDoctorList.value = []
+	for(let i = 0;i<doctorList.value.length;i++){
+		for(let j = 0;j<doctorList.value[i].schedule.length;j++){
+			if(doctorList.value[i].schedule[j].date == date){
+				let doctor = {}
+				doctor.doctorId = doctorList.value[i].doctorId
+				doctor.name = doctorList.value[i].name
+				doctor.title = doctorList.value[i].title
+				doctor.schedule = []
+				doctor.schedule.push(doctorList.value[i].schedule[j])
+				showDoctorList.value.push(doctor)
+				break
+			}
 		}
-		return false
-	})
+	}
 	console.log(showDoctorList)
 }
 const navToDetail = () => {

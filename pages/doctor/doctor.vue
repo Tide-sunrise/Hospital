@@ -45,10 +45,10 @@
 			<view class="bar"></view>
 			<view class="down-content">
 				<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-					<view class="downFixDay" v-for="item in item.schedule" >
-						<view class="box" @click="navToDetail">
-							<text class="t1">{{item.week}}</text>
-							<text class="t2">{{item.date}}</text>
+					<view class="downFixDay" v-for="it in item.schedule" @click="navToDetail(item.doctorId,it.date)">
+						<view class="box">
+							<text class="t1">{{it.week}}</text>
+							<text class="t2">{{it.date}}</text>
 						</view>
 					</view>
 				</scroll-view>
@@ -166,26 +166,38 @@ onLoad((option)=>{
 		for(let i = 0;i<res.length;i++){
 			if(doctorHash.hasOwnProperty(res[i].doctorId)){
 				let part = formatDateToChinese(new Date(res[i].date))
-				doctorHash[res[i].doctorId].schedule.push({
-					date: part.date,
-					week: part.week,
-					time: res[i].time,
-					remain: res[i].availableNumber
-				})
+				if(doctorHash[res[i].doctorId].schedule.hasOwnProperty(part.date)){
+					doctorHash[res[i].doctorId].schedule[part.date].registration.push({
+						time: res[i].time,
+						remain: res[i].availableNumber
+					})
+				}
+				else{
+					doctorHash[res[i].doctorId].schedule[part.date] = {
+						date: part.date,
+						week: part.week,
+						registration:[{
+							time: res[i].time,
+							remain: res[i].availableNumber
+						}]
+					}
+				}
 			}
 			else{
 				let doctor = {}
 				doctor.doctorId = res[i].doctorId
 				doctor.name = res[i].doctorName
 				doctor.title = titlehash[res[i].titleId]
-				doctor.schedule = []
+				doctor.schedule = {}
 				let part = formatDateToChinese(new Date(res[i].date))
-				doctor.schedule.push({
+				doctor.schedule[part.date]={
 					date: part.date,
 					week: part.week,
-					time: res[i].time,
-					remain: res[i].availableNumber
-				})
+					registration:[{
+						time: res[i].time,
+						remain: res[i].availableNumber
+					}]
+				}
 				doctorHash[res[i].doctorId] = doctor
 			}
 		}
@@ -205,24 +217,23 @@ const showThisDay = (date) => {
 	//把传递进来的日期的医生筛选出来，然后只显示这些医生这天的排班信息
 	showDoctorList.value = []
 	for(let i = 0;i<doctorList.value.length;i++){
-		for(let j = 0;j<doctorList.value[i].schedule.length;j++){
-			if(doctorList.value[i].schedule[j].date == date){
-				let doctor = {}
-				doctor.doctorId = doctorList.value[i].doctorId
-				doctor.name = doctorList.value[i].name
-				doctor.title = doctorList.value[i].title
-				doctor.schedule = []
-				doctor.schedule.push(doctorList.value[i].schedule[j])
-				showDoctorList.value.push(doctor)
-				break
-			}
+		let doctor = {}
+		doctor.doctorId = doctorList.value[i].doctorId
+		doctor.name = doctorList.value[i].name
+		doctor.title = doctorList.value[i].title
+		doctor.schedule = []
+		for(let key in doctorList.value[i].schedule){
+			if(key == date) doctor.schedule.push(doctorList.value[i].schedule[key])
 		}
+		if(doctor.schedule.length!=0) showDoctorList.value.push(doctor)
 	}
 	console.log(showDoctorList)
 }
-const navToDetail = () => {
+const navToDetail = (id,date) => {
+	console.log(id)
+	console.log(date)
 	uni.navigateTo({
-		url: '/pages/doctor-details/doctor-details'
+		url: `/pages/doctor-details/doctor-details?id=${id}&date=${date}`
 	})
 }
 const goBack = () => {

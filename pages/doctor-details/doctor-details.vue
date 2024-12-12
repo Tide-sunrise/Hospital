@@ -86,12 +86,23 @@
 
 <script setup>
 import { ref } from 'vue';
+import { onLoad } from '@dcloudio/uni-app'
+import { convertToCurrentYearDate } from '@/utils/date.js'
 
 //预约
 const infoPopup1 =ref(null)
 const infoPopup2 =ref(null)
 const uu=ref("等吧吃点式")
+const doctorId = ref(0)
+const date = ref(new Date().getTime())
 
+onLoad((option)=>{
+	doctorId.value = option.id
+	//option.date是类似于12-12的字符串，需要转换为时间
+	date.value = convertToCurrentYearDate(option.date)
+	console.log(doctorId.value)
+	console.log(date.value)
+})
 
 const timeSelect1 = () => {
 	infoPopup1.value.open();

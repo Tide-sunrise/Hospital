@@ -12,3 +12,16 @@ export function formatDateToChinese(date) {
 	}
 	return ans;
 }
+
+export function convertToCurrentYearDate(dateStr) {
+    // 获取当前年份
+    const currentYear = new Date().getFullYear();
+    
+    // 分割输入的日期字符串
+    const [month, day] = dateStr.split('-');
+    
+    // 创建新的 Date 对象
+    const date = new Date(currentYear, month - 1, day);
+    
+    return date;
+}

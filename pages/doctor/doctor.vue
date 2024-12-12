@@ -17,15 +17,15 @@
 			
 		</view>
 		<view class="upBar">
-			<view class="anyDay" @click="showAllDoctorList">
+			<view :class="['anyDay', datepos===0 ? 'self' : 'other']" @click="showAllDoctorList">
 				<text class="t1">所有</text>
 				<text class="t2">医生</text>
 			</view>
 			<scroll-view :show-scrollbar="false" scroll-x="true" class="fixedDay">
-				<view class="fixDay" v-for="item in date">
-					<view class="box" @click="showThisDay(item.date)">
-						<text class="t1">{{item.week}}</text>
-						<text class="t2">{{item.date}}</text>
+				<view class="fixDay" v-for="(item,index) in date" :key="item.id">
+					<view  :class="['box', item.id===datepos ? 'self' : 'other']" @click="showThisDay(item.time.date,item.id)">
+						<text class="t1">{{item.time.week}}</text>
+						<text class="t2">{{item.time.date}}</text>
 					</view>
 				</view>
 			</scroll-view>
@@ -147,16 +147,19 @@ const showDoctorList = ref([
 ])
 const doctorList = ref([])
 
+//高亮坐标
+const datepos=ref([0]);
+
 onLoad((option)=>{
 	specializationsId.value = option.specializationId
 	async function getDoctorList(){
 		//获取现在的日期与周几
 		let now = new Date()
-		date.value.push(formatDateToChinese(now))
+		date.value.push({id:1,time:formatDateToChinese(now)})
 		//将包括今天在内7天的总日期存入date中
 		for(let i=1;i<7;i++){
 			now.setDate(now.getDate()+1)
-			date.value.push(formatDateToChinese(now));
+			date.value.push({id:i+1,time:formatDateToChinese(now)});
 		}
 		//获取到所有该科室下医生的排班信息
 		let res = await getBySpecializationId(specializationsId.value)
@@ -212,8 +215,9 @@ onLoad((option)=>{
 
 const showAllDoctorList = () => {
 	showDoctorList.value = doctorList.value
+	datepos.value=0
 }
-const showThisDay = (date) => {
+const showThisDay = (date,id) => {
 	//把传递进来的日期的医生筛选出来，然后只显示这些医生这天的排班信息
 	showDoctorList.value = []
 	for(let i = 0;i<doctorList.value.length;i++){
@@ -227,6 +231,7 @@ const showThisDay = (date) => {
 		}
 		if(doctor.schedule.length!=0) showDoctorList.value.push(doctor)
 	}
+	datepos.value=id
 	console.log(showDoctorList)
 }
 const navToDetail = (id,date) => {
@@ -299,6 +304,15 @@ const goBack = () => {
 			border-radius: 20rpx;
 			box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
 			flex-direction: column;
+			&.self {
+			
+			  color: #3a9e8f;
+			 
+			}
+			
+			&.other {
+			  color: #000;
+			}
 		}
 		.fixedDay{
 			display: flex;
@@ -330,14 +344,23 @@ const goBack = () => {
 						justify-content: center;
 						align-items: center;
 						font-size: 30rpx;
-						color: #333;
+						// color: #333;
 					}
 					.t2{
 						display: flex;
 						justify-content: center;
 						align-items: center;
 						font-size: 30rpx;
-						color: #666;
+						// color: #666;
+					}
+					&.self {
+
+					  color: #3a9e8f;
+					 
+					}
+					
+					&.other {
+					  color: #000;
 					}
 				}
 				

@@ -103,11 +103,13 @@
 						isPaid.value = true;
 						console.log(data.value)
 						let obj = {
+							doctorId: data.value.doctorId,
 							doctorName: data.value.name,
+							scheduleId: data.value.scheduleId,
 							specialization: data.value.specializationName,
 							amount: data.value.titleFee,
 							patientId: data.value.patientId,
-							time: timehash[data.value.time],
+							time: data.value.time,
 							date: data.value.date.toLocaleString('zh-CN', {
 								year: 'numeric',
 								month: '2-digit',

@@ -74,7 +74,9 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { onLoad } from '@dcloudio/uni-app';
+import store from '../../store';
 import { getPatientById } from '@/api/patient.js'
+import { addAppointment,cancelAppointment,payCallback } from '@/api/appointment.js'
 
 // 假定的数据，实际应用中应该从后端获取
 const orderTime = ref('2024-12-11 13:36'); // 挂号订单生成的时间
@@ -84,11 +86,20 @@ const amount = ref(50); // 金额
 const patientName = ref('李四'); // 患者姓名
 const time=ref('14:30-15:30')
 const patient = ref({}); // 患者信息
+const appointmentData = ref({}); // 挂号信息
 
 const isPaid=ref(false)
 const infoPopup =ref(null)
 const isSuccess=ref(false)
 const regId=-1;
+const timehash = {
+		'1': '8:30-9:30',
+		'2': '9:30-10:30',
+		'3': '10:30-11:30',
+		'4': '14:30-15:30',
+		'5': '15:30-16:30',
+		'6': '16:30-17:30'
+	}
 
 async function getPatient(id){
 	let res = await getPatientById(id)
@@ -96,6 +107,37 @@ async function getPatient(id){
 	console.log(res)
 	patientName.value = res.name;
 	return res
+}
+async function addappointment(){
+	try{
+		console.log(appointmentData.value)
+		let res = await addAppointment(appointmentData.value)
+		appointmentData.value.appointmentId = res.data
+		console.log(res)
+	}catch(e){
+		console.error(e)
+		uni.navigateBack({delta:2})
+	}
+}
+async function cancelappointment(){
+	try{
+		let res = await cancelAppointment(appointmentData.value)
+		console.log(res)
+		uni.navigateBack({delta:2})
+	}catch(e){
+		console.error(e)
+	}
+}
+async function payCall(){
+	try{
+		let res = await payCallback({
+			appointmentId: appointmentData.value.appointmentId,
+			isPaid: isPaid.value
+		})
+		console.log(res)
+	}catch(e){
+		console.error(e)
+	}
 }
 
 onLoad((options)=>{
@@ -112,13 +154,21 @@ onLoad((options)=>{
 	department.value = data.specialization;
 	amount.value = data.amount;
 	patient.value = getPatient(data.patientId);
-	time.value = data.date + '  ' + data.time;
+	time.value = data.date + '  ' + timehash[data.time];
 	console.log(data)
 	//regId.value = parseInt(options.regId, 10);
-})
-
-onMounted(()=>{
-	//6个变量先通过regId.value获取数据
+	appointmentData.value = {
+		scheduleId: data.scheduleId,
+		doctorId: parseInt(data.doctorId),
+		patientId: data.patientId,
+		userId: parseInt(store.state.user),
+		appointmentDate: data.date,
+		appointmentTime: parseInt(data.time),
+		createTime: orderTime.value.substring(0, 10),
+		fee: parseInt(data.amount)*100
+	}
+	console.log(appointmentData.value)
+	addappointment();
 })
 
 const handlePayment=()=>{
@@ -126,12 +176,11 @@ const handlePayment=()=>{
 	isPaid.value=true
 	isSuccess.value=isPaid.value
 	infoPopup.value.open();
+	payCall();
 }
 
 const abandonPayment =()=>{
-	uni.navigateTo({
-		url:'/pages/index/index'
-	})
+	cancelappointment();
 }
 
 </script>

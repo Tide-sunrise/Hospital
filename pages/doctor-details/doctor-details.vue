@@ -106,10 +106,11 @@
 				</view>
 			</view>
 		</uni-popup>
-		
+
 		<uni-popup ref="infoPopup" type="bottom">
 			<view class="infoPopup">
-				<health-card v-for="item in 4" :cardinfo="{isExist:true,isChoose:false}"></health-card>
+				<health-card v-for="(item,index) in Allhealthcards" :cardinfo="{isExist:true,isChoose:false,name:item.name,id:item.id}" 
+				:key="index" @click="choseHealthcard(index)"></health-card>
 			</view>
 		</uni-popup>
 	</view>
@@ -121,7 +122,7 @@
 		ref
 	} from 'vue';
 	import {
-		onLoad
+		onLoad,onShow
 	} from '@dcloudio/uni-app'
 	import {
 		convertToCurrentYearDate
@@ -153,6 +154,15 @@
 			6: 0
 		}
 	})
+	const scheduleIdhash = ref({
+		1: -1,
+		2: -1,
+		3: -1,
+		4: -1,
+		5: -1,
+		6: -1,
+		})
+		
 	const f1 = ref(false)
 	const f2 = ref(false)
 	const timehash = {
@@ -176,6 +186,7 @@
 		name: '原神',
 		id: '114514191981011451'
 	})
+	const Allhealthcards = ref([])
 
 	async function getSchedule(z) {
 		let res = await getByDoctorIdAndDate(z)
@@ -185,12 +196,14 @@
 		data.value.name = res[0].doctorName
 		data.value.titleId = res[0].titleId
 		for (let i = 0; i < res.length; i++) {
-			if (res[i].time < 4) {
+			if (parseInt(res[i].time) < 4) {
 				f1.value = true
 				data.value.morning[res[i].time] = res[i].availableNumber
+				scheduleIdhash.value[res[i].time] = res[i].scheduleId
 			} else {
 				f2.value = true;
 				data.value.afternoon[res[i].time] = res[i].availableNumber
+				scheduleIdhash.value[res[i].time] = res[i].scheduleId
 			}
 		}
 		console.log(data)
@@ -202,7 +215,13 @@
 		healthcard.value.patientId = res[0].patientId
 		healthcard.value.name = res[0].name
 		healthcard.value.id = res[0].cleartextId
-		console.log(res);
+		for (let i = 0; i < res.length; i++) {
+			Allhealthcards.value.push({
+				patientId: res[i].patientId,
+				name: res[i].name,
+				id: res[i].cleartextId,
+			})
+		}
 	}
 
 	onLoad((option) => {
@@ -220,6 +239,17 @@
 		getSchedule(z)
 		getHealthcard()
 	})
+	onShow(()=>{
+		let z = {
+			doctorId: parseInt(doctorId.value, 10),
+			date: date.value.toLocaleString('zh-CN', {
+				year: 'numeric',
+				month: '2-digit',
+				day: '2-digit'
+			}).replace(/\//g, '-')
+		}
+		getSchedule(z)
+	})
 
 	const timeSelect1 = () => {
 		infoPopup1.value.open();
@@ -227,8 +257,8 @@
 	const timeSelect2 = () => {
 		infoPopup2.value.open();
 	}
-	
-	const cardSelect=()=>{
+
+	const cardSelect = () => {
 		infoPopup.value.open();
 	}
 	const navToCards = () => {
@@ -244,7 +274,8 @@
 			user: store.state.user,
 			doctorId: doctorId.value,
 			date: date.value,
-			time: time
+			time: time,
+			scheduleId: scheduleIdhash.value[time]
 		}
 		let info = encodeURIComponent(JSON.stringify(obj))
 		uni.navigateTo({
@@ -255,6 +286,11 @@
 
 	const navBack = () => {
 		uni.navigateBack()
+	}
+	
+	const choseHealthcard = (index) => {
+		healthcard.value = Allhealthcards.value[index]
+		infoPopup.value.close()
 	}
 </script>
 

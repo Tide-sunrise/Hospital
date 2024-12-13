@@ -163,16 +163,17 @@ onLoad((option)=>{
 		}
 		//获取到所有该科室下医生的排班信息
 		let res = await getBySpecializationId(specializationsId.value)
-		console.log(res)
 		let doctorHash = {}
 		res = res.data
+		console.log(res)
 		for(let i = 0;i<res.length;i++){
 			if(doctorHash.hasOwnProperty(res[i].doctorId)){
 				let part = formatDateToChinese(new Date(res[i].date))
 				if(doctorHash[res[i].doctorId].schedule.hasOwnProperty(part.date)){
 					doctorHash[res[i].doctorId].schedule[part.date].registration.push({
 						time: res[i].time,
-						remain: res[i].availableNumber
+						remain: res[i].availableNumber,
+						scheduleId: res[i].scheduleId
 					})
 				}
 				else{
@@ -181,7 +182,8 @@ onLoad((option)=>{
 						week: part.week,
 						registration:[{
 							time: res[i].time,
-							remain: res[i].availableNumber
+							remain: res[i].availableNumber,
+							scheduleId: res[i].scheduleId
 						}]
 					}
 				}
@@ -198,7 +200,8 @@ onLoad((option)=>{
 					week: part.week,
 					registration:[{
 						time: res[i].time,
-						remain: res[i].availableNumber
+						remain: res[i].availableNumber,
+						scheduleId: res[i].scheduleId
 					}]
 				}
 				doctorHash[res[i].doctorId] = doctor

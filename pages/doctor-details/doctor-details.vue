@@ -48,7 +48,7 @@
 			<view class="title">
 				<view class="text">当前就诊人</view>
 				<view class="button">
-					<wd-button size="small" type="info" @click="navToCards">健康卡管理</wd-button>
+					<wd-button size="small" type="info" @click="cardSelect">健康卡管理</wd-button>
 				</view>
 			</view>
 			<view class="logo">
@@ -106,6 +106,12 @@
 				</view>
 			</view>
 		</uni-popup>
+		
+		<uni-popup ref="infoPopup" type="bottom">
+			<view class="infoPopup">
+				<health-card v-for="item in 4" :cardinfo="{isExist:true}"></health-card>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
@@ -130,6 +136,7 @@
 	//预约
 	const infoPopup1 = ref(null)
 	const infoPopup2 = ref(null)
+	const infoPopup = ref(null)
 	const doctorId = ref(0)
 	const date = ref(new Date().getTime())
 	const data = ref({
@@ -220,7 +227,10 @@
 	const timeSelect2 = () => {
 		infoPopup2.value.open();
 	}
-
+	
+	const cardSelect=()=>{
+		infoPopup.value.open();
+	}
 	const navToCards = () => {
 		uni.navigateTo({
 			url: '/pages/health-cards/health-cards'

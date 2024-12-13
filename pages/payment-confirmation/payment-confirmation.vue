@@ -74,6 +74,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { onLoad } from '@dcloudio/uni-app';
+import { getPatientById } from '@/api/patient.js'
 
 // 假定的数据，实际应用中应该从后端获取
 const orderTime = ref('2024-12-11 13:36'); // 挂号订单生成的时间
@@ -82,14 +83,38 @@ const department = ref('内科'); // 科室名称
 const amount = ref(50); // 金额
 const patientName = ref('李四'); // 患者姓名
 const time=ref('14:30-15:30')
+const patient = ref({}); // 患者信息
 
 const isPaid=ref(false)
 const infoPopup =ref(null)
 const isSuccess=ref(false)
 const regId=-1;
 
+async function getPatient(id){
+	let res = await getPatientById(id)
+	res = res.data
+	console.log(res)
+	patientName.value = res.name;
+	return res
+}
+
 onLoad((options)=>{
-	regId.value = parseInt(options.regId, 10);
+	let data = JSON.parse(options.info);
+	orderTime.value = new Date().toLocaleString('zh-CN', {
+	  year: 'numeric',
+	  month: '2-digit',
+	  day: '2-digit',
+	  hour: '2-digit',
+	  minute: '2-digit',
+	  hour12: false
+	}).replace(/\//g, '-');
+	doctorName.value = data.doctorName;
+	department.value = data.specialization;
+	amount.value = data.amount;
+	patient.value = getPatient(data.patientId);
+	time.value = data.date + '  ' + data.time;
+	console.log(data)
+	//regId.value = parseInt(options.regId, 10);
 })
 
 onMounted(()=>{

@@ -45,7 +45,7 @@
 			<view class="bar"></view>
 			<view class="down-content">
 				<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-					<view class="downFixDay" v-for="it in item.schedule" @click="navToDetail(item.doctorId,it.date)">
+					<view class="downFixDay" v-for="it in item.schedule" @click="navToDetail(item.doctorId,it.date,item)">
 						<view class="box">
 							<text class="t1">{{it.week}}</text>
 							<text class="t2">{{it.date}}</text>
@@ -234,9 +234,10 @@ const showThisDay = (date,id) => {
 	datepos.value=id
 	console.log(showDoctorList)
 }
-const navToDetail = (id,date) => {
-	console.log(id)
-	console.log(date)
+const navToDetail = (id,date,doctor) => {
+	// console.log(id)
+	// console.log(date)
+	//console.log(doctor)
 	uni.navigateTo({
 		url: `/pages/doctor-details/doctor-details?id=${id}&date=${date}`
 	})

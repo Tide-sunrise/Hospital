@@ -16,19 +16,31 @@
 		</view>
 		<view class="time-of-registration">
 			<view class="time">
-				<text>就诊时间： <uni-dateformat :date="Date.now()" format="yyyy-MM-dd"></uni-dateformat></text>
+				<text>就诊时间： <uni-dateformat :date="date" format="yyyy-MM-dd"></uni-dateformat></text>
 			</view>
 			<view class="time-detail">
-				<view class="morning">
+				<view class="morning" v-if="f1">
 					<view class="text">上午 （08：30-11：30） 有号 </view>
 					<view class="button">
 						<wd-button size="small" @click="timeSelect1">预约</wd-button>
 					</view>
 				</view>
-				<view class="afternoon">
+				<view class="morning" v-else>
+					<view class="text">上午 （08：30-11：30） 无号 </view>
+					<view class="button">
+						<wd-button size="small" @click="timeSelect1" disabled>预约</wd-button>
+					</view>
+				</view>
+				<view class="afternoon" v-if="f2">
 					<view class="text">下午 （14：30-17：30） 有号</view>
 					<view class="button">
 						<wd-button size="small" @click="timeSelect2">预约</wd-button>
+					</view>
+				</view>
+				<view class="afternoon" v-else>
+					<view class="text">下午 （14：30-17：30） 无号</view>
+					<view class="button">
+						<wd-button size="small" @click="timeSelect2" disabled>预约</wd-button>
 					</view>
 				</view>
 			</view>
@@ -62,9 +74,16 @@
 					请选择时间段
 				</view>
 				<view class="grid">
-					<up-button @click="navToInfo('8:30-9:30')" color="rgb(66, 83, 216)" shape="circle">8:30-9:30</up-button>
-					<up-button color="rgb(66, 83, 216)" shape="circle">9:30-10:30</up-button>
-					<up-button color="rgb(66, 83, 216)" shape="circle">10:30-11:30 {{uu}}</up-button>
+					<!-- <up-button @click="navToInfo(1)" color="rgb(66, 83, 216)" shape="circle">
+						8:30-9:30</up-button>
+					<up-button @click="navToInfo(2)" color="rgb(66, 83, 216)" shape="circle">
+						9:30-10:30</up-button>
+					<up-button @click="navToInfo(3)" color="rgb(66, 83, 216)" shape="circle">
+						10:30-11:30 {{uu}}</up-button> -->
+					<up-button v-for="item,index in data.morning" @click="navToInfo(index)"
+					color="rgb(66, 83, 216)" shape="circle">
+						{{timehash[index]}} 剩余号量:{{item}}
+					</up-button>
 				</view>
 			</view>
 		</uni-popup>
@@ -75,9 +94,16 @@
 					请选择时间段
 				</view>
 				<view class="grid">
-					<up-button color="rgb(66, 83, 216)" shape="circle">14:30-15:30</up-button>
-					<up-button color="rgb(66, 83, 216)" shape="circle">15:30-16:30</up-button>
-					<up-button color="rgb(66, 83, 216)" shape="circle">16:30-17:30</up-button>
+					<!-- <up-button @click="navToInfo(4)" color="rgb(66, 83, 216)" shape="circle">
+						14:30-15:30</up-button>
+					<up-button @click="navToInfo(5)" color="rgb(66, 83, 216)" shape="circle">
+						15:30-16:30</up-button>
+					<up-button @click="navToInfo(6)" color="rgb(66, 83, 216)" shape="circle">
+						16:30-17:30</up-button> -->
+					<up-button v-for="item,index in data.afternoon" @click="navToInfo(index)"
+					color="rgb(66, 83, 216)" shape="circle">
+						{{timehash[index]}} 剩余号量:{{item}}
+					</up-button>
 				</view>
 			</view>
 		</uni-popup>
@@ -88,20 +114,62 @@
 import { ref } from 'vue';
 import { onLoad } from '@dcloudio/uni-app'
 import { convertToCurrentYearDate } from '@/utils/date.js'
+import { getByDoctorIdAndDate } from '@/api/schedule.js'
 
 //预约
 const infoPopup1 =ref(null)
 const infoPopup2 =ref(null)
-const uu=ref("等吧吃点式")
 const doctorId = ref(0)
 const date = ref(new Date().getTime())
+const data = ref({
+	morning: {
+		1: 0,
+		2: 0,
+		3: 0
+	},
+	afternoon: {
+		4: 0,
+		5: 0,
+		6: 0
+	}
+})
+const f1 = ref(false)
+const f2 = ref(false)
+const timehash={
+	'1': '8:30-9:30',
+	'2': '9:30-10:30',
+	'3': '10:30-11:30',
+	'4': '14:30-15:30',
+	'5': '15:30-16:30',
+	'6': '16:30-17:30'
+}
 
 onLoad((option)=>{
 	doctorId.value = option.id
 	//option.date是类似于12-12的字符串，需要转换为时间
 	date.value = convertToCurrentYearDate(option.date)
-	console.log(doctorId.value)
-	console.log(date.value)
+	let z = {
+		doctorId: parseInt(doctorId.value, 10),
+		date: date.value.toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g,'-')
+	}
+	async function getSchedule(){
+		let res = await getByDoctorIdAndDate(z)
+		res=res.data
+		let morning = {}
+		let afternoon = {}
+		for(let i = 0;i < res.length;i++){
+			if(res[i].time<4){
+				f1.value = true
+				data.value.morning[res[i].time]=res[i].availableNumber
+			}
+			else{
+				f2.value = true;
+				data.value.afternoon[res[i].time]=res[i].availableNumber
+			}
+		}
+		console.log(data)
+	}
+	getSchedule()
 })
 
 const timeSelect1 = () => {

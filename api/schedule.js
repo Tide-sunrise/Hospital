@@ -10,3 +10,15 @@ export function getBySpecializationId(id) {
 		method: 'get'
 	})
 }
+
+/**
+ * 通过医生Id和日期获取医生排班信息
+ * @param {Object} params 医生Id和日期
+ */
+export function getByDoctorIdAndDate(params) {
+	return request({
+		url: `/schedules/doctor`,
+		method: 'post',
+		data: JSON.stringify(params)
+	})
+}

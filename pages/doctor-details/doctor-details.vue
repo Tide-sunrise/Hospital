@@ -109,7 +109,7 @@
 		
 		<uni-popup ref="infoPopup" type="bottom">
 			<view class="infoPopup">
-				<health-card v-for="item in 4" :cardinfo="{isExist:true}"></health-card>
+				<health-card v-for="item in 4" :cardinfo="{isExist:true,isChoose:false}"></health-card>
 			</view>
 		</uni-popup>
 	</view>

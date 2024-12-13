@@ -1,6 +1,6 @@
 <template>
 	<view class="health-card">
-		<view v-if="cardExist" class="exist" @click="navToCards">
+		<view v-if="cardExist" class="exist" @click="cardinfo.isChoose?navToCards:changePos">
 			<view class="box2">
 				<view class="image">
 					<up-avatar :text="cardinfo.name" fontSize="18" randomBgColor size="80"></up-avatar>
@@ -28,6 +28,7 @@ const props = defineProps({
 		default(){
 			return {
 				isExist:false,
+				isChoose:true,
 			}
 		}
 	},
@@ -44,6 +45,9 @@ const navToCards = () => {
 		}
 	}
 	
+const changePos = () => {
+	// props.cardinfo.isChoose = !props.cardinfo.isChoose;
+}
 
 const navToform = () => {
 	uni.navigateTo({

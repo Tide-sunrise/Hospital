@@ -16,7 +16,7 @@ export function addAppointment(data) {
  * 取消挂号
  * @param {Object} data 预约信息
  */
-export function cancelAppointment(data) {
+export function cancelAppointmentById(data) {
 	    return request({
         url: '/appointments/cancel',
         method: 'post',
@@ -33,5 +33,16 @@ export function payCallback(data) {
         url: '/appointments/payment',
         method: 'post',
         data: data
+    })
+}
+
+/**
+ * 通过用户Id查询预约信息
+ * @param {Object} id
+ */
+export function getAppointmentsByUserId(id) {
+	    return request({
+        url: `/appointments/user/${id}`,
+        method: 'get'
     })
 }

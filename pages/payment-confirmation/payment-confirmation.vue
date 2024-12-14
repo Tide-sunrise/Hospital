@@ -73,7 +73,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { onLoad } from '@dcloudio/uni-app';
+import { onLoad,onShow } from '@dcloudio/uni-app';
 import store from '../../store';
 import { getPatientById } from '@/api/patient.js'
 import { addAppointment,cancelAppointment,payCallback } from '@/api/appointment.js'

@@ -53,7 +53,7 @@ function sleep(ms) {
 const confirmName =()=>{
 	if(!namePattern.test(name.value)){
 		uni.showToast({
-			title: '医院丁真，鉴定为：罕见',
+			title: '请输入正确的姓名',
 			icon: 'none',
 			duration: 1000
 		})
@@ -67,7 +67,7 @@ const confirmId =()=>{
 	// console.log("击败1");
 	if(!idPattern.test(id.value)){
 		uni.showToast({
-			title: '医院丁真，鉴定为：罕见',
+			title: '请输入格式正确的身份证号码',
 			icon: 'none',
 			duration: 1000
 		})

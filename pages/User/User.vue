@@ -19,7 +19,7 @@
 						<view class="text">我的挂号记录</view>
 					</view>
 					<view class="right">
-						<view class="text">{{recordNum}}</view>
+						<!-- <view class="text">{{recordNum}}</view> -->
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>

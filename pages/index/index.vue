@@ -66,7 +66,7 @@
 		    <swiper class="swiper" :current="activeIndex" @transition="onTransition" @animationfinish="onAnimationfinish">
 		        <swiper-item v-for="tab in Tabs" :key="tab.title">
 		            <view class="swiper-item-view">
-		                <small-icon v-for="item in 8"></small-icon>
+		                <small-icon v-for="item in tab.list" :item="item"></small-icon>
 		            </view>
 		        </swiper-item>
 		    </swiper>
@@ -107,7 +107,7 @@ import { getpatients } from '@/api/patient.js'
 const current = ref(0)
 
 const swiperList = ref([
-  'https://registry.npmmirror.com/wot-design-uni-assets/*/files/redpanda.jpg',
+  'https://assets.mayoclinic.org/content/dam/media/global/images/2023/06/09/mayo-building-image-001.jpg',
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/capybara.jpg',
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/panda.jpg',
   'https://registry.npmmirror.com/wot-design-uni-assets/*/files/moon.jpg',
@@ -128,31 +128,6 @@ const options= ref( {
 	}
 })
 const list= ref( [
-	// {
-	// 	isExist:true,
-	// 	name:"原神",
-	// 	id:"114514191981011451"
-	// },
-	// {
-	// 	isExist:true,
-	// 	name:"原神",
-	// 	id:"114514191981011451"
-	// },
-	// {
-	// 	isExist:true,
-	// 	name:"原神",
-	// 	id:"114514191981011451"
-	// },
-	// {
-	// 	isExist:true,
-	// 	name:"原神",
-	// 	id:"114514191981011451"
-	// },
-	// {
-	// 	isExist:false,
-	// 	name:"原神",
-	// 	id:"114514191981011451"
-	// }
 ])
 
 const plus=ref({
@@ -182,18 +157,133 @@ const noticeList = ref( [
       ])
 
 //导航栏
-const myFunction = ref([{name:"挂号",url:"/pages/registration/registration"},{name:"击败"},{name:"吧唧"}])
+const myFunction = ref([
+	{
+		name:"挂号",
+		url:"/pages/registration/registration",
+		picurl:"../../static/zxj/yisheng.png",
+	},
+	{
+		name:"问诊",
+		picurl:"../../static/zxj/xiaoxi.png",
+	},
+	{
+		name:"缴费",
+		picurl:"../../static/zxj/fukuan.png",
+	},
+])
 
 //底部导航栏使用
 const itemTab=ref({myTabbar:0})
 
 //滑动标签使用
 const Tabs = ref([
-	{title:"常用"},
-	{title:"门诊"},
-	{title:"住院"},
-	{title:"其他"},
-	{title:"动态"}
+	{
+		title:"常用",
+		list:[
+			{
+				name:"挂号",
+				url:"/pages/registration/registration",
+				picurl:"../../static/zxj/yisheng.png",
+			},
+			{
+				name:"本地门诊",
+				picurl:"../../static/zxj/yiyuan.png",
+			},
+			{
+				name:"海外门诊",
+				picurl:"../../static/zxj/youjian.png",
+			},
+			{
+				name:"多学科综合",
+				picurl:"../../static/zxj/yuyue.png",
+			},
+			{
+				name:"特色药物",
+				picurl:"../../static/zxj/yaowan.png",
+			},
+			{
+				name:"自助缴费",
+				picurl:"../../static/zxj/zixun.png",
+			},
+			{
+				name:"云报告",
+				picurl:"../../static/zxj/yibao.png",
+			},
+			{
+				name:"挂号记录",
+				url:"/pages/reg-record/reg-record",
+				picurl:"../../static/zxj/binglidan.png",
+			}
+		]
+		
+	},
+	{
+		title:"住院",
+		list:[
+			{
+				name:"住院预约",
+				picurl:"../../static/zxj/bingfang.png",
+			},
+			{
+				name:"住院缴费",
+				picurl:"../../static/zxj/baoxianxiang.png",
+			},
+			{
+				name:"出院结算",
+				picurl:"../../static/zxj/guahao.png",
+			},
+			{
+				name:"住院病历",
+				picurl:"../../static/zxj/yidian.png",
+			},
+			{
+				name:"出院带药",
+				picurl:"../../static/zxj/yaopian.png",
+			},
+			{
+				name:"手术进度",
+				picurl:"../../static/zxj/yisheng.png",
+			},
+			{
+				name:"电子陪护",
+				picurl:"../../static/zxj/zhongping.png",
+			},
+			{
+				name:"检查预约",
+				picurl:"../../static/zxj/zhongyi.png",
+			}
+		]
+	},
+	{
+		title:"服务",
+		list:[
+			{
+				name:"来院导航",
+				picurl:"../../static/zxj/biaoqian.png",
+			},
+			{
+				name:"轮椅租赁",
+				picurl:"../../static/zxj/canjiren.png",
+			},
+			{
+				name:"孕妇服务",
+				picurl:"../../static/zxj/yunfu.png",
+			},
+			{
+				name:"满意调查",
+				picurl:"../../static/zxj/yuyue.png",
+			},
+			{
+				name:"疫苗咨询",
+				picurl:"../../static/zxj/zhusheqi.png",
+			},
+			{
+				name:"物价查询",
+				picurl:"../../static/zxj/fukuan.png",
+			}
+		]
+	}
 ])
 const activeIndex = ref(0)
 const tabs = ref([])

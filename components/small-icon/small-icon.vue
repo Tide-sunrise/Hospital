@@ -1,9 +1,9 @@
 <template>
 	<view class="smallIcon">
 		<navigator class="box"
-		:url="item.url || defaultUrl">
+		:url="item.url">
 			<!-- <view class="empty"></view> -->
-			<image class="pic" :src="item.picurl || defaultPicurl" mode="aspectFill"></image>
+			<image class="pic" :src="item.picurl || defaultPicurl" mode="aspectFit"></image>
 			<view class="text">{{item.name}}</view>
 		</navigator>
 	</view>
@@ -21,7 +21,6 @@ defineProps({
 			return {
 				name:"默认名称",
 				picurl:"../../static/logo.png",
-				url:"/pages/registration/registration"
 			}
 		}
 	}

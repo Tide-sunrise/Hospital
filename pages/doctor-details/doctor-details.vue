@@ -155,12 +155,12 @@
 		}
 	})
 	const scheduleIdhash = ref({
-		1: -1,
-		2: -1,
-		3: -1,
-		4: -1,
-		5: -1,
-		6: -1,
+		1: 0,
+		2: 0,
+		3: 0,
+		4: 0,
+		5: 0,
+		6: 0,
 		})
 		
 	const f1 = ref(false)
@@ -191,11 +191,13 @@
 	async function getSchedule(z) {
 		let res = await getByDoctorIdAndDate(z)
 		res = res.data
+		console.log(res)
 		let morning = {}
 		let afternoon = {}
 		data.value.name = res[0].doctorName
 		data.value.titleId = res[0].titleId
 		for (let i = 0; i < res.length; i++) {
+			if(res[i].availableNumber<1) continue;
 			if (parseInt(res[i].time) < 4) {
 				f1.value = true
 				data.value.morning[res[i].time] = res[i].availableNumber
@@ -206,7 +208,7 @@
 				scheduleIdhash.value[res[i].time] = res[i].scheduleId
 			}
 		}
-		console.log(data)
+		//console.log(data)
 	}
 
 	async function getHealthcard() {

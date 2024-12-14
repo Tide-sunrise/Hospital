@@ -155,9 +155,9 @@ onLoad((option)=>{
 	async function getDoctorList(){
 		//获取现在的日期与周几
 		let now = new Date()
-		date.value.push({id:1,time:formatDateToChinese(now)})
+		//date.value.push({id:1,time:formatDateToChinese(now)})
 		//将包括今天在内7天的总日期存入date中
-		for(let i=1;i<7;i++){
+		for(let i=0;i<6;i++){
 			now.setDate(now.getDate()+1)
 			date.value.push({id:i+1,time:formatDateToChinese(now)});
 		}
@@ -166,9 +166,13 @@ onLoad((option)=>{
 		let doctorHash = {}
 		res = res.data
 		console.log(res)
+		now = new Date()
 		for(let i = 0;i<res.length;i++){
+			let z = new Date(res[i].date)
+			//如果月和日与今天相同，则忽略
+			if(now.getDate() == z.getDate() && now.getMonth() == z.getMonth()) continue
+			let part = formatDateToChinese(z)
 			if(doctorHash.hasOwnProperty(res[i].doctorId)){
-				let part = formatDateToChinese(new Date(res[i].date))
 				if(doctorHash[res[i].doctorId].schedule.hasOwnProperty(part.date)){
 					doctorHash[res[i].doctorId].schedule[part.date].registration.push({
 						time: res[i].time,
@@ -194,7 +198,6 @@ onLoad((option)=>{
 				doctor.name = res[i].doctorName
 				doctor.title = titlehash[res[i].titleId]
 				doctor.schedule = {}
-				let part = formatDateToChinese(new Date(res[i].date))
 				doctor.schedule[part.date]={
 					date: part.date,
 					week: part.week,

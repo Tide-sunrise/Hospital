@@ -121,7 +121,10 @@ async function addappointment(){
 }
 async function cancelappointment(){
 	try{
-		let res = await cancelAppointment(appointmentData.value)
+		let res = await payCallback({
+			appointmentId: appointmentData.value.appointmentId,
+			isPaid: false
+		})
 		console.log(res)
 		uni.navigateBack({delta:2})
 	}catch(e){
@@ -180,7 +183,12 @@ const handlePayment=()=>{
 }
 
 const abandonPayment =()=>{
-	cancelappointment();
+	if(!isPaid.value) cancelappointment();
+	else{
+		uni.navigateTo({
+			url: '/pages/index/index'
+		})
+	}
 }
 
 </script>

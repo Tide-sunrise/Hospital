@@ -42,3 +42,27 @@ export function getAllDoctorInfo() {
         method: 'get',
     })
 }
+
+/**
+ * 通过名字查询医生信息
+ * @param {Object} name 医生名字
+ */
+export function getDoctorInfoByName(name) {
+	    return request({
+        url: '/doctors/searchByName',
+        method: 'get',
+		data: name
+    })
+}
+
+/**
+ * 通过介绍查询医生
+ * @param {Object} introduction 医生介绍
+ */
+export function getDoctorInfoByIntroduction(introduction) {
+	    return request({
+        url: '/doctors/searchByIntroduction',
+        method: 'get',
+		data: introduction
+    })
+}

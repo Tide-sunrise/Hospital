@@ -97,13 +97,15 @@ const handleSubmit = async() => {
 	//此处应为健康卡数据上传数据库逻辑
 	let res = await addHealthCard({
 		name: name.value,
-		plaintextId: await encryptWithPublicKey(id.value),
-		hash: CryptoJS.MD5(id.value).toString()
+		plaintextId: id.value,
+		hashedId: CryptoJS.MD5(id.value).toString()
 	})
 	
-	await sleep(1000); // 延迟 1000 毫秒（1 秒）
+	await sleep(500);
 
-	uni.navigateBack();
+	uni.navigateTo({
+		url: '/pages/index/index'
+	})
 }
 
 const goback =()=>{

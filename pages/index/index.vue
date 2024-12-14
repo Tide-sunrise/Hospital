@@ -103,6 +103,7 @@ import { ref, onMounted } from 'vue';
 import store from '../../store/index.js';
 import { tabBarList } from '../../common/data/data.js'
 import { getpatients } from '@/api/patient.js'
+import { onShow } from '@dcloudio/uni-app';
 //滚动
 const current = ref(0)
 
@@ -127,8 +128,7 @@ const options= ref( {
 	        rotate: false,
 	}
 })
-const list= ref( [
-])
+const list= ref([])
 
 const plus=ref({
 		isExist:false,
@@ -296,14 +296,12 @@ const newsLists = ref([
 	{id:444,title:"这是资讯4"}
 ])
 
-//导航栏
-onMounted(()=>{
-	async function getHealthCard(){
+async function getHealthCard(){
 		console.log(store.state.user)
 		let res = await getpatients(store.state.user)
 		console.log(res)
 		res = res.data
-		// list.value = []
+		list.value = []
 		for (let index = 0; index < res.length; index++) {
 			const element = res[index];
 			list.value.push({
@@ -319,10 +317,34 @@ onMounted(()=>{
 		})
 		console.log(list)
 	}
-	console.log(list)
+
+//导航栏
+onMounted(()=>{
 	getHealthCard()
 })
 
+// onShow(async () =>{
+// 	console.log(store.state.user)
+// 	let res = await getpatients(store.state.user)
+// 	console.log(res)
+// 	res = res.data
+// 	list.value = []
+// 	for (let index = 0; index < res.length; index++) {
+// 		const element = res[index];
+// 		list.value.push({
+// 			isExist:true,
+// 			name:element.name,
+// 			id:element.cleartextId
+// 		})
+// 	}
+// 	list.value.push({
+// 		isExist:false,
+// 		name:"原神",
+// 		id:"114514191981011451"
+// 	})
+// 	console.log("onShow")
+// 	console.log(list)
+// })
 
 //滚动
 const onClick =(item)=>{

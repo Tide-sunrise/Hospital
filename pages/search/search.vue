@@ -60,21 +60,21 @@
 					<view class="up-content">
 						<view class="box2">
 							<view class="image">
-								<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
+								<image :src="item.avatar" mode="aspectFill"></image>
 							</view>
 							<view class="row">
-								<view class="text">原神</view>
-								<view class="smallText">mihoyo</view>
+								<view class="text">{{item.name}}</view>
+								<view class="smallText">{{item.title}}</view>
 							</view>
 						</view>
 					</view>
 					<view class="bar"></view>
 					<view class="down-content">
 						<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-							<view class="downFixDay" v-for="item in 8">
-								<view class="box" @click="navToDetail">
-									<text class="t1">周日</text>
-									<text class="t2">9-15</text>
+							<view class="downFixDay" v-for="it in item.schedule" navToDetail(item.doctorId,it.date,item)>
+								<view class="box">
+									<text class="t1">{{it.week}}</text>
+									<text class="t2">{{it.date}}</text>
 								</view>
 							</view>
 						</scroll-view>
@@ -111,6 +111,10 @@
 		onUnload,
 		onReachBottom
 	} from "@dcloudio/uni-app";
+	import {
+		getDoctorInfoByName,
+		getDoctorInfoByIntroduction
+	} from "@/api/doctor.js";
 
 	//查询参数
 	const queryParams = ref({
@@ -155,8 +159,15 @@
 	}
 
 	//点击搜索
-	const onSearch = (value) => {
-		classList.value = [1]
+	const onSearch = async (value) => {
+		let res;
+		if(typeSelect.value=="按医生"){
+			res = await getDoctorInfoByName({name:value});
+		}
+		else if(typeSelect.value=="按疾病"){
+			res = await getDoctorInfoByIntroduction({introduction:value});
+		}
+		console.log(res)
 	}
 
 	//点击清除按钮

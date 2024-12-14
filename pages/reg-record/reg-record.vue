@@ -17,6 +17,9 @@
 			
 		</view>
 		<view class="box" v-for="(item,index) in recordList">
+			<view class="info-title" v-if="item.isPaid">
+				<label>订单已失效</label>
+			</view>
 			<view class="info-item">
 				<label>订单生成时间:</label>
 				<span>{{ item.orderTime }}</span>
@@ -45,6 +48,9 @@
 				<label>支付状态:</label>
 				<span>{{ item.isPaid?'已支付':'未支付' }}</span>
 			</view>
+			<view class="button">
+				<wd-button type="warning" @click="nogate" :disabled="item.isPaid">取消挂号</wd-button>
+			</view>
 		</view>
 	</view>
 	
@@ -67,6 +73,28 @@
 		uni.navigateTo({
 			url:'/pages/User/User'
 		})
+	}
+	
+	//取消挂号
+	const nogate = () => {
+		uni.showModal({
+			title: '提示',
+			content: '是否取消挂号',
+			success: function(res) {
+				if (res.confirm) {
+					uni.showToast({
+						title: '取消成功',
+						icon: 'success',
+						duration: 2000
+					});
+					
+					//取消挂号逻辑
+					
+				} else if (res.cancel) {
+					console.log('用户点击取消');
+				}
+			}
+		});
 	}
 </script>
 
@@ -116,6 +144,17 @@
 		margin: 30rpx auto;
 		background: #fff;
 		padding: 30rpx 0;
+		.info-title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 30rpx;
+			label {
+				font-size: 15px;
+				font-weight: bold;
+				color: #f00;
+			}
+		}
 		.info-item {
 			display: flex;
 			justify-content: space-between;
@@ -129,6 +168,11 @@
 			span {
 				font-size: 16px;
 			}
+		}
+		.button{
+			display: flex;
+			justify-content: center;
+			margin-top: 30rpx;
 		}
 	}	
 }

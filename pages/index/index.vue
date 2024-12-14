@@ -14,7 +14,7 @@
 			    :list="swiperList"
 			    previousMargin="24px"
 			    nextMargin="24px"
-				@click="onClick"
+
 			  >
 			  </wd-swiper>
 			</view>

@@ -18,7 +18,7 @@
 			
 		</view>
 		<view class="pic">
-			<image src="../../static/picture/doctor.jpg" mode="aspectFill"></image>
+			<image src="../../static/picture/guahao.jpg" mode="aspectFill"></image>
 		</view>
 		<view class="wraper">
 		    <wd-sidebar v-model="active" @change="handleChange" style="width: 250rpx;">

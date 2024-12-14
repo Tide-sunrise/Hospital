@@ -25,28 +25,28 @@
 		</view>
 
 
-		
-			<view class="history">
-				<view class="topTitle">
-					<view class="text">最近搜索</view>
-					<view class="icon" @click="removeHistory">
-						<uni-icons type="trash" size="25"></uni-icons>
-					</view>
-				</view>
-				<view class="tabs">
-					<view class="tab" v-for="tab in historySearch" :key="tab" @click="clickTab(tab)">{{tab}}</view>
-				</view>
-			</view>
 
-			<view class="recommend">
-				<view class="topTitle">
-					<view class="text">热门搜索</view>
-				</view>
-				<view class="tabs">
-					<view class="tab" v-for="tab in recommendList" :key="tab" @click="clickTab(tab)">{{tab}}</view>
+		<view class="history">
+			<view class="topTitle">
+				<view class="text">最近搜索</view>
+				<view class="icon" @click="removeHistory">
+					<uni-icons type="trash" size="25"></uni-icons>
 				</view>
 			</view>
-		
+			<view class="tabs">
+				<view class="tab" v-for="tab in historySearch" :key="tab" @click="clickTab(tab)">{{tab}}</view>
+			</view>
+		</view>
+
+		<view class="recommend">
+			<view class="topTitle">
+				<view class="text">热门搜索</view>
+			</view>
+			<view class="tabs">
+				<view class="tab" v-for="tab in recommendList" :key="tab" @click="clickTab(tab)">{{tab}}</view>
+			</view>
+		</view>
+
 
 
 		<view class="noSearch" v-if="classList.length===0">
@@ -54,35 +54,35 @@
 		</view>
 
 
-		
-			<view class="list">
-				<view class="doctor" v-for="(item,index) in classList">
-					<view class="up-content">
-						<view class="box2">
-							<view class="image">
-								<image :src="item.avatar" mode="aspectFill"></image>
-							</view>
-							<view class="row">
-								<view class="text">{{item.name}}</view>
-								<view class="smallText">{{item.title}}</view>
-							</view>
+
+		<view class="list">
+			<view class="doctor" v-for="(item,index) in classList">
+				<view class="up-content">
+					<view class="box2">
+						<view class="image">
+							<image :src="item.avatar" mode="aspectFill"></image>
+						</view>
+						<view class="row">
+							<view class="text">{{item.name}}</view>
+							<view class="smallText">{{item.title}}</view>
 						</view>
 					</view>
-					<view class="bar"></view>
-					<view class="down-content">
-						<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
-							<view class="downFixDay" v-for="it in item.schedule" navToDetail(item.doctorId,it.date,item)>
-								<view class="box">
-									<text class="t1">{{it.week}}</text>
-									<text class="t2">{{it.date}}</text>
-								</view>
+				</view>
+				<view class="bar"></view>
+				<view class="down-content">
+					<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
+						<view class="downFixDay" v-for="it in item.schedule" @click="navToDetail(item.doctorId,it.date,item)">
+							<view class="box">
+								<text class="t1">{{it.week}}</text>
+								<text class="t2">{{it.date}}</text>
 							</view>
-						</scroll-view>
-					</view>
+						</view>
+					</scroll-view>
 				</view>
 			</view>
-			<!-- <view v-if="noData || classList.length"><uni-load-more :status="noData?'noMore':'loading'" /></view> -->
-		
+		</view>
+		<!-- <view v-if="noData || classList.length"><uni-load-more :status="noData?'noMore':'loading'" /></view> -->
+
 
 		<uni-popup ref="infoPopup" type="bottom">
 			<view class="infoPopup">
@@ -115,6 +115,12 @@
 		getDoctorInfoByName,
 		getDoctorInfoByIntroduction
 	} from "@/api/doctor.js";
+	import {
+		getByDoctorIdAndDate
+	} from '@/api/schedule.js'
+	import {
+		formatDateToChinese
+	} from '@/utils/date.js'
 
 	//查询参数
 	const queryParams = ref({
@@ -135,15 +141,22 @@
 	const noSearch = ref(false);
 
 	//搜索结果列表
-	const classList = ref([
-		// {_id:123123,smallPicurl:'https://mp-0cb878b7-99ec-44ea-8246-12b123304b05.cdn.bspapp.com/xxmBizhi/20231102/1698905562410_0_small.webp'}
-	]);
+	const classList = ref([]);
 
 	const searchValue = ref("")
-	
+
 	//搜索栏切换
 	const infoPopup = ref(null)
 	const typeSelect = ref("请选择")
+	const titlehash = {
+		'1': '医士',
+		'2': '医师',
+		'3': '主治医师',
+		'4': '副主任医师',
+		'5': '主任医师',
+		'6': '专家'
+	}
+	
 	const timeSelect = () => {
 		infoPopup.value.open();
 	}
@@ -157,17 +170,79 @@
 		typeSelect.value = "按疾病";
 		infoPopup.value.close();
 	}
+	
+	const navToDetail = (id,date,doctor) => {
+		// console.log(id)
+		// console.log(date)
+		//console.log(doctor)
+		uni.navigateTo({
+			url: `/pages/doctor-details/doctor-details?id=${id}&date=${date}`
+		})
+	}
 
 	//点击搜索
 	const onSearch = async (value) => {
 		let res;
-		if(typeSelect.value=="按医生"){
-			res = await getDoctorInfoByName({name:value});
-		}
-		else if(typeSelect.value=="按疾病"){
-			res = await getDoctorInfoByIntroduction({introduction:value});
+		if (typeSelect.value == "按医生") {
+			res = await getDoctorInfoByName({
+				name: value
+			});
+		} else if (typeSelect.value == "按疾病") {
+			res = await getDoctorInfoByIntroduction({
+				introduction: value
+			});
 		}
 		console.log(res)
+		let doctorHash = {}
+		res = res.data
+		
+		console.log(res)
+		let now = new Date()
+		for (let i = 0; i < res.length; i++) {
+			let z = new Date(res[i].date)
+			//如果月和日与今天相同，则忽略
+			if (now.getDate() == z.getDate() && now.getMonth() == z.getMonth()) continue
+			let part = formatDateToChinese(z)
+			if (doctorHash.hasOwnProperty(res[i].doctorId)) {
+				if (doctorHash[res[i].doctorId].schedule.hasOwnProperty(part.date)) {
+					doctorHash[res[i].doctorId].schedule[part.date].registration.push({
+						time: res[i].time,
+						remain: res[i].availableNumber,
+						scheduleId: res[i].scheduleId
+					})
+				} else {
+					doctorHash[res[i].doctorId].schedule[part.date] = {
+						date: part.date,
+						week: part.week,
+						registration: [{
+							time: res[i].time,
+							remain: res[i].availableNumber,
+							scheduleId: res[i].scheduleId
+						}]
+					}
+				}
+			} else {
+				let doctor = {}
+				doctor.doctorId = res[i].doctorId
+				doctor.name = res[i].doctorName
+				doctor.title = titlehash[res[i].titleId]
+				doctor.schedule = {}
+				doctor.schedule[part.date] = {
+					date: part.date,
+					week: part.week,
+					registration: [{
+						time: res[i].time,
+						remain: res[i].availableNumber,
+						scheduleId: res[i].scheduleId
+					}]
+				}
+				doctorHash[res[i].doctorId] = doctor
+			}
+		}
+		for (let key in doctorHash) {
+			classList.value.push(doctorHash[key])
+		}
+		console.log(classList)
 	}
 
 	//点击清除按钮
@@ -175,9 +250,9 @@
 
 	}
 
-	const goback = ()=>{
+	const goback = () => {
 		uni.navigateTo({
-			url:'/pages/index/index'
+			url: '/pages/index/index'
 		})
 	}
 
@@ -213,6 +288,7 @@
 <style lang="scss" scoped>
 	.searchLayout {
 		padding-top: 50rpx;
+
 		.searchBar {
 			padding: 0 30rpx;
 			display: flex;
@@ -221,7 +297,7 @@
 			// background: pink;
 			justify-content: center;
 			align-items: center;
-			
+
 			.downBox {
 				background-color: white;
 				// padding-top: 10rpx;
@@ -246,8 +322,9 @@
 			.search {
 				width: 75%;
 				padding: 0 10rpx;
+
 				// background: #fff;
-				.u-input{
+				.u-input {
 					background: #fff;
 				}
 			}
@@ -292,33 +369,38 @@
 			gap: 5rpx;
 			padding: 20rpx 0rpx;
 
-			.doctor{
+			.doctor {
 				height: 400rpx;
 				width: 690rpx;
 				border-radius: 30rpx;
-				box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+				box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 				margin: 20rpx 30rpx;
 				background-color: white;
+
 				// background: red;
-				.up-content{
+				.up-content {
 					height: 250rpx;
 					// background: skyblue;
 					border-radius: 30rpx 30rpx 0 0;
-					.box2{
+
+					.box2 {
 						display: flex;
 						flex-direction: row;
-						.image{
+
+						.image {
 							width: 250rpx;
 							box-sizing: border-box;
 							height: 250rpx;
-							image{
-								margin:25rpx ;
+
+							image {
+								margin: 25rpx;
 								width: 200rpx;
 								height: 200rpx;
 								border-radius: 50%;
 							}
 						}
-						.row{
+
+						.row {
 							width: 440rpx;
 							height: 200rpx;
 							margin: 25rpx;
@@ -328,11 +410,13 @@
 							// align-items: center;
 							font-size: 18px;
 							// background: red;
-							color:#333;
-							.text{
+							color: #333;
+
+							.text {
 								// padding:0rpx;
 							}
-							.smallText{
+
+							.smallText {
 								// padding-right:0 5px;
 								// margin-bottom: 180rpx;
 								font-size: 25rpx;
@@ -340,46 +424,53 @@
 						}
 					}
 				}
-				.bar{
+
+				.bar {
 					height: 5rpx;
 					background: #e8e8e4;
 				}
-				.down-content{
+
+				.down-content {
 					height: 145rpx;
 					// background: pink;
 					border-radius: 0 0 30rpx 30rpx;
-					.downFixedDay{
+
+					.downFixedDay {
 						display: flex;
 						flex-direction: row;
 						max-width: 670rpx;
 						height: 145rpx;
 						padding: 10rpx;
-						white-space:nowrap; 
+						white-space: nowrap;
 						scroll-behavior: smooth;
 						-webkit-overflow-scrolling: touch;
-						.downFixDay{
+
+						.downFixDay {
 							width: 125rpx;
 							height: 125rpx;
 							margin: 0 5rpx 0 5rpx;
 							// background-color: red;
 							border-radius: 20rpx;
-							box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+							box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 							display: inline-block;
-							.box{
+
+							.box {
 								display: flex;
 								align-items: center;
 								justify-content: center;
 								width: 100%;
 								height: 100%;
 								flex-direction: column;
-								.t1{
+
+								.t1 {
 									display: flex;
 									justify-content: center;
 									align-items: center;
 									font-size: 30rpx;
 									color: #333;
 								}
-								.t2{
+
+								.t2 {
 									display: flex;
 									justify-content: center;
 									align-items: center;
@@ -387,7 +478,7 @@
 									color: #666;
 								}
 							}
-							
+
 						}
 					}
 				}

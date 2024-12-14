@@ -17,7 +17,7 @@
 
 		</view>
 		<view class="box" v-for="(item,index) in recordList">
-			<view class="info-title" v-if="item.isPaid">
+			<view class="info-title" v-if="!item.isPaid">
 				<label>订单已失效</label>
 			</view>
 			<view class="info-item">
@@ -45,7 +45,7 @@
 				<span>{{ item.time }}</span>
 			</view>
 			<view class="button">
-				<wd-button type="warning" @click="nogate(item.appointmentId)" :disabled="item.isPaid">取消挂号</wd-button>
+				<wd-button type="warning" @click="nogate(item.appointmentId)" :disabled="!item.isPaid">取消挂号</wd-button>
 			</view>
 		</view>
 	</view>
@@ -82,9 +82,9 @@
 		let now = new Date();
 		let target = new Date(time);
 		if (target - now < 3600000) {
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
@@ -110,7 +110,7 @@
 				amount: parseFloat(res.data[i].fee).toFixed(2) / 100,
 				patientName: res.data[i].patientName,
 				time: res.data[i].appointmentDate + ' ' + res.data[i].appointmentTimeInfo,
-				isPaid: canCancel(makeTime(res.data[i]))
+				isPaid: canCancel(makeTime(res.data[i])) && (res.data[i].status==2)
 			}
 			recordList.value.push(item);
 		}

@@ -21,3 +21,15 @@ export function getpatients(id){
 		method:'get',
 	})
 }
+
+/**
+ * 添加健康卡
+ * @param {Object} data 健康卡信息
+ */
+export function addHealthCard(data) {
+	return request({
+		url: '/patients',
+		method: 'put',
+		data: data
+	})
+}

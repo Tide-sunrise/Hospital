@@ -249,9 +249,7 @@ const navToDetail = (id,date,doctor) => {
 	})
 }
 const goBack = () => {
-	uni.navigateTo({
-		url:'/pages/registration/registration'
-	})
+	uni.navigateBack()
 }
 </script>
 

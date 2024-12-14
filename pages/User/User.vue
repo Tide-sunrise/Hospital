@@ -2,7 +2,7 @@
 	<view class="userLayout pageBg">
 		<view class="userInfo">
 			<view class="avatar">
-				<image src="../../common/image/1726211145961.jpg" mode="aspectFill"></image>
+				<image src="../../static/zxj/v-Photoroom.png" mode="aspectFill"></image>
 			</view>
 			<view class="ip">100.100.100.100</view>
 			<view class="address">来自于：中南大学</view>

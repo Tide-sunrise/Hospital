@@ -1,17 +1,17 @@
 <template>
 	<view class="catalogsLayout">
 		<view class="imageBackground">
-			<image src="../../static/picture/xiangya2.jpg" mode="aspectFill"></image>
+			<image src="../../static/zhongyi.jpg" mode="aspectFill"></image>
 		</view>
 		
 		<view class="logo">
-			<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
+			<image src="../../static/zxj/v.png" mode="aspectFill"></image>
 		</view>
 		<view class="content ">
-			<view class="title">米家医院</view>
+			<view class="title">瓦纳海姆医院</view>
 			<view class="box">
 				<view class="swiper-item-view">
-				    <small-icon v-for="item in 8"></small-icon>
+				    <small-icon v-for="item in iconList" :item="item"></small-icon>
 				</view>
 			</view>
 		</view>
@@ -27,6 +27,44 @@ import {tabBarList} from '../../common/data/data.js'
 
 const itemTab=ref({myTabbar:1})
 
+const iconList=ref(
+	[
+		{
+			name:"挂号",
+			url:"/pages/registration/registration",
+			picurl:"../../static/zxj/yisheng.png",
+		},
+		{
+			name:"本地门诊",
+			picurl:"../../static/zxj/yiyuan.png",
+		},
+		{
+			name:"海外门诊",
+			picurl:"../../static/zxj/youjian.png",
+		},
+		{
+			name:"多学科综合",
+			picurl:"../../static/zxj/yuyue.png",
+		},
+		{
+			name:"特色药物",
+			picurl:"../../static/zxj/yaowan.png",
+		},
+		{
+			name:"自助缴费",
+			picurl:"../../static/zxj/zixun.png",
+		},
+		{
+			name:"云报告",
+			picurl:"../../static/zxj/yibao.png",
+		},
+		{
+			name:"挂号记录",
+			url:"/pages/reg-record/reg-record",
+			picurl:"../../static/zxj/binglidan.png",
+		}
+	]
+)
 
 </script>
 
@@ -67,6 +105,7 @@ const itemTab=ref({myTabbar:1})
 			font-size: 56rpx;
 			color: #000;
 			justify-content: center;
+			font-weight: bold;
 		}
 		.box {
 		    height: 400rpx;

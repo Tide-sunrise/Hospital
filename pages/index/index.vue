@@ -107,11 +107,11 @@ import { getpatients } from '@/api/patient.js'
 const current = ref(0)
 
 const swiperList = ref([
-  'https://assets.mayoclinic.org/content/dam/media/global/images/2023/06/09/mayo-building-image-001.jpg',
-  'https://registry.npmmirror.com/wot-design-uni-assets/*/files/capybara.jpg',
-  'https://registry.npmmirror.com/wot-design-uni-assets/*/files/panda.jpg',
-  'https://registry.npmmirror.com/wot-design-uni-assets/*/files/moon.jpg',
-  'https://registry.npmmirror.com/wot-design-uni-assets/*/files/meng.jpg'
+  
+  '../../static/shen.jpg',
+  '../../static/gan.jpg',
+  '../../static/xin.jpg',
+  '../../static/fei.jpg'
 ])
 
 //健康卡

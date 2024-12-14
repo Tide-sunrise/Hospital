@@ -6,9 +6,15 @@
 		<view class="input">
 			<view class="small-input">
 				<view class="text-box">
+					手机号
+				</view>
+				<up-input border="bottom" v-model="phone" clearable></up-input>
+			</view>
+			<view class="small-input">
+				<view class="text-box">
 					用户名
 				</view>
-				<up-input placeholder="用户名不得重复" border="bottom" v-model="username" clearable></up-input>
+				<up-input border="bottom" v-model="username" clearable></up-input>
 			</view>
 			<view class="small-input">
 				<view class="text-box">
@@ -78,6 +84,8 @@
 	const password = ref("")
 	const rePassword = ref("")
 	const passwordPattern = /^(?:(?=.*\d)(?=.*[a-zA-Z])|(?=.*\d)(?=.*\W)|(?=.*[a-zA-Z])(?=.*\W)).{6,20}$/;
+	const phone = ref("")
+	const phonePattern = /^1[3456789]\d{9}$/
 	// const isPassword = ref(true)
 	const eye = ref(false)
 	const userid = ref()
@@ -89,7 +97,7 @@
 		let data = {
 			userId: null,
 			name: username,
-			phone: null,
+			phone: phone.value,
 			balabce: 0,
 			password: password,
 		}
@@ -101,7 +109,6 @@
 			console.log(userid.value)
 			uni.showModal({
 				title: '注册成功',
-				content: '请记住您的登录账号:' + userid.value,
 				showCancel: false,
 				confirmText: '确定',
 				success: function(res) {
@@ -126,6 +133,22 @@
 		if (!value.value) {
 			uni.showToast({
 				title: '请同意隐私政策',
+				icon: 'none',
+				duration: 1000
+			})
+			return false
+		}
+		if (!phonePattern.test(phone.value)){
+			uni.showToast({
+				title: '手机号格式错误',
+				icon: 'none',
+				duration: 1000
+			})
+			return false
+		}
+		if (username.value == "") {
+			uni.showToast({
+				title: '用户名不能为空',
 				icon: 'none',
 				duration: 1000
 			})

@@ -6,12 +6,12 @@
 		<view class="input">
 			<view class="small-input">
 				<view class="text-box">
-					账号
+					手机号
 				</view>
 				<up-input
-				    placeholder="请输入账号"
+				    placeholder="请输入手机号码"
 				    border="bottom"
-					v-model="username"
+					v-model="phone"
 				    clearable
 					
 				  ></up-input>
@@ -74,6 +74,7 @@ onMounted(()=>{
 })
 
 const value = ref(false)
+const phone = ref("")
 const username = ref("")
 const password = ref("")
 const eye = ref(false)
@@ -81,16 +82,16 @@ const eye = ref(false)
 const handleChange = (e) => {
 	value.value = e.value
 }
-async function userlogin(username,password){
+async function userlogin(){
 	let data = {
-		userId: username,
-		password: CryptoJS.MD5(password).toString()
+		phone: phone.value,
+		password: CryptoJS.MD5(password.value).toString()
 	}
 	let res = await login(data)
 	console.log(res)
 	res=res.data;
 	store.commit('setToken',res.tokenValue);
-	store.commit('setUser',username);
+	store.commit('setUser',res.loginId);
 	uni.showToast({
 		title: '登录成功',
 		icon: 'success',
@@ -113,7 +114,7 @@ const confirmPassword = () =>{
 		return false
 	}
 	//此处插入判断用户是否存在逻辑
-	return userlogin(username.value,password.value)
+	return userlogin()
 }
 
 const navToRig = () => {

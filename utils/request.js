@@ -2,7 +2,7 @@ import axios from "uniapp-axios-adapter";
 import store from "../store";
 
 const baseURL = 'http://localhost:8081';
-const timeout = 5000;
+const timeout = 10000;
 const instance = axios.create({ 
 	baseURL, 
 	timeout,

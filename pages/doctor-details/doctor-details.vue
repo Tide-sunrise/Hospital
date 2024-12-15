@@ -2,7 +2,7 @@
 	<view class="doctorDetailLayout pageBg2">
 		<view class="logoBackground">
 			<view class="logo">
-				<image src="../../common/image/genshin.jpg" mode="aspectFill"></image>
+				<image src="../../static/zxj/male.png" mode="aspectFill"></image>
 			</view>
 			<view class="box">
 				<view class="name">

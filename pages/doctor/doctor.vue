@@ -34,7 +34,7 @@
 			<view class="up-content">
 				<view class="box2">
 					<view class="image">
-						<image :src="item.avatar" mode="aspectFill"></image>
+						<image src="../../static/zxj/male.png" mode="aspectFill"></image>
 					</view>
 					<view class="row">
 						<view class="text">{{item.name}}</view>

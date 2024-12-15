@@ -76,7 +76,7 @@ import { onMounted, ref } from 'vue';
 import { onLoad,onShow } from '@dcloudio/uni-app';
 import store from '../../store';
 import { getPatientById } from '@/api/patient.js'
-import { addAppointment,cancelAppointment,payCallback } from '@/api/appointment.js'
+import { addAppointment,payCallback } from '@/api/appointment.js'
 
 // 假定的数据，实际应用中应该从后端获取
 const orderTime = ref('2024-12-11 13:36'); // 挂号订单生成的时间

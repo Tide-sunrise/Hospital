@@ -109,8 +109,9 @@
 
 		<uni-popup ref="infoPopup" type="bottom">
 			<view class="infoPopup">
-				<health-card v-for="(item,index) in Allhealthcards" :cardinfo="{isExist:true,isChoose:false,name:item.name,id:item.id}" 
-				:key="index" @click="choseHealthcard(index)"></health-card>
+				<health-card v-for="(item,index) in Allhealthcards"
+					:cardinfo="{isExist:true,isChoose:false,name:item.name,id:item.id}" :key="index"
+					@click="choseHealthcard(index)"></health-card>
 			</view>
 		</uni-popup>
 	</view>
@@ -122,7 +123,8 @@
 		ref
 	} from 'vue';
 	import {
-		onLoad,onShow
+		onLoad,
+		onShow
 	} from '@dcloudio/uni-app'
 	import {
 		convertToCurrentYearDate
@@ -133,6 +135,12 @@
 	import {
 		getpatients
 	} from '@/api/patient.js'
+	import {
+		format
+	} from 'date-fns';
+	import {
+		zhCN
+	} from 'date-fns/locale';
 
 	//预约
 	const infoPopup1 = ref(null)
@@ -161,8 +169,8 @@
 		4: 0,
 		5: 0,
 		6: 0,
-		})
-		
+	})
+
 	const f1 = ref(false)
 	const f2 = ref(false)
 	const timehash = {
@@ -197,7 +205,7 @@
 		data.value.name = res[0].doctorName
 		data.value.titleId = res[0].titleId
 		for (let i = 0; i < res.length; i++) {
-			if(res[i].availableNumber<1) continue;
+			if (res[i].availableNumber < 1) continue;
 			if (parseInt(res[i].time) < 4) {
 				f1.value = true
 				data.value.morning[res[i].time] = res[i].availableNumber
@@ -232,23 +240,15 @@
 		date.value = convertToCurrentYearDate(option.date)
 		let z = {
 			doctorId: parseInt(doctorId.value, 10),
-			date: date.value.toLocaleString('zh-CN', {
-				year: 'numeric',
-				month: '2-digit',
-				day: '2-digit'
-			}).replace(/\//g, '-')
+			date: format(date.value, 'yyyy-MM-dd', { locale: zhCN })
 		}
 		getSchedule(z)
 		getHealthcard()
 	})
-	onShow(()=>{
+	onShow(() => {
 		let z = {
 			doctorId: parseInt(doctorId.value, 10),
-			date: date.value.toLocaleString('zh-CN', {
-				year: 'numeric',
-				month: '2-digit',
-				day: '2-digit'
-			}).replace(/\//g, '-')
+			date: format(date.value, 'yyyy-MM-dd', { locale: zhCN })
 		}
 		getSchedule(z)
 	})
@@ -289,7 +289,7 @@
 	const navBack = () => {
 		uni.navigateBack()
 	}
-	
+
 	const choseHealthcard = (index) => {
 		healthcard.value = Allhealthcards.value[index]
 		infoPopup.value.close()

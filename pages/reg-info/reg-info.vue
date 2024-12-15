@@ -31,6 +31,12 @@
 	import {
 		getDoctorInfo
 	} from '@/api/doctor.js'
+	import {
+		format
+	} from 'date-fns';
+	import {
+		zhCN
+	} from 'date-fns/locale';
 
 	// 定义响应式变量
 	const isPaid = ref(false);
@@ -68,7 +74,8 @@
 
 	// // 模拟页面加载时获取传递过来的时间参数
 	onLoad((options) => {
-		data.value = JSON.parse(options.info)
+		const decodedInfo = decodeURIComponent(options.info);
+		data.value = JSON.parse(decodedInfo)
 		//转换时区为本地时区
 		data.value.date = new Date(data.value.date);
 		registrationTime.value = timehash[data.value.time] || '8:30-9:30';
@@ -110,11 +117,7 @@
 							amount: data.value.titleFee,
 							patientId: data.value.patientId,
 							time: data.value.time,
-							date: data.value.date.toLocaleString('zh-CN', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit'
-							}).replace(/\//g, '-')
+							date: format(data.value.date, 'yyyy-MM-dd')
 						}
 						uni.navigateTo({
 							url: '/pages/payment-confirmation/payment-confirmation?info=' +

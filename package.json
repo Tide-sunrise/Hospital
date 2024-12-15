@@ -5,6 +5,8 @@
     "clipboard": "^2.0.11",
     "crypto-browserify": "^3.12.1",
     "crypto-js": "^4.2.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
     "dayjs": "^1.11.13",
     "jwt-decode": "^4.0.0",
     "uniapp-axios-adapter": "^0.3.2",

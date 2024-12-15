@@ -1,8 +1,8 @@
 import axios from "uniapp-axios-adapter"; 
 import store from "../store";
 
-const baseURL = 'http://117.72.54.6:6008';
-const timeout = 10000;
+const baseURL = 'http://localhost:8081';
+const timeout = 5000;
 const instance = axios.create({ 
 	baseURL, 
 	timeout,
@@ -16,7 +16,7 @@ instance.interceptors.request.use(
 		if(!config.headers['Content-Type'])
 			config.headers['Content-Type'] = 'application/json';
 		config.headers['satoken'] = store.state.token;
-		console.log(config);
+		// console.log(config);
 		return config;
 });
 

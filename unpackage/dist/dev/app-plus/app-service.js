@@ -8149,6 +8149,7 @@ if (uni.restoreGlobal) {
     }
   );
   function login(data) {
+    formatAppLog("log", "at api/users.js:19", "555");
     return instance({
       url: "/users/login",
       method: "post",
@@ -14957,12 +14958,14 @@ if (uni.restoreGlobal) {
         value2.value = e.value;
       };
       async function userlogin() {
+        formatAppLog("log", "at pages/login/login.vue:86", "123");
         let data = {
           phone: phone.value,
           password: CryptoJS.MD5(password.value).toString()
         };
+        formatAppLog("log", "at pages/login/login.vue:91", "1223");
         let res = await login(data);
-        formatAppLog("log", "at pages/login/login.vue:91", res);
+        formatAppLog("log", "at pages/login/login.vue:93", res);
         res = res.data;
         store.commit("setToken", res.tokenValue);
         store.commit("setUser", res.loginId);
@@ -14993,7 +14996,9 @@ if (uni.restoreGlobal) {
         });
       };
       const confirm = () => {
+        formatAppLog("log", "at pages/login/login.vue:129", "你好");
         if (!confirmPassword()) {
+          formatAppLog("log", "at pages/login/login.vue:131", "你好a");
           return;
         }
       };

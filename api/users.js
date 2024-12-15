@@ -16,6 +16,7 @@ export function getUserInfo(id) {
  * @param {Object} data 登录信息
  */
 export function login(data) {
+	console.log("555");
 	return request({
 		url: '/users/login',
 		method: 'post',

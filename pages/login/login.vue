@@ -83,10 +83,12 @@ const handleChange = (e) => {
 	value.value = e.value
 }
 async function userlogin(){
+	console.log("123")
 	let data = {
 		phone: phone.value,
 		password: CryptoJS.MD5(password.value).toString()
 	}
+	console.log("1223")
 	let res = await login(data)
 	console.log(res)
 	res=res.data;
@@ -124,7 +126,9 @@ const navToRig = () => {
 }
 
 const confirm = () => {
+	console.log("你好")
 	if(!confirmPassword()){
+		console.log("你好a")
 		return
 	}
 }

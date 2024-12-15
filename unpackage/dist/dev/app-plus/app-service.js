@@ -8068,8 +8068,6 @@ if (uni.restoreGlobal) {
       //存放状态
       // user: localStorage.getItem('user') || null,
       // token: localStorage.getItem('token') || null
-      user: null,
-      token: null
     },
     mutations: {
       //同步修改状态
@@ -8086,14 +8084,13 @@ if (uni.restoreGlobal) {
         state.token = null;
       },
       checkToken(state) {
-        formatAppLog("log", "at store/index.js:29", "checkToken");
+        formatAppLog("log", "at store/index.js:27", "checkToken");
         if (state.token != null) {
           const token = state.token;
           const decoded = jwtDecode(token);
           const currentTime = Date.now().valueOf() / 1e3;
           if (decoded.exp < currentTime) {
             state.token = null;
-            localStorage.removeItem("token");
           }
         }
       }
@@ -8105,8 +8102,8 @@ if (uni.restoreGlobal) {
       }
     }
   });
-  const baseURL = "http://117.72.54.6:6008";
-  const timeout$1 = 1e4;
+  const baseURL = "http://localhost:8081";
+  const timeout$1 = 5e3;
   const instance = axios.create({
     baseURL,
     timeout: timeout$1
@@ -8116,7 +8113,6 @@ if (uni.restoreGlobal) {
       if (!config2.headers["Content-Type"])
         config2.headers["Content-Type"] = "application/json";
       config2.headers["satoken"] = store.state.token;
-      formatAppLog("log", "at utils/request.js:19", config2);
       return config2;
     }
   );

@@ -74,6 +74,12 @@
 		cancelAppointmentById
 	} from '@/api/appointment.js'
 	import store from '@/store/index.js'
+	import {
+		format
+	} from 'date-fns';
+	import {
+		zhCN
+	} from 'date-fns/locale';
 
 	const recordList = ref([1]);
 
@@ -104,13 +110,13 @@
 		for (let i = 0; i < res.data.length; i++) {
 			let item = {
 				appointmentId: res.data[i].appointmentId,
-				orderTime: new Date(res.data[i].createdTimeStamp).toLocaleString().replace(/\//g, '-'),
+				orderTime: format(new Date(res.data[i].createdTimeStamp), 'yyyy-MM-dd HH:mm:ss'),
 				doctorName: res.data[i].doctorName,
 				department: res.data[i].specializationName,
 				amount: parseFloat(res.data[i].fee).toFixed(2) / 100,
 				patientName: res.data[i].patientName,
 				time: res.data[i].appointmentDate + ' ' + res.data[i].appointmentTimeInfo,
-				isPaid: canCancel(makeTime(res.data[i])) && (res.data[i].status==2)
+				isPaid: canCancel(makeTime(res.data[i])) && (res.data[i].status == 2)
 			}
 			recordList.value.push(item);
 		}

@@ -47,8 +47,8 @@
 				<scroll-view :show-scrollbar="false" scroll-x="true" class="downFixedDay">
 					<view class="downFixDay" v-for="it in item.schedule" @click="navToDetail(item.doctorId,it.date,item)">
 						<view class="box">
-							<text class="t1">{{it.week}}</text>
-							<text class="t2">{{it.date}}</text>
+							<view class="t1">{{it.week}}</view>
+							<view class="t2">{{it.date}}</view>
 						</view>
 					</view>
 				</scroll-view>

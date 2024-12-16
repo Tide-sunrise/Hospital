@@ -34,7 +34,7 @@
 			<view class="up-content">
 				<view class="box2">
 					<view class="image">
-						<image src="../../static/zxj/male.png" mode="aspectFill"></image>
+						<image :src="item.img" mode="aspectFill"></image>
 					</view>
 					<view class="row">
 						<view class="text">{{item.name}}</view>
@@ -196,6 +196,7 @@ onLoad((option)=>{
 				let doctor = {}
 				doctor.doctorId = res[i].doctorId
 				doctor.name = res[i].doctorName
+				doctor.img =  res[i].photoUrl
 				doctor.title = titlehash[res[i].titleId]
 				doctor.schedule = {}
 				doctor.schedule[part.date]={

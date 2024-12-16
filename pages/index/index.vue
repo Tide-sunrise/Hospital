@@ -1,6 +1,7 @@
 <template>
 	<view class="homeLayout pageBg">
-		<custom-nav-bar title="推荐"></custom-nav-bar>
+		<myEmpty height="50rpx"></myEmpty>
+		<custom-nav-bar title="瓦纳海姆医院导航"></custom-nav-bar>
 		<view class="banner">
 			<view class="card-swiper">
 			  <wd-swiper
@@ -72,28 +73,11 @@
 		    </swiper>
 		</view>
 		
-		<view class="news">
-		 	<view class="title">
-		 	    医院资讯
-		 	</view>
-			<view class="out">
-				<view class="list" v-for="(item,index) in newsLists" :key="item.id">
-					<view class="image">
-						<image src="../../static/logo.png" mode="aspectFill"></image>
-					</view>
-					<view class="row">
-						<view class="text">{{index+1}}.{{item.title}}</view>
-						<view class="smallText">这是小字</view>
-					</view>
-				</view>	
-				<view class="count">
-					共{{newsLists.length}}条资讯
-				</view>	
-			</view>
-		</view>
+		
 		
 		<myTabBar :item="itemTab"></myTabBar>
 		<view class="safe-area-inset-bottom"></view>
+		<myEmpty height="50rpx"></myEmpty>
 	</view>
 	
 </template>
@@ -168,8 +152,9 @@ const myFunction = ref([
 		picurl:"../../static/zxj/xiaoxi.png",
 	},
 	{
-		name:"缴费",
-		picurl:"../../static/zxj/fukuan.png",
+		name:"介绍",
+		url:"/pages/intro/intro",
+		picurl:"../../static/zxj/zixun.png",
 	},
 ])
 

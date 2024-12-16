@@ -1,5 +1,6 @@
 <template>
 	<view class="formLayout pageBg2">
+		<myEmpty height="100rpx"></myEmpty>
 		<view class="title">
 			添加健康卡
 		</view>

@@ -1,5 +1,6 @@
 <template>
 	<view class="paymentInfoLayout pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="title">
 			支付信息确认
 		</view>

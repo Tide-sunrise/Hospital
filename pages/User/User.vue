@@ -1,10 +1,11 @@
 <template>
 	<view class="userLayout pageBg">
+		<myEmpty height="100rpx"></myEmpty>
 		<view class="userInfo">
 			<view class="avatar">
 				<image src="../../static/zxj/v-Photoroom.png" mode="aspectFill"></image>
 			</view>
-			<view class="ip">100.100.100.100</view>
+			<view class="ip">{{userName}}</view>
 			<view class="address">来自于：中南大学</view>
 		</view>
 		
@@ -27,10 +28,10 @@
 				<view class="row" @click="navToB">
 					<view class="left">
 						<uni-icons type="star-filled" size="20"></uni-icons>
-						<view class="text">我的评分</view>
+						<view class="text">我的评论</view>
 					</view>
 					<view class="right">
-						<view class="text">33</view>
+						<view class="text">未上线</view>
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>
@@ -64,7 +65,7 @@
 						<view class="text">订阅更新</view>
 					</view>
 					<view class="right">
-						<view class="text"></view>
+						<view class="text">未上线</view>
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>
@@ -75,7 +76,7 @@
 						<view class="text">常见问题</view>
 					</view>
 					<view class="right">
-						<view class="text"></view>
+						<view class="text">未上线</view>
 						<uni-icons type="right" size="15" color="#aaa"></uni-icons>
 					</view>
 				</view>
@@ -97,13 +98,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { loginout } from '@/api/users.js'
+import { ref,onMounted } from 'vue';
+import { loginout,getUserInfo} from '@/api/users.js'
 import store from '../../store';
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+import { userId } from '../../common/data/data';
 
 const itemTab=ref({myTabbar:2})
 const recordNum=ref(33)
+const userName = ref("洛小八")
 
+
+onMounted(async () => {
+	//从uni缓存里获取用户信息
+	const userId = uni.getStorageSync('userId');
+	const user=await getUserInfo(userId);
+	userName.value=user.data.name;
+	// console.log(userName);
+  // userName.value=
+});
 
 async function userLoginOut(){
 	const res = await loginout()

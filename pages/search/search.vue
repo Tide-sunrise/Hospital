@@ -53,14 +53,16 @@
 			<uv-empty mode="search" icon="http://cdn.uviewui.com/uview/empty/search.png"></uv-empty>
 		</view>
 
-
-
+<!-- 		<view class="doctor" v-for="(item,index) in classList">
+			2
+		</view> -->
 		<view class="list">
 			<view class="doctor" v-for="(item,index) in classList">
+				
 				<view class="up-content">
 					<view class="box2">
 						<view class="image">
-							<image :src="item.avatar" mode="aspectFill"></image>
+							<image :src="item.img" mode="aspectFill"></image>
 						</view>
 						<view class="row">
 							<view class="text">{{item.name}}</view>
@@ -192,6 +194,7 @@
 				introduction: value
 			});
 		}
+		
 		console.log(res)
 		let doctorHash = {}
 		res = res.data
@@ -225,6 +228,7 @@
 				let doctor = {}
 				doctor.doctorId = res[i].doctorId
 				doctor.name = res[i].doctorName
+				doctor.img =  res[i].photoUrl
 				doctor.title = titlehash[res[i].titleId]
 				doctor.schedule = {}
 				doctor.schedule[part.date] = {
@@ -238,11 +242,17 @@
 				}
 				doctorHash[res[i].doctorId] = doctor
 			}
+			
 		}
+		console.log(doctorHash)
+		classList.value = []
 		for (let key in doctorHash) {
+			//先清空classList.value
+			// classList.value = []
 			classList.value.push(doctorHash[key])
 		}
-		console.log(classList)
+		console.log("你好")
+		// console.log(classList.value[0])
 	}
 
 	//点击清除按钮
@@ -364,9 +374,9 @@
 		}
 
 		.list {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rpx;
+			// display: grid;
+			// grid-template-columns: repeat(3, 1fr);
+			// gap: 5rpx;
 			padding: 20rpx 0rpx;
 
 			.doctor {

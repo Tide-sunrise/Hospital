@@ -1,5 +1,6 @@
 <template>
 	<view class="rigLayout pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="title">
 			注册
 		</view>
@@ -63,6 +64,10 @@
 		<view class="button">
 			<wd-button block @click="confirm">注册</wd-button>
 			<wd-button block type="success" @click="navToRig">返回登录</wd-button>
+		</view>
+		
+		<view class="logo">
+			<image src="../../static/zxj/v-Photoroom.png" mode="aspectFit"></image>
 		</view>
 	</view>
 </template>
@@ -262,9 +267,17 @@
 		.button {
 			margin-top: 50rpx;
 			display: flex;
-
-
+			
+			
 		}
-
+		.logo{
+			display: flex;
+			justify-content: center;
+			margin-top: 100rpx;
+			opacity: 0.5;
+			image{
+				opacity: 0.5;
+			}
+		}
 	}
 </style>

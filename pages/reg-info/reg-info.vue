@@ -1,5 +1,6 @@
 <template>
 	<view class="registration-container pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="header">
 			<text class="title">挂号信息</text>
 		</view>

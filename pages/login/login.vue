@@ -1,5 +1,6 @@
 <template>
 	<view class="loginLayout pageBg2">
+		<myEmpty height="100rpx"></myEmpty>
 		<view class="title">
 			登录
 		</view>
@@ -53,6 +54,10 @@
 			<wd-button block @click="confirm">登录</wd-button>
 			<wd-button block type="success" @click="navToRig">注册</wd-button>
 		</view>
+		
+		<view class="logo">
+			<image src="../../static/zxj/v-Photoroom.png" mode="aspectFit"></image>
+		</view>
 	</view>
 </template>
 
@@ -61,6 +66,7 @@ import { ref,onMounted } from 'vue'
 import { login } from '@/api/users.js'
 import store from '@/store/index.js'
 import CryptoJS from 'crypto-js'
+import { userId } from '../../common/data/data.js'
 
 //挂载前检查当前token是否存在
 onMounted(()=>{
@@ -99,6 +105,9 @@ async function userlogin(){
 		icon: 'success',
 		duration: 1000
 	})
+	console.log(res.loginId);
+	uni.setStorageSync('userId',res.loginId);
+	uni.setStorageSync('token',res.tokenValue);
 	uni.navigateTo({
 		url: '/pages/index/index'
 	})
@@ -205,6 +214,14 @@ const confirm = () => {
 		
 		
 	}
-	
+	.logo{
+		display: flex;
+		justify-content: center;
+		margin-top: 100rpx;
+		opacity: 0.5;
+		image{
+			opacity: 0.5;
+		}
+	}
 }  
 </style>

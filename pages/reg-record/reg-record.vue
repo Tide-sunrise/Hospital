@@ -1,6 +1,9 @@
 <template>
 	<view class="recordLayout pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
+		
 		<view class="layout">
+			
 			<view class="navbar">
 				<view class="goBack" @click="goBack">
 					<uni-icons type="back" color="#000" size="20"></uni-icons>
@@ -178,7 +181,7 @@
 				left: 0;
 				width: 100%;
 				z-index: 10;
-				padding: 30rpx 0;
+				padding: 80rpx 0 30rpx 0;
 				background:
 					linear-gradient(to bottom, transparent 0%, #fff 400rpx),
 					linear-gradient(to left, #beecd8 20%, #b2e0fa);

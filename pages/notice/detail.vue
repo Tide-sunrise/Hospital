@@ -1,5 +1,6 @@
 <template>
   <view class="noticeLayout pageBg2">
+	<myEmpty height="50rpx"></myEmpty>
 	<view class="layout">
 		<view class="navbar">
 			<view class="goBack" @click="goBack">

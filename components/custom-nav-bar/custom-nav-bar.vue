@@ -1,5 +1,6 @@
 <template>
 	<view class="layout">
+		<!-- <myEmpty height="100rpx"></myEmpty> -->
 		<view class="navbar">
 			<view v-if="isBack" class="goBack" @click="goBack" :style="{top:getStatusBarHeight()+'px'}">
 				<uni-icons type="back" color="#fff" size="20"></uni-icons>
@@ -62,7 +63,7 @@ const goBack = ()=>{
 		left: 0;
 		width: 100%;
 		z-index: 10;
-		padding-top: 30rpx;
+		padding-top: 80rpx;
 		background:
 		linear-gradient(to bottom,transparent 0%, #fff 400rpx),
 		linear-gradient(to left,#beecd8 20%,#b2e0fa);

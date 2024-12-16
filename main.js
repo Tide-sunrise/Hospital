@@ -22,6 +22,7 @@ export function createApp() {
   app.use(store)
   app.use(routerInterceptor)
   app.use(uviewPlus)
+  
   return {
     app,
 	Vuex

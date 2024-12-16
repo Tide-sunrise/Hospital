@@ -3025,7 +3025,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1$a = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-ac70166d"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_1$a = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-ac70166d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-icon/u-icon.vue"]]);
   const props$8 = defineMixin({
     props: {
       // 绑定的值
@@ -3425,7 +3425,7 @@ if (uni.restoreGlobal) {
             class: "u-input__content__field-wrapper",
             onClick: _cache[6] || (_cache[6] = (...args) => $options.clickHandler && $options.clickHandler(...args))
           }, [
-            vue.createCommentVNode(" 根据uni-app的input组件文档，H5和APP中只要声明了password参数(无论true还是false)，type均失效，此时\n					为了防止type=number时，又存在password属性，type无效，此时需要设置password为undefined\n				 "),
+            vue.createCommentVNode(" 根据uni-app的input组件文档，H5和APP中只要声明了password参数(无论true还是false)，type均失效，此时\r\n					为了防止type=number时，又存在password属性，type无效，此时需要设置password为undefined\r\n				 "),
             vue.createElementVNode("input", {
               ref: "input-native",
               class: "u-input__content__field-wrapper__field",
@@ -3487,7 +3487,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-df79975b"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-input/u-input.vue"]]);
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-df79975b"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-input/u-input.vue"]]);
   function addUnit$2(num) {
     return Number.isNaN(Number(num)) ? `${num}` : `${num}px`;
   }
@@ -3729,7 +3729,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const wdIcon = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-24906af6"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const wdIcon = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-24906af6"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   function useParent(key) {
     const parent = vue.inject(key, null);
     if (parent) {
@@ -3970,7 +3970,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-66fc790e"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-checkbox/wd-checkbox.vue"]]);
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-66fc790e"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-checkbox/wd-checkbox.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -4250,7 +4250,7 @@ if (uni.restoreGlobal) {
       ])
     ], 46, ["id", "hover-class", "hover-start-time", "hover-stay-time", "open-type", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card", "session-from", "lang", "hover-stop-propagation"]);
   }
-  const __easycom_1$9 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-d858c170"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
+  const __easycom_1$9 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-d858c170"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function bind(fn, thisArg) {
     return function wrap() {
       return fn.apply(thisArg, arguments);
@@ -8102,7 +8102,7 @@ if (uni.restoreGlobal) {
       }
     }
   });
-  const baseURL = "http://localhost:8081";
+  const baseURL = "http://117.72.97.23:7002";
   const timeout$1 = 5e3;
   const instance = axios.create({
     baseURL,
@@ -15109,7 +15109,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-e4e4508d"], ["__file", "E:/mine/webfrom/Hospital/pages/login/login.vue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-e4e4508d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/login/login.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -15829,7 +15829,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-d31e1c47"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   const SYSTEM_INFO = uni.getSystemInfoSync();
   const getStatusBarHeight = () => SYSTEM_INFO.statusBarHeight || 15;
   const getTitleBarHeight = () => {
@@ -15952,7 +15952,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-412fc155"], ["__file", "E:/mine/webfrom/Hospital/components/custom-nav-bar/custom-nav-bar.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-412fc155"], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/custom-nav-bar/custom-nav-bar.vue"]]);
   const swiperNavprops = {
     ...baseProps,
     /**
@@ -16066,7 +16066,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const wdSwiperNav = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-7a2b7438"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-swiper-nav/wd-swiper-nav.vue"]]);
+  const wdSwiperNav = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-7a2b7438"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-swiper-nav/wd-swiper-nav.vue"]]);
   const swiperProps = {
     ...baseProps,
     /**
@@ -16375,7 +16375,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$8 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-f903ae98"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-swiper/wd-swiper.vue"]]);
+  const __easycom_1$8 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-f903ae98"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-swiper/wd-swiper.vue"]]);
   const props$7 = defineMixin({
     props: {
       // 文字颜色
@@ -16452,7 +16452,7 @@ if (uni.restoreGlobal) {
       /* TEXT, STYLE */
     );
   }
-  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-12f6646d"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-link/u-link.vue"]]);
+  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-12f6646d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-link/u-link.vue"]]);
   const props$6 = defineMixin({
     props: {
       // 主题颜色
@@ -16781,7 +16781,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-0a574502"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-text/u-text.vue"]]);
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-0a574502"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-text/u-text.vue"]]);
   const props$5 = defineMixin({
     props: {
       // 头像图片路径(不能为相对路径)
@@ -16986,7 +16986,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-34d954f9"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-avatar/u-avatar.vue"]]);
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-34d954f9"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-avatar/u-avatar.vue"]]);
   const _sfc_main$F = {
     __name: "health-card",
     props: {
@@ -17080,7 +17080,7 @@ if (uni.restoreGlobal) {
       ]))
     ]);
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-9bc90eca"], ["__file", "E:/mine/webfrom/Hospital/components/health-card/health-card.vue"]]);
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-9bc90eca"], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/health-card/health-card.vue"]]);
   function ChildrenMixin(parent, options2 = {}) {
     options2.indexKey || "index";
     return {
@@ -17293,7 +17293,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-46825bf1"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/zebra-swiper/components/z-swiper-item/z-swiper-item.vue"]]);
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-46825bf1"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/zebra-swiper/components/z-swiper-item/z-swiper-item.vue"]]);
   function deleteProps(obj) {
     const object2 = obj;
     Object.keys(object2).forEach((key) => {
@@ -24014,7 +24014,7 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["id"]);
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-3db01611"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/zebra-swiper/components/z-swiper/z-swiper.vue"]]);
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-3db01611"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/zebra-swiper/components/z-swiper/z-swiper.vue"]]);
   const _sfc_main$C = {
     __name: "small-icon",
     props: {
@@ -24059,7 +24059,7 @@ if (uni.restoreGlobal) {
       ], 8, ["url"])
     ]);
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-399c1124"], ["__file", "E:/mine/webfrom/Hospital/components/small-icon/small-icon.vue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-399c1124"], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/small-icon/small-icon.vue"]]);
   function isNull(val) {
     if (typeof val == "boolean") {
       return false;
@@ -24622,7 +24622,7 @@ if (uni.restoreGlobal) {
       ])) : vue.createCommentVNode("v-if", true)
     ], 14, ["data-index"]);
   }
-  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-2d763a4b"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/y-tabs/components/y-tab/y-tab.vue"]]);
+  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-2d763a4b"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/y-tabs/components/y-tab/y-tab.vue"]]);
   const touchMixin = function() {
     return {
       data() {
@@ -26313,7 +26313,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-3efb49c4"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/y-tabs/components/y-tabs/y-tabs.vue"]]);
+  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-3efb49c4"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/y-tabs/components/y-tabs/y-tabs.vue"]]);
   const badgeProps = {
     ...baseProps,
     /**
@@ -26423,7 +26423,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const wdBadge = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-6ea9b0eb"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-badge/wd-badge.vue"]]);
+  const wdBadge = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-6ea9b0eb"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-badge/wd-badge.vue"]]);
   const TABBAR_KEY = Symbol("wd-tabbar");
   const tabbarProps = {
     ...baseProps,
@@ -26612,7 +26612,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-5b5379ae"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-tabbar-item/wd-tabbar-item.vue"]]);
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-5b5379ae"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-tabbar-item/wd-tabbar-item.vue"]]);
   function isVNode(value2) {
     return value2 ? value2.__v_isVNode === true : false;
   }
@@ -26781,7 +26781,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-70467ab8"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-70467ab8"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
   const tabBarList = [
     { url: "/pages/index/index" },
     { url: "/pages/catalogs/catalogs" },
@@ -26850,7 +26850,7 @@ if (uni.restoreGlobal) {
       }, 8, ["modelValue"])
     ]);
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "E:/mine/webfrom/Hospital/components/myTabBar/myTabBar.vue"]]);
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/myTabBar/myTabBar.vue"]]);
   function getPatientById(id) {
     return instance({
       url: `/patients/${id}`,
@@ -27320,7 +27320,7 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "safe-area-inset-bottom" })
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-1cf27b2a"], ["__file", "E:/mine/webfrom/Hospital/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-1cf27b2a"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/index/index.vue"]]);
   const SIDEBAR_KEY = Symbol("wd-sidebar");
   const sidebarProps = {
     ...baseProps,
@@ -27471,7 +27471,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-0597c3a8"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-sidebar-item/wd-sidebar-item.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-0597c3a8"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-sidebar-item/wd-sidebar-item.vue"]]);
   const __default__$2 = {
     name: "wd-sidebar",
     options: {
@@ -27514,7 +27514,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-d265e78d"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-sidebar/wd-sidebar.vue"]]);
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-d265e78d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-sidebar/wd-sidebar.vue"]]);
   const CELL_GROUP_KEY = Symbol("wd-cell-group");
   const cellGroupProps = {
     ...baseProps,
@@ -27787,7 +27787,7 @@ if (uni.restoreGlobal) {
       )
     ], 14, ["hover-class"]);
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-f1c5bbe2"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-cell/wd-cell.vue"]]);
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-f1c5bbe2"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-cell/wd-cell.vue"]]);
   const __default__ = {
     name: "wd-cell-group",
     options: {
@@ -27850,7 +27850,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-55e5786b"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/wot-design-uni/components/wd-cell-group/wd-cell-group.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-55e5786b"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-cell-group/wd-cell-group.vue"]]);
   const _sfc_main$q = {
     __name: "precautions",
     setup(__props, { expose: __expose }) {
@@ -27929,7 +27929,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-2cacd83b"], ["__file", "E:/mine/webfrom/Hospital/components/precautions/precautions.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-2cacd83b"], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/precautions/precautions.vue"]]);
   class MPAnimation {
     constructor(options2, _this) {
       this.options = options2;
@@ -28306,7 +28306,7 @@ if (uni.restoreGlobal) {
       [vue.vShow, $data.isShow]
     ]);
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
   const _sfc_main$o = {
     name: "uniPopup",
     components: {},
@@ -28717,7 +28717,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-4dd3c44b"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
   function getAllDepartments() {
     return instance({
       url: "/departments/all",
@@ -28974,7 +28974,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesRegistrationRegistration = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-1e5d1fa0"], ["__file", "E:/mine/webfrom/Hospital/pages/registration/registration.vue"]]);
+  const PagesRegistrationRegistration = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-1e5d1fa0"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/registration/registration.vue"]]);
   const _imports_0$3 = "/static/zxj/v-Photoroom.png";
   const _sfc_main$m = {
     __name: "User",
@@ -29169,7 +29169,7 @@ if (uni.restoreGlobal) {
       vue.createVNode(_component_myTabBar, { item: $setup.itemTab }, null, 8, ["item"])
     ]);
   }
-  const PagesUserUser = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-1e1b347f"], ["__file", "E:/mine/webfrom/Hospital/pages/User/User.vue"]]);
+  const PagesUserUser = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-1e1b347f"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/User/User.vue"]]);
   const _sfc_main$l = {
     __name: "myEmpty",
     props: {
@@ -29205,7 +29205,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-b985e341"], ["__file", "E:/mine/webfrom/Hospital/components/myEmpty/myEmpty.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-b985e341"], ["__file", "D:/文本/真带学/应用实践二/Hospital/components/myEmpty/myEmpty.vue"]]);
   const _imports_0$2 = "/static/zhongyi.jpg";
   const _imports_1$1 = "/static/zxj/v.png";
   const _sfc_main$k = {
@@ -29295,7 +29295,7 @@ if (uni.restoreGlobal) {
       vue.createVNode(_component_myTabBar, { item: $setup.itemTab }, null, 8, ["item"])
     ]);
   }
-  const PagesCatalogsCatalogs = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-5149d303"], ["__file", "E:/mine/webfrom/Hospital/pages/catalogs/catalogs.vue"]]);
+  const PagesCatalogsCatalogs = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-5149d303"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/catalogs/catalogs.vue"]]);
   const mpMixin = {};
   function email(value2) {
     return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(value2);
@@ -30659,7 +30659,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-b7a6dd5d"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uv-icon/components/uv-icon/uv-icon.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-b7a6dd5d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uv-icon/components/uv-icon/uv-icon.vue"]]);
   const props$2 = {
     props: {
       // 内置图标名称，或图片路径，建议绝对路径
@@ -30808,7 +30808,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-6efcec67"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uv-empty/components/uv-empty/uv-empty.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-6efcec67"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uv-empty/components/uv-empty/uv-empty.vue"]]);
   function getDoctorInfo(id) {
     return instance({
       url: `/doctors/${id}`,
@@ -30860,6 +30860,7 @@ if (uni.restoreGlobal) {
     const date2 = new Date(currentYear, month - 1, day);
     return date2;
   }
+  const _imports_0$1 = "/static/zxj/male.png";
   const _sfc_main$h = {
     __name: "search",
     setup(__props, { expose: __expose }) {
@@ -31129,9 +31130,9 @@ if (uni.restoreGlobal) {
                 vue.createElementVNode("view", { class: "box2" }, [
                   vue.createElementVNode("view", { class: "image" }, [
                     vue.createElementVNode("image", {
-                      src: item.avatar,
+                      src: _imports_0$1,
                       mode: "aspectFill"
-                    }, null, 8, ["src"])
+                    })
                   ]),
                   vue.createElementVNode("view", { class: "row" }, [
                     vue.createElementVNode(
@@ -31230,7 +31231,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-c10c040c"], ["__file", "E:/mine/webfrom/Hospital/pages/search/search.vue"]]);
+  const PagesSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-c10c040c"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/search/search.vue"]]);
   function pad(str, length = 2) {
     str += "";
     while (str.length < length) {
@@ -31498,8 +31499,8 @@ if (uni.restoreGlobal) {
       /* TEXT */
     );
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
-  const _imports_0$1 = "/assets/zhifu-zhifuchenggong.b7ab7d99.svg";
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
+  const _imports_0 = "/assets/zhifu-zhifuchenggong.b7ab7d99.svg";
   const _imports_1 = "/assets/zhifu-zhifushibai.ff167364.svg";
   const _sfc_main$f = {
     __name: "payment",
@@ -31532,7 +31533,7 @@ if (uni.restoreGlobal) {
           class: "icon"
         }, [
           vue.createElementVNode("image", {
-            src: _imports_0$1,
+            src: _imports_0,
             mode: "aspectFill"
           })
         ])) : (vue.openBlock(), vue.createElementBlock("view", {
@@ -31591,8 +31592,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesPaymentPayment = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-eade9ab2"], ["__file", "E:/mine/webfrom/Hospital/pages/payment/payment.vue"]]);
-  const _imports_0 = "/static/zxj/male.png";
+  const PagesPaymentPayment = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-eade9ab2"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/payment/payment.vue"]]);
   const _sfc_main$e = {
     __name: "doctor",
     setup(__props, { expose: __expose }) {
@@ -31869,7 +31869,7 @@ if (uni.restoreGlobal) {
               vue.createElementVNode("view", { class: "box2" }, [
                 vue.createElementVNode("view", { class: "image" }, [
                   vue.createElementVNode("image", {
-                    src: _imports_0,
+                    src: _imports_0$1,
                     mode: "aspectFill"
                   })
                 ]),
@@ -31936,7 +31936,7 @@ if (uni.restoreGlobal) {
       ))
     ]);
   }
-  const PagesDoctorDoctor = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-d944f3d9"], ["__file", "E:/mine/webfrom/Hospital/pages/doctor/doctor.vue"]]);
+  const PagesDoctorDoctor = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-d944f3d9"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/doctor/doctor.vue"]]);
   const props$1 = defineMixin({
     props: {
       // 是否显示组件
@@ -32231,7 +32231,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-2af81691"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-2af81691"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
   const props = defineMixin({
     props: {
       // 是否细边框
@@ -32616,7 +32616,7 @@ if (uni.restoreGlobal) {
       ))
     ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-5ce41ee6"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uview-plus/components/u-button/u-button.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-5ce41ee6"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-button/u-button.vue"]]);
   const millisecondsInWeek = 6048e5;
   const millisecondsInDay = 864e5;
   const constructFromSymbol = Symbol.for("constructDateFrom");
@@ -34663,7 +34663,7 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "logoBackground" }, [
         vue.createElementVNode("view", { class: "logo" }, [
           vue.createElementVNode("image", {
-            src: _imports_0,
+            src: _imports_0$1,
             mode: "aspectFill"
           })
         ]),
@@ -34943,7 +34943,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesDoctorDetailsDoctorDetails = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-08a0b3fc"], ["__file", "E:/mine/webfrom/Hospital/pages/doctor-details/doctor-details.vue"]]);
+  const PagesDoctorDetailsDoctorDetails = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-08a0b3fc"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/doctor-details/doctor-details.vue"]]);
   const _sfc_main$a = {
     __name: "health-cards",
     setup(__props, { expose: __expose }) {
@@ -35008,7 +35008,7 @@ if (uni.restoreGlobal) {
       ))
     ]);
   }
-  const PagesHealthCardsHealthCards = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-6838644f"], ["__file", "E:/mine/webfrom/Hospital/pages/health-cards/health-cards.vue"]]);
+  const PagesHealthCardsHealthCards = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-6838644f"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/health-cards/health-cards.vue"]]);
   const _sfc_main$9 = {
     __name: "notice",
     setup(__props, { expose: __expose }) {
@@ -35073,7 +35073,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesNoticeNotice = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-1c2e4c1e"], ["__file", "E:/mine/webfrom/Hospital/pages/notice/notice.vue"]]);
+  const PagesNoticeNotice = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-1c2e4c1e"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/notice/notice.vue"]]);
   const _sfc_main$8 = {
     name: "UniTag",
     emits: ["click"],
@@ -35168,7 +35168,7 @@ if (uni.restoreGlobal) {
       /* TEXT, CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-1f94d070"], ["__file", "E:/mine/webfrom/Hospital/uni_modules/uni-tag/components/uni-tag/uni-tag.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-1f94d070"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-tag/components/uni-tag/uni-tag.vue"]]);
   const _sfc_main$7 = {
     __name: "detail",
     setup(__props, { expose: __expose }) {
@@ -35300,7 +35300,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesNoticeDetail = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-0f737f11"], ["__file", "E:/mine/webfrom/Hospital/pages/notice/detail.vue"]]);
+  const PagesNoticeDetail = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-0f737f11"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/notice/detail.vue"]]);
   const publicKeyPem = `-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDWMohPHMTSNqInq18yZcw3r91g
 qmZ57lE53pxpEBPcSNaA2vZa2LM2ccmULgFgX2t3b4bdu6Ur+RPFVGiQdxd2pqAt
@@ -35476,7 +35476,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       ])
     ]);
   }
-  const PagesHealthCardFormHealthCardForm = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-0102ebb0"], ["__file", "E:/mine/webfrom/Hospital/pages/health-card-form/health-card-form.vue"]]);
+  const PagesHealthCardFormHealthCardForm = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-0102ebb0"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/health-card-form/health-card-form.vue"]]);
   const _sfc_main$5 = {
     __name: "register",
     setup(__props, { expose: __expose }) {
@@ -35709,7 +35709,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       ])
     ]);
   }
-  const PagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-bac4a35d"], ["__file", "E:/mine/webfrom/Hospital/pages/register/register.vue"]]);
+  const PagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-bac4a35d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/register/register.vue"]]);
   const _sfc_main$4 = {
     __name: "reg-info",
     setup(__props, { expose: __expose }) {
@@ -35882,7 +35882,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       })) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesRegInfoRegInfo = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-c35845c5"], ["__file", "E:/mine/webfrom/Hospital/pages/reg-info/reg-info.vue"]]);
+  const PagesRegInfoRegInfo = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-c35845c5"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/reg-info/reg-info.vue"]]);
   const inputAreaHeight = 50;
   const _sfc_main$3 = {
     __name: "chatwindow",
@@ -35958,7 +35958,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       ])
     ]);
   }
-  const PagesChatwindowChatwindow = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-6a5ef0ea"], ["__file", "E:/mine/webfrom/Hospital/pages/chatwindow/chatwindow.vue"]]);
+  const PagesChatwindowChatwindow = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-6a5ef0ea"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/chatwindow/chatwindow.vue"]]);
   function addAppointment(data) {
     return instance({
       url: "/appointments",
@@ -36236,7 +36236,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
                     class: "icon"
                   }, [
                     vue.createElementVNode("image", {
-                      src: _imports_0$1,
+                      src: _imports_0,
                       mode: "aspectFill"
                     })
                   ])) : (vue.openBlock(), vue.createElementBlock("view", {
@@ -36294,7 +36294,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesPaymentConfirmationPaymentConfirmation = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-eaae19d0"], ["__file", "E:/mine/webfrom/Hospital/pages/payment-confirmation/payment-confirmation.vue"]]);
+  const PagesPaymentConfirmationPaymentConfirmation = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-eaae19d0"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/payment-confirmation/payment-confirmation.vue"]]);
   const _sfc_main$1 = {
     __name: "reg-record",
     setup(__props, { expose: __expose }) {
@@ -36511,7 +36511,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       ))
     ]);
   }
-  const PagesRegRecordRegRecord = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-32f65fe5"], ["__file", "E:/mine/webfrom/Hospital/pages/reg-record/reg-record.vue"]]);
+  const PagesRegRecordRegRecord = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-32f65fe5"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/reg-record/reg-record.vue"]]);
   __definePage("pages/login/login", PagesLoginLogin);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/registration/registration", PagesRegistrationRegistration);
@@ -36541,7 +36541,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "E:/mine/webfrom/Hospital/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "D:/文本/真带学/应用实践二/Hospital/App.vue"]]);
   const { toString } = Object.prototype;
   function isArray(val) {
     return toString.call(val) === "[object Array]";

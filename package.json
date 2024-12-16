@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@capacitor/core": "^6.2.0",
     "axios": "^1.7.9",
     "buffer": "^6.0.3",
     "clipboard": "^2.0.11",

@@ -1,5 +1,6 @@
 <template>
 	<view class="noticeLayout pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="box">
 			<view class="titleBox">
 				<view class="goBack" @click="goBack" :style="{top:getStatusBarHeight()+'px'}">

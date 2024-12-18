@@ -1,5 +1,6 @@
 <template>
 	<view class="doctorLayout pageBg">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="layout">
 			<view class="navbar">
 				<view class="goBack" @click="goBack">
@@ -34,11 +35,23 @@
 			<view class="up-content">
 				<view class="box2">
 					<view class="image">
-						<image :src="item.img" mode="aspectFill"></image>
+						<!-- <image :src="item.img" mode="aspectFill"></image> -->
+						<!-- <up-avatar :text="item.name" fontSize="18" bg-color="#2f8afb" size="120" font-size="30"></up-avatar> -->
+						<view class="circle" :style="{ background: getGradient('#2f8afb') }">
+							{{item.name}}
+						</view>
 					</view>
 					<view class="row">
-						<view class="text">{{item.name}}</view>
+						<view class="text1">{{item.name}}</view>
 						<view class="smallText">{{item.title}}</view>
+						<view class="text">
+							<scroll-view :show-scrollbar="false" scroll-y="true" class="text-true">
+								<view class="text2">
+								{{content}}
+								</view>
+
+							</scroll-view>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -147,6 +160,34 @@ const showDoctorList = ref([
 ])
 const doctorList = ref([])
 
+const content = ref( `噫吁嚱，危乎高哉！
+  蜀道之难，难于上青天！
+  蚕丛及鱼凫，开国何茫然！
+  尔来四万八千岁，不与秦塞通人烟。
+  西当太白有鸟道，可以横绝峨眉巅。
+  地崩山摧壮士死，然后天梯石栈相钩连。
+  上有六龙回日之高标，下有冲波逆折之回川。
+  黄鹤之飞尚不得过，猿猱欲度愁攀援。
+  青泥何盘盘，百步九折萦岩峦。
+  扪参历井仰胁息，以手抚膺坐长叹。
+
+  问君西游何时还？畏途巉岩不可攀。
+  但见悲鸟号古木，雄飞雌从绕林间。
+  又闻子规啼夜月，愁空山。
+  蜀道之难，难于上青天，使人听此凋朱颜！
+  连峰去天不盈尺，枯松倒挂倚绝壁。
+  飞湍瀑流争喧豗，砯崖转石万壑雷。
+  其险也如此，嗟尔远道之人胡为乎来哉！(也如此 一作：也若此)
+
+  剑阁峥嵘而崔嵬，一夫当关，万夫莫开。
+  所守或匪亲，化为狼与豺。
+  朝避猛虎，夕避长蛇，磨牙吮血，杀人如麻。
+  锦城虽云乐，不如早还家。
+  蜀道之难，难于上青天，侧身西望长咨嗟！`)
+
+
+
+
 //高亮坐标
 const datepos=ref([0]);
 
@@ -252,6 +293,32 @@ const navToDetail = (id,date,doctor) => {
 const goBack = () => {
 	uni.navigateBack()
 }
+
+const getGradient = (baseColor) => {
+  return `linear-gradient(135deg, ${baseColor} 0%, ${lightenColor(baseColor)} 50%, ${baseColor} 100%)`;
+};
+
+// 加亮颜色函数
+const lightenColor = (color) => {
+  // 将颜色转换为 RGB 格式
+  const [r, g, b] = hexToRgb(color);
+  // 加亮颜色
+  const lighterR = Math.min(r + 50, 255);
+  const lighterG = Math.min(g + 50, 255);
+  const lighterB = Math.min(b + 50, 255);
+  // 返回加亮后的颜色
+  return `rgb(${lighterR}, ${lighterG}, ${lighterB})`;
+};
+
+// 将十六进制颜色转换为 RGB 格式
+const hexToRgb = (hex) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? [
+    parseInt(result[1], 16),
+    parseInt(result[2], 16),
+    parseInt(result[3], 16)
+  ] : null;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -263,7 +330,7 @@ const goBack = () => {
 			left: 0;
 			width: 100%;
 			z-index: 10;
-			padding: 30rpx 0;
+			padding: 80rpx 0 30rpx 0;
 			background:
 				linear-gradient(to bottom, transparent 0%, #fff 400rpx),
 				linear-gradient(to left, #beecd8 20%, #b2e0fa);
@@ -374,7 +441,7 @@ const goBack = () => {
 		}
 	}
 	.doctor{
-		height: 400rpx;
+		// height: 400rpx;
 		width: 690rpx;
 		border-radius: 30rpx;
 		box-shadow: 0 10px 10px rgba(0,0,0,0.1);
@@ -382,21 +449,27 @@ const goBack = () => {
 		background-color: white;
 		// background: red;
 		.up-content{
-			height: 250rpx;
+			// height: 250rpx;
 			// background: skyblue;
+			height: auto;
 			border-radius: 30rpx 30rpx 0 0;
 			.box2{
 				display: flex;
 				flex-direction: row;
 				.image{
-					width: 250rpx;
+					margin: 20rpx;
+					width: 210rpx;
 					box-sizing: border-box;
-					height: 250rpx;
-					image{
-						margin:25rpx ;
-						width: 200rpx;
-						height: 200rpx;
+					height: 210rpx;
+					.circle{
+						width: 210rpx;
+						height: 210rpx;
 						border-radius: 50%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-size: 35rpx;
+						color: white
 					}
 				}
 				.row{
@@ -417,6 +490,58 @@ const goBack = () => {
 						// padding-right:0 5px;
 						// margin-bottom: 180rpx;
 						font-size: 25rpx;
+					}
+					.text{
+						// padding: 20rpx;
+						font-size: 30rpx;
+						height: 100%;
+						width: 100%;
+						color: #333;
+						display: flex;
+						flex-direction: column;
+						opacity: 1;
+						.text-true {
+							display: flex;
+						    flex-direction: column; /* 垂直方向排列 */
+						    max-width: 440rpx; /* 适应容器的宽度 */
+						    max-height: 100rpx; /* 设置最大高度 */
+						    // padding: 40rpx;
+						    overflow-y: auto; /* 启用垂直滚动 */
+						    scroll-behavior: smooth;
+						    -webkit-overflow-scrolling: touch;
+							z-index: 10;
+							padding-top: 20rpx;
+							.text2{
+								text-indent: 2em;
+								display: 'block';
+								font-size: 20rpx;
+								line-height: 30rpx;
+								color: #000;
+								font-weight: bold;
+								font-family: '仿宋';
+							}
+							.image2{
+								display: flex;
+								justify-content: center;
+								margin: 20rpx 0;
+								
+								image{
+									opacity: 1;
+									width: 100%;
+									height: 500rpx;
+								}
+							}
+						}
+						image{
+							//在文字正下方，重叠
+							position: absolute;
+							margin: 275rpx 0;
+							width: 650rpx;
+							height: 650rpx;
+							opacity: 0.32;
+							
+							
+						}
 					}
 				}
 			}

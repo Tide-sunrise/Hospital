@@ -1,4 +1,4 @@
-import "./chunk-34Z2WVG2.js";
+import "./chunk-4337NVKS.js";
 
 // ../../../文本/真带学/应用实践二/Hospital/node_modules/dayjs/esm/constant.js
 var SECONDS_A_MINUTE = 60;

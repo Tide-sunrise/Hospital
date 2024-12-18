@@ -1024,9 +1024,6 @@ uni-view[data-v-6efcec67], uni-scroll-view[data-v-6efcec67], uni-swiper-item[dat
   margin-top: 0.625rem;
 }
 .searchLayout .list[data-v-c10c040c] {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.15625rem;
   padding: 0.625rem 0;
 }
 .searchLayout .list .doctor[data-v-c10c040c] {

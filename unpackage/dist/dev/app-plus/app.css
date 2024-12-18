@@ -4254,6 +4254,10 @@ uni-view, uni-swiper, uni-swiper-item {
   background: linear-gradient(to bottom, transparent 0%, #fff 31.25rem), linear-gradient(to left, #beecd8 20%, #b2e0fa);
   min-height: 80vh;
 }
+.pageBg3 {
+  background: linear-gradient(to bottom, transparent 0%, #fff 31.25rem), linear-gradient(to left, #beecd8 20%, #b2e0fa);
+  min-height: 80vh;
+}
 .loadingLayout {
   padding: 0.9375rem 0;
 }

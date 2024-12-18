@@ -23,35 +23,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.empty[data-v-b985e341] {
-  width: 100%;
-  height: var(--square-height);
-}
-/**
- * 这里是uni-app内置的常用样式变量
- *
- * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
- * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
- *
- */
-/**
- * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
- *
- * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
- */
-/* 颜色变量 */
-/* 行为相关颜色 */
-/* 文字基本颜色 */
-/* 背景颜色 */
-/* 边框颜色 */
-/* 尺寸变量 */
-/* 文字尺寸 */
-/* 图片尺寸 */
-/* Border Radius */
-/* 水平间距 */
-/* 垂直间距 */
-/* 透明度 */
-/* 文章场景相关 */
 .uniui-cart-filled[data-v-d31e1c47]:before {
   content: "\e6d0";
 }
@@ -584,51 +555,173 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.noticeLayout[data-v-1c2e4c1e] {
-  padding: 0.9375rem 0;
-}
-.noticeLayout .box[data-v-1c2e4c1e] {
+.title[data-v-e0df3f7f] {
   width: 21.5625rem;
-  height: 1.875rem;
-  margin: 0 0.9375rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  /* 条件编译 */
+  margin-bottom: 0.3125rem;
 }
-.noticeLayout .box .titleBox[data-v-1c2e4c1e] {
-  margin: 0 0 0.9375rem 0;
+.title .line[data-v-e0df3f7f] {
+  width: 21.5625rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.title .line .navbar[data-v-e0df3f7f] {
+  height: 2.5rem;
   display: flex;
   flex-direction: row;
-  width: 21.5625rem;
-  background: white;
-  border-radius: 0.9375rem;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  width: 19.0625rem;
 }
-.noticeLayout .box .titleBox .goBack[data-v-1c2e4c1e] {
-  margin: 0.15625rem;
-  width: 1.5625rem;
-  height: 1.5625rem;
-  left: 0.9375rem;
+.title .line .navbar .goBack[data-v-e0df3f7f] {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 100px;
   top: 0;
+  -webkit-backdrop-filter: blur(0.3125rem);
+          backdrop-filter: blur(0.3125rem);
+  border: 0.03125rem solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.noticeLayout .box .titleBox .title[data-v-1c2e4c1e] {
-  width: 19.6875rem;
-  height: 1.875rem;
-  padding-right: 1.875rem;
+.title .line .navbar .text[data-v-e0df3f7f] {
+  height: 2.5rem;
   display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.title .line .logo[data-v-e0df3f7f] {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.9375rem;
+}
+.title .line .logo uni-image[data-v-e0df3f7f] {
+  width: 100%;
+  height: 100%;
+}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.empty[data-v-b985e341] {
+  width: 100%;
+  height: var(--square-height);
+}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.introductionLayout[data-v-f7bca513] {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 0.9375rem;
+  padding-top: 1.5625rem;
 }
-.noticeLayout .box .notice[data-v-1c2e4c1e] {
-  display: flex;
-  padding-left: 0.9375rem;
-  align-items: center;
-  flex-direction: row;
-  margin: 0.9375rem 0;
+.introductionLayout .intoduction[data-v-f7bca513] {
   width: 21.5625rem;
-  height: 1.875rem;
-  background: white;
-  border-radius: 0.9375rem;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  height: 40.625rem;
+  background-color: #fff;
+  border-radius: 1.5625rem;
+  margin-top: 0.625rem;
+  display: flex;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.introductionLayout .intoduction .text[data-v-f7bca513] {
+  padding: 0.625rem;
+  font-size: 0.9375rem;
+  height: 100%;
+  width: 100%;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+.introductionLayout .intoduction .text .text-true[data-v-f7bca513] {
+  display: flex;
+  flex-direction: column;
+  /* 垂直方向排列 */
+  max-width: 17.8125rem;
+  /* 适应容器的宽度 */
+  max-height: 39.375rem;
+  /* 设置最大高度 */
+  padding: 1.25rem;
+  overflow-y: auto;
+  /* 启用垂直滚动 */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  z-index: 10;
+}
+.introductionLayout .intoduction .text .text-true .text2[data-v-f7bca513] {
+  text-indent: 2em;
+  display: "block";
+  font-size: 1.25rem;
+  line-height: 1.5625rem;
+  color: #000;
+  font-weight: bold;
+  font-family: "仿宋";
+}
+.introductionLayout .intoduction .text .text-true .image2[data-v-f7bca513] {
+  display: flex;
+  justify-content: center;
+  margin: 0.625rem 0;
+}
+.introductionLayout .intoduction .text .text-true .image2 uni-image[data-v-f7bca513] {
+  opacity: 1;
+  width: 100%;
+  height: 15.625rem;
+}
+.introductionLayout .intoduction .text uni-image[data-v-f7bca513] {
+  position: absolute;
+  margin: 8.59375rem 0;
+  width: 20.3125rem;
+  height: 20.3125rem;
+  opacity: 0.32;
 }

@@ -47,7 +47,7 @@
 						<view class="text">
 							<scroll-view :show-scrollbar="false" scroll-y="true" class="text-true">
 								<view class="text2">
-								{{content}}
+								{{item.intro}}
 								</view>
 
 							</scroll-view>
@@ -239,6 +239,7 @@ onLoad((option)=>{
 				doctor.name = res[i].doctorName
 				doctor.img =  res[i].photoUrl
 				doctor.title = titlehash[res[i].titleId]
+				doctor.intro=res[i].introduction
 				doctor.schedule = {}
 				doctor.schedule[part.date]={
 					date: part.date,
@@ -273,6 +274,7 @@ const showThisDay = (date,id) => {
 		doctor.doctorId = doctorList.value[i].doctorId
 		doctor.name = doctorList.value[i].name
 		doctor.title = doctorList.value[i].title
+		doctor.intro=doctorList.value[i].intro
 		doctor.schedule = []
 		for(let key in doctorList.value[i].schedule){
 			if(key == date) doctor.schedule.push(doctorList.value[i].schedule[key])

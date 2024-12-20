@@ -72,7 +72,7 @@
 							<view class="text">
 								<scroll-view :show-scrollbar="false" scroll-y="true" class="text-true">
 									<view class="text2">
-									{{content}}
+									{{item.intro}}
 									</view>
 							
 								</scroll-view>
@@ -302,6 +302,7 @@ import { hi } from "date-fns/locale";
 				doctor.name = res[i].doctorName
 				doctor.img =  res[i].photoUrl
 				doctor.title = titlehash[res[i].titleId]
+				doctor.intro=res[i].introduction
 				doctor.schedule = {}
 				doctor.schedule[part.date] = {
 					date: part.date,

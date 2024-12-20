@@ -1,8 +1,12 @@
 <template>
 	<view class="doctorDetailLayout pageBg2">
+		<myEmpty height="50rpx"></myEmpty>
 		<view class="logoBackground">
 			<view class="logo">
-				<image src="../../static/zxj/male.png" mode="aspectFill"></image>
+				<!-- <image src="../../static/zxj/male.png" mode="aspectFill"></image> -->
+				<view class="circle" :style="{ background: getGradient('#2f8afb') }">
+					{{data.name}}
+				</view>
 			</view>
 			<view class="box">
 				<view class="name">
@@ -52,7 +56,7 @@
 				</view>
 			</view>
 			<view class="logo">
-				<up-avatar :text="healthcard.name" fontSize="12" randomBgColor size="50"></up-avatar>
+				<up-avatar v-if="healthcard.id!=='?'" :text="healthcard.name" fontSize="12" randomBgColor size="50"></up-avatar>
 			</view>
 			<view class="name">
 				{{healthcard.name}}
@@ -191,8 +195,8 @@
 	}
 	const healthcard = ref({
 		patientId: 0,
-		name: '原神',
-		id: '114514191981011451'
+		name: '没有健康卡，请返回主页添加',
+		id: '?'
 	})
 	const Allhealthcards = ref([])
 
@@ -294,6 +298,31 @@
 		healthcard.value = Allhealthcards.value[index]
 		infoPopup.value.close()
 	}
+	const getGradient = (baseColor) => {
+	  return `linear-gradient(135deg, ${baseColor} 0%, ${lightenColor(baseColor)} 50%, ${baseColor} 100%)`;
+	};
+	
+	// 加亮颜色函数
+	const lightenColor = (color) => {
+	  // 将颜色转换为 RGB 格式
+	  const [r, g, b] = hexToRgb(color);
+	  // 加亮颜色
+	  const lighterR = Math.min(r + 50, 255);
+	  const lighterG = Math.min(g + 50, 255);
+	  const lighterB = Math.min(b + 50, 255);
+	  // 返回加亮后的颜色
+	  return `rgb(${lighterR}, ${lighterG}, ${lighterB})`;
+	};
+	
+	// 将十六进制颜色转换为 RGB 格式
+	const hexToRgb = (hex) => {
+	  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	  return result ? [
+	    parseInt(result[1], 16),
+	    parseInt(result[2], 16),
+	    parseInt(result[3], 16)
+	  ] : null;
+	};
 </script>
 
 <style lang="scss" scoped>
@@ -306,7 +335,7 @@
 			.logo {
 				position: absolute;
 				// border-color: #000;
-				top: 50rpx;
+				top: 100rpx;
 				left: 50%;
 				z-index: 20;
 				transform: translateX(-50%);
@@ -315,12 +344,14 @@
 				border-radius: 50%;
 				overflow: hidden;
 
-				image {
+				.circle {
 					width: 100%;
 					height: 100%;
-					// display: flex;
-					// justify-content: center;
-					// align-items: center;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 35rpx;
+					color: white
 				}
 			}
 
@@ -392,7 +423,7 @@
 					align-items: center;
 					justify-content: center;
 					flex-direction: row;
-
+					margin-bottom: 20rpx;
 					.text {
 						width: 500rpx;
 					}

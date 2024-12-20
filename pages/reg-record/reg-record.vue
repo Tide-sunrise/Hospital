@@ -19,7 +19,7 @@
 		<view class="em">
 
 		</view>
-		<view class="box" v-for="(item,index) in recordList">
+		<view class="box" v-for="(item,index) in recordList.slice().reverse()">
 			<view class="info-title" v-if="!item.isPaid">
 				<label>订单已失效</label>
 			</view>
@@ -49,6 +49,7 @@
 			</view>
 			<view class="button">
 				<wd-button type="warning" @click="nogate(item.appointmentId)" :disabled="!item.isPaid">取消挂号</wd-button>
+				<!-- <wd-button type="error" @click="nogate2(item.appointmentId)" :disabled="item.isPaid">删除记录</wd-button> -->
 			</view>
 		</view>
 	</view>
@@ -104,6 +105,12 @@
 	async function getRecordList() {
 		//获取挂号记录
 		let res = await getAppointmentsByUserId(store.state.user);
+		//过滤掉30秒外，且status为3的记录
+		let now = new Date();
+		res.data = res.data.filter((item) => {
+			return (now - new Date(item.createdTimeStamp)) < 30000 || item.status != 3;
+		})
+		
 		//对res.data中的appointmentId排序
 		res.data.sort((a, b) => {
 			return a.appointmentId - b.appointmentId;
@@ -142,6 +149,40 @@
 		uni.showModal({
 			title: '提示',
 			content: '是否取消挂号',
+			success: async function(res) {
+				if (res.confirm) {
+					try {
+						let response = await cancelAppointmentById({
+							appointmentId: id
+						});
+						console.log(response);
+						await getRecordList();
+						uni.showToast({
+							title: '取消成功',
+							icon: 'success',
+							duration: 2000
+						});
+						//刷新页面
+					} catch (error) {
+						console.error(error);
+						uni.showToast({
+							title: '取消失败',
+							icon: 'none',
+							duration: 2000
+						});
+					}
+				} else if (res.cancel) {
+					console.log('用户点击取消');
+				}
+			}
+		});
+	}
+	
+	//删除记录
+	const nogate2 = async (id) => {
+		uni.showModal({
+			title: '提示',
+			content: '是否删除记录',
 			success: async function(res) {
 				if (res.confirm) {
 					try {

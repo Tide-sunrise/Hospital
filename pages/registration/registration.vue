@@ -44,7 +44,7 @@
 					<wd-cell-group :title="item.title" border>
 						<wd-cell v-for="(cell, index) in item.items" :key="index" :title="cell.title" :label="cell.label"
 						is-link :to="`/pages/doctor/doctor?specializationId=${cell.id}`">
-							<!-- <image src="../../common/image/genshin.jpg" mode="aspectFit"></image> -->
+							<image src="../../static/zxj/CT.png" mode="aspectFit"></image>
 						</wd-cell>
 					</wd-cell-group>
 		        </scroll-view>
@@ -184,7 +184,7 @@ onMounted(()=>{
 			left: 0;
 			width: 100%;
 			z-index: 10;
-			padding: 30rpx 0;
+			padding: 80rpx 0 30rpx 0;
 			background:
 				linear-gradient(to bottom, transparent 0%, #fff 400rpx),
 				linear-gradient(to left, #beecd8 20%, #b2e0fa);
@@ -245,8 +245,8 @@ onMounted(()=>{
 				box-sizing: border-box;
 				height: 100%;
 				image {
-					width: 100rpx;
-					height:100rpx;
+					width: 50rpx;
+					height:50rpx;
 					border-radius: 50%;
 				}
 			}

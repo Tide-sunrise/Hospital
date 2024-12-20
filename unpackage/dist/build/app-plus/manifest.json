@@ -5,10 +5,10 @@
     "iPad"
   ],
   "id": "__UNI__A751A47",
-  "name": "Hospital",
+  "name": "Vanaheim",
   "version": {
-    "name": "1.0.2",
-    "code": 102
+    "name": "1.0.3",
+    "code": 103
   },
   "description": "",
   "developer": {
@@ -75,7 +75,8 @@
         }
       },
       "splashscreen": {
-        "useOriginalMsgbox": false
+        "useOriginalMsgbox": false,
+        "androidStyle": "common"
       },
       "google": {
         "permissions": [

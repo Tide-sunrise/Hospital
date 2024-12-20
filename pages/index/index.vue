@@ -148,8 +148,9 @@ const myFunction = ref([
 		picurl:"../../static/zxj/yisheng.png",
 	},
 	{
-		name:"问诊",
-		picurl:"../../static/zxj/xiaoxi.png",
+		name:"名医搜索",
+		url:"/pages/search/search",
+		picurl:"../../static/zxj/jiuzhen.png",
 	},
 	{
 		name:"介绍",

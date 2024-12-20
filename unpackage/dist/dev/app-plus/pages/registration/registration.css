@@ -3057,7 +3057,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 0.9375rem 0;
+  padding: 2.5rem 0 0.9375rem 0;
   background: linear-gradient(to bottom, transparent 0%, #fff 12.5rem), linear-gradient(to left, #beecd8 20%, #b2e0fa);
   display: flex;
   flex-direction: row;
@@ -3115,8 +3115,8 @@
   height: 100%;
 }
 .registrationLayout .wraper .content .category uni-image[data-v-1e5d1fa0] {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
   border-radius: 50%;
 }
 .registrationLayout .scorePopup[data-v-1e5d1fa0] {

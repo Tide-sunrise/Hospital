@@ -3061,7 +3061,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_2$7 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-ac70166d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_2$6 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-ac70166d"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-icon/u-icon.vue"]]);
   const props$8 = defineMixin({
     props: {
       // 绑定的值
@@ -3436,7 +3436,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$7);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4006,7 +4006,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-66fc790e"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-checkbox/wd-checkbox.vue"]]);
+  const __easycom_3$4 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-66fc790e"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-checkbox/wd-checkbox.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -4286,7 +4286,7 @@ if (uni.restoreGlobal) {
       ])
     ], 46, ["id", "hover-class", "hover-start-time", "hover-stay-time", "open-type", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card", "session-from", "lang", "hover-stop-propagation"]);
   }
-  const __easycom_2$6 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-d858c170"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-d858c170"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function bind(fn, thisArg) {
     return function wrap() {
       return fn.apply(thisArg, arguments);
@@ -14991,7 +14991,7 @@ if (uni.restoreGlobal) {
     { url: "/pages/User/User" }
   ];
   const userId = 0;
-  const _imports_0$5 = "/static/zxj/v-Photoroom.png";
+  const _imports_0$4 = "/static/zxj/v-Photoroom.png";
   const _sfc_main$O = {
     __name: "login",
     setup(__props, { expose: __expose }) {
@@ -15070,9 +15070,9 @@ if (uni.restoreGlobal) {
   function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_up_input = resolveEasycom(vue.resolveDynamicComponent("up-input"), __easycom_1$7);
-    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$7);
-    const _component_wd_checkbox = resolveEasycom(vue.resolveDynamicComponent("wd-checkbox"), __easycom_3$3);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$6);
+    const _component_wd_checkbox = resolveEasycom(vue.resolveDynamicComponent("wd-checkbox"), __easycom_3$4);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "loginLayout pageBg2" }, [
       vue.createVNode(_component_myEmpty, { height: "100rpx" }),
       vue.createElementVNode("view", { class: "title" }, " 登录 "),
@@ -15165,7 +15165,7 @@ if (uni.restoreGlobal) {
       ]),
       vue.createElementVNode("view", { class: "logo" }, [
         vue.createElementVNode("image", {
-          src: _imports_0$5,
+          src: _imports_0$4,
           mode: "aspectFit"
         })
       ])
@@ -16438,7 +16438,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-f903ae98"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-swiper/wd-swiper.vue"]]);
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-f903ae98"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/wot-design-uni/components/wd-swiper/wd-swiper.vue"]]);
   const props$7 = defineMixin({
     props: {
       // 文字颜色
@@ -16759,7 +16759,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$7);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$6);
     const _component_u_link = resolveEasycom(vue.resolveDynamicComponent("u-link"), __easycom_1$5);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
@@ -16999,7 +16999,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$7);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$6);
     const _component_up_text = resolveEasycom(vue.resolveDynamicComponent("up-text"), __easycom_1$4);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -17049,7 +17049,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-34d954f9"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-avatar/u-avatar.vue"]]);
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-34d954f9"], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uview-plus/components/u-avatar/u-avatar.vue"]]);
   const _sfc_main$G = {
     __name: "health-card",
     props: {
@@ -17097,7 +17097,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_up_avatar = resolveEasycom(vue.resolveDynamicComponent("up-avatar"), __easycom_2$4);
+    const _component_up_avatar = resolveEasycom(vue.resolveDynamicComponent("up-avatar"), __easycom_3$3);
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "health-card" }, [
       $setup.cardExist ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -26982,8 +26982,9 @@ if (uni.restoreGlobal) {
           picurl: "../../static/zxj/yisheng.png"
         },
         {
-          name: "问诊",
-          picurl: "../../static/zxj/xiaoxi.png"
+          name: "名医搜索",
+          url: "/pages/search/search",
+          picurl: "../../static/zxj/jiuzhen.png"
         },
         {
           name: "介绍",
@@ -27108,9 +27109,9 @@ if (uni.restoreGlobal) {
         { id: 444, title: "这是资讯4" }
       ]);
       async function getHealthCard() {
-        formatAppLog("log", "at pages/index/index.vue:285", store.state.user);
+        formatAppLog("log", "at pages/index/index.vue:286", store.state.user);
         let res = await getpatients(store.state.user);
-        formatAppLog("log", "at pages/index/index.vue:287", res);
+        formatAppLog("log", "at pages/index/index.vue:288", res);
         res = res.data;
         list.value = [];
         for (let index2 = 0; index2 < res.length; index2++) {
@@ -27126,22 +27127,22 @@ if (uni.restoreGlobal) {
           name: "原神",
           id: "114514191981011451"
         });
-        formatAppLog("log", "at pages/index/index.vue:303", list);
+        formatAppLog("log", "at pages/index/index.vue:304", list);
       }
       vue.onMounted(() => {
         getHealthCard();
       });
       const onClick2 = (item) => {
-        formatAppLog("log", "at pages/index/index.vue:337", item.index === 0);
+        formatAppLog("log", "at pages/index/index.vue:338", item.index === 0);
         uni.navigateTo({
           url: item.index === 0 ? "/pages/payment/payment" : "/pages/User/User"
         });
       };
       function handleClick(e) {
-        formatAppLog("log", "at pages/index/index.vue:343", e);
+        formatAppLog("log", "at pages/index/index.vue:344", e);
       }
       function onChange(e) {
-        formatAppLog("log", "at pages/index/index.vue:346", e);
+        formatAppLog("log", "at pages/index/index.vue:347", e);
       }
       const onTransition = (e) => {
         if (Tabs2.value) {
@@ -27151,7 +27152,7 @@ if (uni.restoreGlobal) {
       function onAnimationfinish(e) {
         activeIndex.value = e.detail.current;
         tabs.value.unlockDx();
-        formatAppLog("log", "at pages/index/index.vue:361", activeIndex);
+        formatAppLog("log", "at pages/index/index.vue:362", activeIndex);
       }
       const __returned__ = { current, swiperList, slideCustomStyle, options: options2, list, plus: plus2, noticeList, myFunction, itemTab, Tabs: Tabs2, activeIndex, tabs, newsLists, getHealthCard, onClick: onClick2, handleClick, onChange, onTransition, onAnimationfinish, ref: vue.ref, onMounted: vue.onMounted, get store() {
         return store;
@@ -27169,7 +27170,7 @@ if (uni.restoreGlobal) {
   function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_custom_nav_bar = resolveEasycom(vue.resolveDynamicComponent("custom-nav-bar"), __easycom_1$6);
-    const _component_wd_swiper = resolveEasycom(vue.resolveDynamicComponent("wd-swiper"), __easycom_2$5);
+    const _component_wd_swiper = resolveEasycom(vue.resolveDynamicComponent("wd-swiper"), __easycom_2$4);
     const _component_health_card = resolveEasycom(vue.resolveDynamicComponent("health-card"), __easycom_1$3);
     const _component_z_swiper_item = resolveEasycom(vue.resolveDynamicComponent("z-swiper-item"), __easycom_4$1);
     const _component_z_swiper = resolveEasycom(vue.resolveDynamicComponent("z-swiper"), __easycom_5$1);
@@ -28838,7 +28839,8 @@ if (uni.restoreGlobal) {
       return __returned__;
     }
   });
-  const _imports_0$4 = "/static/picture/guahao.jpg";
+  const _imports_0$3 = "/static/picture/guahao.jpg";
+  const _imports_1$1 = "/static/zxj/CT.png";
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$6);
     const _component_wd_sidebar_item = resolveEasycom(vue.resolveDynamicComponent("wd-sidebar-item"), __easycom_1$1);
@@ -28869,7 +28871,7 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "em" }),
       vue.createElementVNode("view", { class: "pic" }, [
         vue.createElementVNode("image", {
-          src: _imports_0$4,
+          src: _imports_0$3,
           mode: "aspectFill"
         })
       ]),
@@ -28938,7 +28940,10 @@ if (uni.restoreGlobal) {
                             to: `/pages/doctor/doctor?specializationId=${cell.id}`
                           }, {
                             default: vue.withCtx(() => [
-                              vue.createCommentVNode(' <image src="../../common/image/genshin.jpg" mode="aspectFit"></image> ')
+                              vue.createElementVNode("image", {
+                                src: _imports_1$1,
+                                mode: "aspectFit"
+                              })
                             ]),
                             _: 2
                             /* DYNAMIC */
@@ -29072,7 +29077,7 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "userInfo" }, [
         vue.createElementVNode("view", { class: "avatar" }, [
           vue.createElementVNode("image", {
-            src: _imports_0$5,
+            src: _imports_0$4,
             mode: "aspectFill"
           })
         ]),
@@ -29209,8 +29214,8 @@ if (uni.restoreGlobal) {
     ]);
   }
   const PagesUserUser = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-1e1b347f"], ["__file", "D:/文本/真带学/应用实践二/Hospital/pages/User/User.vue"]]);
-  const _imports_0$3 = "/static/zhongyi.jpg";
-  const _imports_0$2 = "/static/zxj/v.png";
+  const _imports_0$2 = "/static/zhongyi.jpg";
+  const _imports_0$1 = "/static/zxj/v.png";
   const _sfc_main$m = {
     __name: "catalogs",
     setup(__props, { expose: __expose }) {
@@ -29268,13 +29273,13 @@ if (uni.restoreGlobal) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "catalogsLayout" }, [
       vue.createElementVNode("view", { class: "imageBackground" }, [
         vue.createElementVNode("image", {
-          src: _imports_0$3,
+          src: _imports_0$2,
           mode: "aspectFill"
         })
       ]),
       vue.createElementVNode("view", { class: "logo" }, [
         vue.createElementVNode("image", {
-          src: _imports_0$2,
+          src: _imports_0$1,
           mode: "aspectFill"
         })
       ]),
@@ -30872,8 +30877,6 @@ if (uni.restoreGlobal) {
         pageSize: 12,
         keyword: ""
       });
-      const historySearch = vue.ref(["中医", "骨", "皮肤", "张三"]);
-      const recommendList = vue.ref(["陶勇", "发热", "老年", "人瑞"]);
       const noData = vue.ref(false);
       const noSearch = vue.ref(false);
       const classList = vue.ref([]);
@@ -30888,6 +30891,31 @@ if (uni.restoreGlobal) {
         "5": "主任医师",
         "6": "专家"
       };
+      const content = vue.ref(`噫吁嚱，危乎高哉！
+	  蜀道之难，难于上青天！
+	  蚕丛及鱼凫，开国何茫然！
+	  尔来四万八千岁，不与秦塞通人烟。
+	  西当太白有鸟道，可以横绝峨眉巅。
+	  地崩山摧壮士死，然后天梯石栈相钩连。
+	  上有六龙回日之高标，下有冲波逆折之回川。
+	  黄鹤之飞尚不得过，猿猱欲度愁攀援。
+	  青泥何盘盘，百步九折萦岩峦。
+	  扪参历井仰胁息，以手抚膺坐长叹。
+	
+	  问君西游何时还？畏途巉岩不可攀。
+	  但见悲鸟号古木，雄飞雌从绕林间。
+	  又闻子规啼夜月，愁空山。
+	  蜀道之难，难于上青天，使人听此凋朱颜！
+	  连峰去天不盈尺，枯松倒挂倚绝壁。
+	  飞湍瀑流争喧豗，砯崖转石万壑雷。
+	  其险也如此，嗟尔远道之人胡为乎来哉！(也如此 一作：也若此)
+	
+	  剑阁峥嵘而崔嵬，一夫当关，万夫莫开。
+	  所守或匪亲，化为狼与豺。
+	  朝避猛虎，夕避长蛇，磨牙吮血，杀人如麻。
+	  锦城虽云乐，不如早还家。
+	  蜀道之难，难于上青天，侧身西望长咨嗟！`);
+      const historySearch = vue.ref(uni.getStorageSync("historySearch") || []);
       const timeSelect = () => {
         infoPopup.value.open();
       };
@@ -30905,6 +30933,10 @@ if (uni.restoreGlobal) {
         });
       };
       const onSearch = async (value2) => {
+        historySearch.value = [.../* @__PURE__ */ new Set([value2, ...historySearch.value])].slice(0, 10);
+        uni.setStorageSync("historySearch", value2);
+        initParams(queryParams2.value.keyword);
+        formatAppLog("log", "at pages/search/search.vue:245", queryParams2.value.keyword);
         let res;
         if (typeSelect.value == "按医生") {
           res = await getDoctorInfoByName({
@@ -30915,10 +30947,10 @@ if (uni.restoreGlobal) {
             introduction: value2
           });
         }
-        formatAppLog("log", "at pages/search/search.vue:198", res);
+        formatAppLog("log", "at pages/search/search.vue:257", res);
         let doctorHash = {};
         res = res.data;
-        formatAppLog("log", "at pages/search/search.vue:202", res);
+        formatAppLog("log", "at pages/search/search.vue:261", res);
         let now2 = /* @__PURE__ */ new Date();
         for (let i = 0; i < res.length; i++) {
           let z = new Date(res[i].date);
@@ -30962,14 +30994,15 @@ if (uni.restoreGlobal) {
             doctorHash[res[i].doctorId] = doctor;
           }
         }
-        formatAppLog("log", "at pages/search/search.vue:247", doctorHash);
+        formatAppLog("log", "at pages/search/search.vue:306", doctorHash);
         classList.value = [];
         for (let key in doctorHash) {
           classList.value.push(doctorHash[key]);
         }
-        formatAppLog("log", "at pages/search/search.vue:254", "你好");
+        formatAppLog("log", "at pages/search/search.vue:313", "你好");
       };
       const onClear = () => {
+        initParams();
       };
       const goback = () => {
         uni.navigateTo({
@@ -30984,16 +31017,46 @@ if (uni.restoreGlobal) {
           title: "是否清空历史搜索？",
           success: (res) => {
             if (res.confirm) {
-              formatAppLog("log", "at pages/search/search.vue:281", "确认删除");
+              formatAppLog("log", "at pages/search/search.vue:340", "确认删除");
+              uni.removeStorageSync("historySearch");
+              historySearch.value = [];
             }
           }
         });
+      };
+      const initParams = (value2 = "") => {
+        classList.value = [];
+        noData.value = false;
+        noSearch.value = false;
+        queryParams2.value = {
+          pageNum: 1,
+          pageSize: 12,
+          keyword: value2 || ""
+        };
       };
       onReachBottom(() => {
       });
       onUnload(() => {
       });
-      const __returned__ = { queryParams: queryParams2, historySearch, recommendList, noData, noSearch, classList, searchValue, infoPopup, typeSelect, titlehash, timeSelect, switchToD, switchToI, navToDetail, onSearch, onClear, goback, clickTab, removeHistory, ref: vue.ref, get onLoad() {
+      const getGradient = (baseColor) => {
+        return `linear-gradient(135deg, ${baseColor} 0%, ${lightenColor(baseColor)} 50%, ${baseColor} 100%)`;
+      };
+      const lightenColor = (color2) => {
+        const [r, g, b] = hexToRgb2(color2);
+        const lighterR = Math.min(r + 50, 255);
+        const lighterG = Math.min(g + 50, 255);
+        const lighterB = Math.min(b + 50, 255);
+        return `rgb(${lighterR}, ${lighterG}, ${lighterB})`;
+      };
+      const hexToRgb2 = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? [
+          parseInt(result[1], 16),
+          parseInt(result[2], 16),
+          parseInt(result[3], 16)
+        ] : null;
+      };
+      const __returned__ = { queryParams: queryParams2, noData, noSearch, classList, searchValue, infoPopup, typeSelect, titlehash, content, historySearch, timeSelect, switchToD, switchToI, navToDetail, onSearch, onClear, goback, clickTab, removeHistory, initParams, getGradient, lightenColor, hexToRgb: hexToRgb2, ref: vue.ref, get onLoad() {
         return onLoad;
       }, get onUnload() {
         return onUnload;
@@ -31015,7 +31078,7 @@ if (uni.restoreGlobal) {
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$6);
     const _component_up_input = resolveEasycom(vue.resolveDynamicComponent("up-input"), __easycom_1$7);
-    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$7);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$6);
     const _component_uv_empty = resolveEasycom(vue.resolveDynamicComponent("uv-empty"), __easycom_3);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "searchLayout pageBg" }, [
@@ -31096,26 +31159,7 @@ if (uni.restoreGlobal) {
           ))
         ])
       ]),
-      vue.createElementVNode("view", { class: "recommend" }, [
-        vue.createElementVNode("view", { class: "topTitle" }, [
-          vue.createElementVNode("view", { class: "text" }, "热门搜索")
-        ]),
-        vue.createElementVNode("view", { class: "tabs" }, [
-          (vue.openBlock(true), vue.createElementBlock(
-            vue.Fragment,
-            null,
-            vue.renderList($setup.recommendList, (tab) => {
-              return vue.openBlock(), vue.createElementBlock("view", {
-                class: "tab",
-                key: tab,
-                onClick: ($event) => $setup.clickTab(tab)
-              }, vue.toDisplayString(tab), 9, ["onClick"]);
-            }),
-            128
-            /* KEYED_FRAGMENT */
-          ))
-        ])
-      ]),
+      vue.createCommentVNode(' <view class="recommend">\r\n			<view class="topTitle">\r\n				<view class="text">热门搜索</view>\r\n			</view>\r\n			<view class="tabs">\r\n				<view class="tab" v-for="tab in recommendList" :key="tab" @click="clickTab(tab)">{{tab}}</view>\r\n			</view>\r\n		</view> '),
       $setup.classList.length === 0 ? (vue.openBlock(), vue.createElementBlock("view", {
         key: 0,
         class: "noSearch"
@@ -31135,15 +31179,21 @@ if (uni.restoreGlobal) {
               vue.createElementVNode("view", { class: "up-content" }, [
                 vue.createElementVNode("view", { class: "box2" }, [
                   vue.createElementVNode("view", { class: "image" }, [
-                    vue.createElementVNode("image", {
-                      src: item.img,
-                      mode: "aspectFill"
-                    }, null, 8, ["src"])
+                    vue.createElementVNode(
+                      "view",
+                      {
+                        class: "circle",
+                        style: vue.normalizeStyle({ background: $setup.getGradient("#2f8afb") })
+                      },
+                      vue.toDisplayString(item.name),
+                      5
+                      /* TEXT, STYLE */
+                    )
                   ]),
                   vue.createElementVNode("view", { class: "row" }, [
                     vue.createElementVNode(
                       "view",
-                      { class: "text" },
+                      { class: "text1" },
                       vue.toDisplayString(item.name),
                       1
                       /* TEXT */
@@ -31154,7 +31204,22 @@ if (uni.restoreGlobal) {
                       vue.toDisplayString(item.title),
                       1
                       /* TEXT */
-                    )
+                    ),
+                    vue.createElementVNode("view", { class: "text" }, [
+                      vue.createElementVNode("scroll-view", {
+                        "show-scrollbar": false,
+                        "scroll-y": "true",
+                        class: "text-true"
+                      }, [
+                        vue.createElementVNode(
+                          "view",
+                          { class: "text2" },
+                          vue.toDisplayString($setup.content),
+                          1
+                          /* TEXT */
+                        )
+                      ])
+                    ])
                   ])
                 ])
               ]),
@@ -31506,7 +31571,7 @@ if (uni.restoreGlobal) {
     );
   }
   const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__file", "D:/文本/真带学/应用实践二/Hospital/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
-  const _imports_0$1 = "/assets/zhifu-zhifuchenggong.b7ab7d99.svg";
+  const _imports_0 = "/assets/zhifu-zhifuchenggong.b7ab7d99.svg";
   const _imports_1 = "/assets/zhifu-zhifushibai.ff167364.svg";
   const _sfc_main$h = {
     __name: "payment",
@@ -31531,7 +31596,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_2$1);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "paymentLayout" }, [
       vue.createElementVNode("view", { class: "layout" }, [
         $setup.isSuccess ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -31539,7 +31604,7 @@ if (uni.restoreGlobal) {
           class: "icon"
         }, [
           vue.createElementVNode("image", {
-            src: _imports_0$1,
+            src: _imports_0,
             mode: "aspectFill"
           })
         ])) : (vue.openBlock(), vue.createElementBlock("view", {
@@ -31686,6 +31751,30 @@ if (uni.restoreGlobal) {
         }
       ]);
       const doctorList = vue.ref([]);
+      const content = vue.ref(`噫吁嚱，危乎高哉！
+  蜀道之难，难于上青天！
+  蚕丛及鱼凫，开国何茫然！
+  尔来四万八千岁，不与秦塞通人烟。
+  西当太白有鸟道，可以横绝峨眉巅。
+  地崩山摧壮士死，然后天梯石栈相钩连。
+  上有六龙回日之高标，下有冲波逆折之回川。
+  黄鹤之飞尚不得过，猿猱欲度愁攀援。
+  青泥何盘盘，百步九折萦岩峦。
+  扪参历井仰胁息，以手抚膺坐长叹。
+
+  问君西游何时还？畏途巉岩不可攀。
+  但见悲鸟号古木，雄飞雌从绕林间。
+  又闻子规啼夜月，愁空山。
+  蜀道之难，难于上青天，使人听此凋朱颜！
+  连峰去天不盈尺，枯松倒挂倚绝壁。
+  飞湍瀑流争喧豗，砯崖转石万壑雷。
+  其险也如此，嗟尔远道之人胡为乎来哉！(也如此 一作：也若此)
+
+  剑阁峥嵘而崔嵬，一夫当关，万夫莫开。
+  所守或匪亲，化为狼与豺。
+  朝避猛虎，夕避长蛇，磨牙吮血，杀人如麻。
+  锦城虽云乐，不如早还家。
+  蜀道之难，难于上青天，侧身西望长咨嗟！`);
       const datepos = vue.ref([0]);
       onLoad((option) => {
         specializationsId.value = option.specializationId;
@@ -31698,7 +31787,7 @@ if (uni.restoreGlobal) {
           let res = await getBySpecializationId(specializationsId.value);
           let doctorHash = {};
           res = res.data;
-          formatAppLog("log", "at pages/doctor/doctor.vue:169", res);
+          formatAppLog("log", "at pages/doctor/doctor.vue:209", res);
           now2 = /* @__PURE__ */ new Date();
           for (let i = 0; i < res.length; i++) {
             let z = new Date(res[i].date);
@@ -31747,7 +31836,7 @@ if (uni.restoreGlobal) {
           }
           if (doctorList.value)
             showDoctorList.value = doctorList.value;
-          formatAppLog("log", "at pages/doctor/doctor.vue:219", showDoctorList);
+          formatAppLog("log", "at pages/doctor/doctor.vue:259", showDoctorList);
         }
         getDoctorList();
       });
@@ -31771,7 +31860,7 @@ if (uni.restoreGlobal) {
             showDoctorList.value.push(doctor);
         }
         datepos.value = id;
-        formatAppLog("log", "at pages/doctor/doctor.vue:243", showDoctorList);
+        formatAppLog("log", "at pages/doctor/doctor.vue:283", showDoctorList);
       };
       const navToDetail = (id, date3, doctor) => {
         uni.navigateTo({
@@ -31781,7 +31870,25 @@ if (uni.restoreGlobal) {
       const goBack = () => {
         uni.navigateBack();
       };
-      const __returned__ = { titlehash, specializationsId, date: date2, showDoctorList, doctorList, datepos, showAllDoctorList, showThisDay, navToDetail, goBack, ref: vue.ref, onMounted: vue.onMounted, get onLoad() {
+      const getGradient = (baseColor) => {
+        return `linear-gradient(135deg, ${baseColor} 0%, ${lightenColor(baseColor)} 50%, ${baseColor} 100%)`;
+      };
+      const lightenColor = (color2) => {
+        const [r, g, b] = hexToRgb2(color2);
+        const lighterR = Math.min(r + 50, 255);
+        const lighterG = Math.min(g + 50, 255);
+        const lighterB = Math.min(b + 50, 255);
+        return `rgb(${lighterR}, ${lighterG}, ${lighterB})`;
+      };
+      const hexToRgb2 = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? [
+          parseInt(result[1], 16),
+          parseInt(result[2], 16),
+          parseInt(result[3], 16)
+        ] : null;
+      };
+      const __returned__ = { titlehash, specializationsId, date: date2, showDoctorList, doctorList, content, datepos, showAllDoctorList, showThisDay, navToDetail, goBack, getGradient, lightenColor, hexToRgb: hexToRgb2, ref: vue.ref, onMounted: vue.onMounted, get onLoad() {
         return onLoad;
       }, get getBySpecializationId() {
         return getBySpecializationId;
@@ -31877,15 +31984,23 @@ if (uni.restoreGlobal) {
             vue.createElementVNode("view", { class: "up-content" }, [
               vue.createElementVNode("view", { class: "box2" }, [
                 vue.createElementVNode("view", { class: "image" }, [
-                  vue.createElementVNode("image", {
-                    src: item.img,
-                    mode: "aspectFill"
-                  }, null, 8, ["src"])
+                  vue.createCommentVNode(' <image :src="item.img" mode="aspectFill"></image> '),
+                  vue.createCommentVNode(' <up-avatar :text="item.name" fontSize="18" bg-color="#2f8afb" size="120" font-size="30"></up-avatar> '),
+                  vue.createElementVNode(
+                    "view",
+                    {
+                      class: "circle",
+                      style: vue.normalizeStyle({ background: $setup.getGradient("#2f8afb") })
+                    },
+                    vue.toDisplayString(item.name),
+                    5
+                    /* TEXT, STYLE */
+                  )
                 ]),
                 vue.createElementVNode("view", { class: "row" }, [
                   vue.createElementVNode(
                     "view",
-                    { class: "text" },
+                    { class: "text1" },
                     vue.toDisplayString(item.name),
                     1
                     /* TEXT */
@@ -31896,7 +32011,22 @@ if (uni.restoreGlobal) {
                     vue.toDisplayString(item.title),
                     1
                     /* TEXT */
-                  )
+                  ),
+                  vue.createElementVNode("view", { class: "text" }, [
+                    vue.createElementVNode("scroll-view", {
+                      "show-scrollbar": false,
+                      "scroll-y": "true",
+                      class: "text-true"
+                    }, [
+                      vue.createElementVNode(
+                        "view",
+                        { class: "text2" },
+                        vue.toDisplayString($setup.content),
+                        1
+                        /* TEXT */
+                      )
+                    ])
+                  ])
                 ])
               ])
             ]),
@@ -32548,7 +32678,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_0$1);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$7);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("button", {
       "hover-start-time": Number(_ctx.hoverStartTime),
       "hover-stay-time": Number(_ctx.hoverStayTime),
@@ -34498,7 +34628,6 @@ if (uni.restoreGlobal) {
       firstWeekContainsDate: 4
     }
   };
-  const _imports_0 = "/static/zxj/male.png";
   const _sfc_main$d = {
     __name: "doctor-details",
     setup(__props, { expose: __expose }) {
@@ -34550,14 +34679,14 @@ if (uni.restoreGlobal) {
       };
       const healthcard = vue.ref({
         patientId: 0,
-        name: "原神",
-        id: "114514191981011451"
+        name: "没有健康卡，请返回主页添加",
+        id: "?"
       });
       const Allhealthcards = vue.ref([]);
       async function getSchedule(z) {
         let res = await getByDoctorIdAndDate(z);
         res = res.data;
-        formatAppLog("log", "at pages/doctor-details/doctor-details.vue:202", res);
+        formatAppLog("log", "at pages/doctor-details/doctor-details.vue:206", res);
         data.value.name = res[0].doctorName;
         data.value.titleId = res[0].titleId;
         for (let i = 0; i < res.length; i++) {
@@ -34620,7 +34749,7 @@ if (uni.restoreGlobal) {
         });
       };
       const navToInfo = (time) => {
-        formatAppLog("log", "at pages/doctor-details/doctor-details.vue:273", time);
+        formatAppLog("log", "at pages/doctor-details/doctor-details.vue:277", time);
         let obj = {
           patientId: healthcard.value.patientId,
           user: store.state.user,
@@ -34641,7 +34770,25 @@ if (uni.restoreGlobal) {
         healthcard.value = Allhealthcards.value[index2];
         infoPopup.value.close();
       };
-      const __returned__ = { infoPopup1, infoPopup2, infoPopup, doctorId, date: date2, data, scheduleIdhash, f1, f2, timehash, titlehash, healthcard, Allhealthcards, getSchedule, getHealthcard, timeSelect1, timeSelect2, cardSelect, navToCards, navToInfo, navBack, choseHealthcard, get store() {
+      const getGradient = (baseColor) => {
+        return `linear-gradient(135deg, ${baseColor} 0%, ${lightenColor(baseColor)} 50%, ${baseColor} 100%)`;
+      };
+      const lightenColor = (color2) => {
+        const [r, g, b] = hexToRgb2(color2);
+        const lighterR = Math.min(r + 50, 255);
+        const lighterG = Math.min(g + 50, 255);
+        const lighterB = Math.min(b + 50, 255);
+        return `rgb(${lighterR}, ${lighterG}, ${lighterB})`;
+      };
+      const hexToRgb2 = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? [
+          parseInt(result[1], 16),
+          parseInt(result[2], 16),
+          parseInt(result[3], 16)
+        ] : null;
+      };
+      const __returned__ = { infoPopup1, infoPopup2, infoPopup, doctorId, date: date2, data, scheduleIdhash, f1, f2, timehash, titlehash, healthcard, Allhealthcards, getSchedule, getHealthcard, timeSelect1, timeSelect2, cardSelect, navToCards, navToInfo, navBack, choseHealthcard, getGradient, lightenColor, hexToRgb: hexToRgb2, get store() {
         return store;
       }, ref: vue.ref, get onLoad() {
         return onLoad;
@@ -34663,19 +34810,28 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_2$1);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
-    const _component_up_avatar = resolveEasycom(vue.resolveDynamicComponent("up-avatar"), __easycom_2$4);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
+    const _component_up_avatar = resolveEasycom(vue.resolveDynamicComponent("up-avatar"), __easycom_3$3);
     const _component_up_button = resolveEasycom(vue.resolveDynamicComponent("up-button"), __easycom_1);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_3$1);
     const _component_health_card = resolveEasycom(vue.resolveDynamicComponent("health-card"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "doctorDetailLayout pageBg2" }, [
+      vue.createVNode(_component_myEmpty, { height: "50rpx" }),
       vue.createElementVNode("view", { class: "logoBackground" }, [
         vue.createElementVNode("view", { class: "logo" }, [
-          vue.createElementVNode("image", {
-            src: _imports_0,
-            mode: "aspectFill"
-          })
+          vue.createCommentVNode(' <image src="../../static/zxj/male.png" mode="aspectFill"></image> '),
+          vue.createElementVNode(
+            "view",
+            {
+              class: "circle",
+              style: vue.normalizeStyle({ background: $setup.getGradient("#2f8afb") })
+            },
+            vue.toDisplayString($setup.data.name),
+            5
+            /* TEXT, STYLE */
+          )
         ]),
         vue.createElementVNode("view", { class: "box" }, [
           vue.createElementVNode(
@@ -34797,12 +34953,13 @@ if (uni.restoreGlobal) {
           ])
         ]),
         vue.createElementVNode("view", { class: "logo" }, [
-          vue.createVNode(_component_up_avatar, {
+          $setup.healthcard.id !== "?" ? (vue.openBlock(), vue.createBlock(_component_up_avatar, {
+            key: 0,
             text: $setup.healthcard.name,
             fontSize: "12",
             randomBgColor: "",
             size: "50"
-          }, null, 8, ["text"])
+          }, null, 8, ["text"])) : vue.createCommentVNode("v-if", true)
         ]),
         vue.createElementVNode(
           "view",
@@ -35437,7 +35594,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
   function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_up_input = resolveEasycom(vue.resolveDynamicComponent("up-input"), __easycom_1$7);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "formLayout pageBg2" }, [
       vue.createVNode(_component_myEmpty, { height: "100rpx" }),
       vue.createElementVNode("view", { class: "title" }, " 添加健康卡 "),
@@ -35612,9 +35769,9 @@ KLdCLa8OUtJCfpMrywIDAQAB
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_up_input = resolveEasycom(vue.resolveDynamicComponent("up-input"), __easycom_1$7);
-    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$7);
-    const _component_wd_checkbox = resolveEasycom(vue.resolveDynamicComponent("wd-checkbox"), __easycom_3$3);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_2$6);
+    const _component_wd_checkbox = resolveEasycom(vue.resolveDynamicComponent("wd-checkbox"), __easycom_3$4);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "rigLayout pageBg2" }, [
       vue.createVNode(_component_myEmpty, { height: "50rpx" }),
       vue.createElementVNode("view", { class: "title" }, " 注册 "),
@@ -35727,7 +35884,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       ]),
       vue.createElementVNode("view", { class: "logo" }, [
         vue.createElementVNode("image", {
-          src: _imports_0$5,
+          src: _imports_0$4,
           mode: "aspectFit"
         })
       ])
@@ -35826,7 +35983,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_up_button = resolveEasycom(vue.resolveDynamicComponent("up-button"), __easycom_1);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "registration-container pageBg2" }, [
       vue.createVNode(_component_myEmpty, { height: "50rpx" }),
       vue.createElementVNode("view", { class: "header" }, [
@@ -36264,7 +36421,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
                     class: "icon"
                   }, [
                     vue.createElementVNode("image", {
-                      src: _imports_0$1,
+                      src: _imports_0,
                       mode: "aspectFill"
                     })
                   ])) : (vue.openBlock(), vue.createElementBlock("view", {
@@ -36428,7 +36585,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_myEmpty = resolveEasycom(vue.resolveDynamicComponent("myEmpty"), __easycom_1$8);
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$6);
-    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$6);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "recordLayout pageBg2" }, [
       vue.createVNode(_component_myEmpty, { height: "50rpx" }),
       vue.createElementVNode("view", { class: "layout" }, [
@@ -36453,7 +36610,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
       (vue.openBlock(true), vue.createElementBlock(
         vue.Fragment,
         null,
-        vue.renderList($setup.recordList, (item, index2) => {
+        vue.renderList($setup.recordList.slice().reverse(), (item, index2) => {
           return vue.openBlock(), vue.createElementBlock("view", { class: "box" }, [
             !item.isPaid ? (vue.openBlock(), vue.createElementBlock("view", {
               key: 0,
@@ -36623,7 +36780,7 @@ KLdCLa8OUtJCfpMrywIDAQAB
             vue.createElementVNode("view", { class: "text2" }, " 医院秉持着“尊重生命，关爱健康”的核心理念，不仅关注疾病的治疗，更加重视患者的身心康复。在这里，每一个细节都经过精心设计，从舒适的就诊环境到亲切的医护人员，我们都力求让每一位来访者感受到家一般的温暖。 ")
           ]),
           vue.createElementVNode("image", {
-            src: _imports_0$2,
+            src: _imports_0$1,
             mode: "aspectFill"
           })
         ])

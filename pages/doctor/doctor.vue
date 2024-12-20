@@ -483,7 +483,7 @@ const hexToRgb = (hex) => {
 					font-size: 18px;
 					// background: red;
 					color:#333;
-					.text{
+					.text1{
 						// padding:0rpx;
 					}
 					.smallText{
@@ -509,7 +509,7 @@ const hexToRgb = (hex) => {
 						    overflow-y: auto; /* 启用垂直滚动 */
 						    scroll-behavior: smooth;
 						    -webkit-overflow-scrolling: touch;
-							z-index: 10;
+							// z-index: 10;
 							padding-top: 20rpx;
 							.text2{
 								text-indent: 2em;

@@ -3,8 +3,8 @@ import { createStore } from 'vuex'
 import { jwtDecode, InvalidTokenError } from 'jwt-decode';
 const store = createStore({
 	state: { //存放状态
-		// user: localStorage.getItem('user') || null,
-		// token: localStorage.getItem('token') || null
+		user: uni.getStorageSync('user')| null,
+		// token: uni. || null
 	},
 	mutations: { //同步修改状态
 		setToken(state, token) {
